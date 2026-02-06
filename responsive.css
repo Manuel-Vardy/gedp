@@ -274,6 +274,7 @@
     /* Tighter intro spacing */
     .intro-section {
         padding-top: 0 !important;
+        margin-top: 40px !important;
     }
 
     .intro-section .section-title {
