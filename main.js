@@ -87,13 +87,20 @@ function initScrollAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
+        if (entry.target.classList.contains('hide-reveal-left')) {
+          entry.target.classList.add('reveal-left');
+        } else {
+          entry.target.classList.add('reveal');
+        }
       }
     });
   }, observerOptions);
 
-  document.querySelectorAll('section, .module-card, .portal-card').forEach(el => {
-    el.classList.add('hide-reveal');
+  document.querySelectorAll('.hide-reveal, .hide-reveal-left, section, .portal-card').forEach(el => {
+    // Only add hide-reveal if it doesn't already have an animation class
+    if (!el.classList.contains('hide-reveal-left') && !el.classList.contains('hide-reveal')) {
+      el.classList.add('hide-reveal');
+    }
     observer.observe(el);
   });
 }
