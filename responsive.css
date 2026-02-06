@@ -109,9 +109,12 @@
     }
 
     .slide-content h1 {
-        font-size: 2rem;
-        line-height: 1.2;
+        font-size: 3rem;
+        line-height: 1.1;
         margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .slide-content p {
@@ -193,9 +196,14 @@
         height: 45px;
     }
 
+    .student-laptop {
+        background-position: 45% 15% !important;
+        /* Mobile tweak to keep student visible */
+    }
+
     .slide-content h1 {
-        font-size: 2.25rem;
-        /* Increased from 1.65rem */
+        font-size: 2.5rem;
+        line-height: 1.1;
     }
 
     .slide-content p {
