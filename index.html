@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEDP | Ghana Education Digital Platform</title>
+  <meta name="description"
+    content="Official Ghana Education Digital Platform (GEDP) for streamlining data for the Ministry of Education.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700&display=swap"
+    rel="stylesheet">
+
+  <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+
+  <!-- Navigation bar -->
+  <header class="header sticky-nav">
+    <div class="container nav-wrapper">
+      <div class="logo">
+        <img src="/logo.jpg" alt="GEDP Logo" class="logo-image">
+      </div>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="modules.html" class="nav-link">Modules</a></li>
+          <li><a href="#training" class="nav-link">Support</a></li>
+          <li><a href="#guidelines" class="nav-link">Guidelines</a></li>
+          <li><a href="#portals" class="nav-link">External Portals</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+
+          <!-- Mobile Only Buttons -->
+          <li class="mobile-only-btn"><a href="#login" class="nav-link btn-link">Login</a></li>
+          <li class="mobile-only-btn"><a href="#signup" class="nav-link btn-link highlight">Sign Up</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline mobile-hide">Login</button>
+        <button class="btn btn-primary mobile-hide">Sign Up</button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Slider -->
+    <section id="home" class="hero">
+      <div class="slider-container">
+        <!-- Slides will be injected or defined here -->
+        <div class="slide active" data-slide="1">
+          <div class="slide-content container">
+            <h1>Vision: Streamlining Education Data</h1>
+            <p>"To properly streamline data for Ministry of Education and GES to easily foster data accessibility."</p>
+
+          </div>
+          <div class="slide-image pupil-tablet"></div>
+        </div>
+        <div class="slide" data-slide="2">
+          <div class="slide-content container">
+            <h1>Mission: Paperless System</h1>
+            <p>"To evolve from manual process to paperless system"</p>
+
+          </div>
+          <div class="slide-image student-laptop"></div>
+        </div>
+        <div class="slide" data-slide="3">
+          <div class="slide-content container">
+            <h1>Innovation in TVET</h1>
+            <p>Empowering the next generation with cutting-edge tools and robotics.</p>
+
+          </div>
+          <div class="slide-image tvet-robotics"></div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="prev">&larr;</button>
+          <div class="dots"></div>
+          <button class="next">&rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Text -->
+    <section class="intro-section">
+      <div class="container grid grid-2 align-center">
+        <div class="intro-text">
+          <h2 class="section-title">Ghana Education Digital Platform (GEDP)</h2>
+          <p>Ghana Education Digital Platform (GEDP) is an ERP software tailored for Ghana Education Service (GES) with
+            its core mandate, is to <strong>PROPERLY
+              STREAMLINE DATA</strong> for Ministry of Education for informed decision making.</p>
+          <ul class="vision-mission-list">
+            <li><strong>VISION:</strong> To properly streamline data for Ministry of Education and Ghana Education
+              Service (GES) to easily foster data accessibility.</li>
+            <li><strong>MISSION:</strong> "To evolve from manual process to paperless system"</li>
+          </ul>
+        </div>
+        <div class="intro-graphic glass-panel">
+          <!-- Animated SVG Graphic -->
+          <div class="pulse-circle"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="modules-section bg-alt">
+      <div class="container">
+        <h2 class="section-title w-full mb-2">System Modules</h2>
+        <div class="grid grid-3">
+          <div class="module-card">
+            <h3>Administrative Modules</h3>
+            <p>Centralized day-to-day operations through a user-friendly dashboard with role-based access. It enables
+              efficient management of records, scheduling, and administrative communications for Ghana Education Service
+              (GES).</p>
+            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+          </div>
+
+          <div class="module-card">
+            <h3>Academic Modules</h3>
+            <p>Provides tools for curriculum management, academic tracking, assessments, and performance reporting. This
+              module includes the Transcript Checker, which allows parents and guardians to monitor academic track
+              academic progress, 
+            </p>
+            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+          </div>
+
+          <div class="module-card">
+            <h3>Staff Management</h3>
+            <p>Facilitates processes related to staff records, workstations and performance reviews. This module
+              streamlines human resource management and supports effective staff administration across all levels.</p>
+            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+          </div>
+
+          <div class="module-card">
+            <h3>Utility Applications</h3>
+            <p>Essential school tools including Circulars, File Systems, Mails, Letters, and the WorkStation tool. Also
+              includes Self Applications for promotions, study leaves, transfers, upgrading, and assurance.</p>
+            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+          </div>
+
+          <div class="module-card">
+            <h3>Data Analytics</h3>
+            <p>Data analytics module is designed to help present life-informed data to help in decision making. This
+              module helps users to analyze and distribute actionable information derived from agencies’ data for better
+              strategic planning.</p>
+            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+          </div>
+
+          <div class="module-card">
+            <h3>Learning Management System (LMS)</h3>
+            <p>Modernizing library management systems to meet the evolving needs of students and facilitators. Includes
+              interactive tools such as discussion forums, quizzes, and multimedia resources to support diverse teaching
+              and learning styles.</p>
+            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training, Support and Guidelines -->
+    <section id="training" class="training-section">
+      <div class="container">
+        <h2 class="section-title">Training, Support & Guidelines</h2>
+        <div class="grid grid-2">
+          <div class="support-info">
+            <h3>Our Support & Training</h3>
+            <p>Learning to work on this platform is easy with our support team on your side.</p>
+            <div class="onboarding-steps">
+              <div class="step">
+                <span class="step-num">1</span>
+                <span>Step-By-Step Onboarding Process</span>
+              </div>
+              <div class="video-placeholder glass-panel">
+                <div class="play-btn"></div>
+                <span>View Tutorial (Video placeholder)</span>
+              </div>
+            </div>
+
+            <div class="training-list">
+              <h4>GEDP ERP support sessions include:</h4>
+              <ul>
+                <li>GEDP Expert Technical Support</li>
+                <li>App & Dedicated Team Access</li>
+                <li>Communication & Relay Support</li>
+                <li>Customer Success Consultants</li>
+                <li>Implementation & Data Onboarding</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="contact-expert glass-panel">
+            <h3>Talk To An Expert</h3>
+            <p>Complete the form to speak with a product specialist.</p>
+            <form id="expert-form">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-full">Send Message</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="guidelines-cta text-center mt-4">
+          <div class="glass-panel inline-block p-2">
+            <p>GEDP is mainly tailored for Ghana Education Service (GES). It's a complete package for all stakeholders.
+            </p>
+            <button class="btn btn-accent mt-1">Click To Download The Full Guidelines</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance Reporting -->
+    <section id="compliance" class="compliance-section bg-alt-dark text-white">
+      <div class="container text-center max-w-narrow">
+        <div class="lock-icon mb-1">🔒</div>
+        <h2 class="section-title inverse">Compliance Reporting</h2>
+        <p>A secure and confidential way to raise concerns or report unethical behavior related to GEDP ERP system.
+          Anonymity is guaranteed unless you choose otherwise.</p>
+
+        <div class="grid grid-2 mt-3">
+          <div class="report-box glass-panel text-left">
+            <h3>Report an Incident</h3>
+            <p>To report an incident, click the button below to start your submission.</p>
+            <button id="submit-report" class="btn btn-danger">SUBMIT REPORT</button>
+          </div>
+          <div class="follow-up-box glass-panel text-left">
+            <h3>Check Status</h3>
+            <p>Already made a report? Use your Report ID and PIN to follow-up.</p>
+            <div class="flex gap-1">
+              <button class="btn btn-outline-white">I Have A PIN</button>
+              <button class="btn btn-outline-white">No PIN?</button>
+            </div>
+          </div>
+        </div>
+        <p class="warning-text mt-2">*Please note GEDP will only investigate allegations involving GEDP staff, products,
+          or services.</p>
+      </div>
+    </section>
+
+    <!-- External Portals -->
+    <section id="portals" class="portals-section">
+      <div class="container">
+        <h2 class="section-title text-center w-full">External Portals</h2>
+        <div class="grid grid-3">
+          <div class="portal-card glass-panel">
+            <div class="portal-icon">🚪</div>
+            <h3>Admission Portal</h3>
+            <p>Complete automation of the admission cycle for schools and students.</p>
+            <ul>
+              <li>Admission Inquiry Forms</li>
+              <li>Unique Student ID Generation</li>
+              <li>Direct Management Link</li>
+            </ul>
+            <button class="btn btn-primary w-full mt-2">Access Portal</button>
+          </div>
+          <div class="portal-card glass-panel">
+            <div class="portal-icon">💼</div>
+            <h3>Recruitment Portal</h3>
+            <p>Streamlined hiring for GES and TVET teaching and non-teaching staff.</p>
+            <ul>
+              <li>User-friendly HUB</li>
+              <li>Automation of 60% of tasks</li>
+              <li>Transparent workflows</li>
+            </ul>
+            <button class="btn btn-primary w-full mt-2">Apply Here</button>
+          </div>
+          <div class="portal-card glass-panel">
+            <div class="portal-icon">🏫</div>
+            <h3>School Placement</h3>
+            <p>CSSPS platform for BECE candidates entering SHS and TVET.</p>
+            <ul>
+              <li>Equity and Transparency</li>
+              <li>Free of Charge Service</li>
+              <li>Real-time Placements</li>
+            </ul>
+            <button class="btn btn-primary w-full mt-2">Check Results</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Policy and Strategic Goals -->
+    <section class="policy-section bg-alt">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="policy-principles">
+            <h2 class="section-title">Core Policy Principles</h2>
+            <p class="mb-2">Driving informed decisions with real-time analytics.</p>
+            <ul class="icon-list">
+              <li><span class="icon">🌍</span> <strong>Access & Inclusivity:</strong> Equitable access for rural and
+                urban users.</li>
+              <li><span class="icon">🛡️</span> <strong>Data Privacy & Security:</strong> Encryption and secure
+                authentication.</li>
+              <li><span class="icon">🙋</span> <strong>User-Centric Design:</strong> Accessible for all stakeholders.
+              </li>
+              <li><span class="icon">✨</span> <strong>Transparency:</strong> Robust reporting and accountability tools.
+              </li>
+            </ul>
+          </div>
+          <div class="strategic-goals">
+            <h2 class="section-title">Strategic Goals</h2>
+            <p class="mb-2">Transforming education through innovation and digitalization.</p>
+            <ul class="icon-list">
+              <li><span class="icon">⚙️</span> <strong>Efficiency:</strong> Automate and streamline admin tasks.</li>
+              <li><span class="icon">📈</span> <strong>Academic Excellence:</strong> Monitor student performance.</li>
+              <li><span class="icon">💬</span> <strong>Effective Communication:</strong> Real-time messaging updates.
+              </li>
+              <li><span class="icon">⚖️</span> <strong>Compliance:</strong> Adhere to national data laws.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us & Benefits -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="grid grid-2 align-center">
+          <div class="about-content">
+            <h2 class="section-title">About GEDP</h2>
+            <p>GEDP is a comprehensive <strong>one-in-all ERP software</strong> designed to streamline data through
+              administrative and management functions for Ghana Education Service (GES).</p>
+            <p>Our solution integrates tools for LMS, staff management, payroll processing, admissions, and recruitment
+              into one unified platform.</p>
+          </div>
+          <div class="benefits-content glass-panel">
+            <h3>Benefits & Impact</h3>
+            <ul class="check-list">
+              <li>Enhanced Access to Education</li>
+              <li>Operational Efficiency & Accuracy</li>
+              <li>Cost-Effectiveness in Resource Allocation</li>
+              <li>Real-Time Data Insights for Policy</li>
+              <li>Collaborative Engagement for All</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- News Section Teaser in Footer -->
+  <footer id="contact" class="footer bg-primary text-white">
+    <div class="container pt-4 pb-2">
+      <div class="grid grid-3">
+        <div class="footer-info">
+          <img src="/logo.jpg" alt="GEDP Logo" class="logo-image footer-logo" style="margin-bottom: 1rem;">
+          <p>Modernizing Ghana's Education Landscape.</p>
+          <div class="contact-links mt-2">
+            <p><strong>Email:</strong> info@gedp.gov.gh</p>
+            <p><strong>Location:</strong> Ministry of Education, Accra</p>
+          </div>
+        </div>
+        <div class="footer-news">
+          <h3>Latest News</h3>
+          <ul class="news-list">
+            <li><a href="#">Ministry launches GEDP Phase 2</a></li>
+            <li><a href="#">Training sessions scheduled for rural districts</a></li>
+            <li><a href="#">Understanding the new CSSPS placements</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">GES Portal</a></li>
+            <li><a href="#">MOE Website</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom text-center mt-3 pt-2 border-top">
+        <p>&copy; 2026 Ghana Education Digital Platform. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

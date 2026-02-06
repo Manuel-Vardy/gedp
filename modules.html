@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEDP | System Modules</title>
+    <meta name="description"
+        content="Explore the various modules of the Ghana Education Digital Platform (GEDP) designed to streamline education management.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <header class="header sticky-nav">
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/logo.jpg" alt="GEDP Logo" class="logo-image">
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="modules.html" class="nav-link active">Modules</a></li>
+                    <li><a href="index.html#training" class="nav-link">Support</a></li>
+                    <li><a href="index.html#guidelines" class="nav-link">Guidelines</a></li>
+                    <li><a href="index.html#portals" class="nav-link">External Portals</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+
+                    <!-- Mobile Only Buttons -->
+                    <li class="mobile-only-btn"><a href="#login" class="nav-link btn-link">Login</a></li>
+                    <li class="mobile-only-btn"><a href="#signup" class="nav-link btn-link highlight">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-outline mobile-hide">Login</button>
+                <button class="btn btn-primary mobile-hide">Sign Up</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Simple Page Header -->
+        <section class="page-header bg-primary text-white pt-5 pb-5">
+            <div class="container text-center">
+                <h1 class="section-title inverse mb-2">Our System Modules</h1>
+                <p class="max-w-narrow mx-auto">Discover the comprehensive suite of tools designed to transform
+                    educational administration.</p>
+            </div>
+        </section>
+
+        <!-- Content from Index Modules Section -->
+        <section class="modules-section section">
+            <div class="container">
+
+                <div class="grid grid-3">
+                    <div class="module-card">
+                        <h3>Administrative Modules</h3>
+                        <p>Centralized day-to-day operations through a user-friendly dashboard with role-based access.
+                            It enables
+                            efficient management of records, scheduling, and administrative communications for Ghana
+                            Education Service
+                            (GES).</p>
+                    </div>
+
+                    <div class="module-card">
+                        <h3>Academic Modules</h3>
+                        <p>Provides tools for curriculum management, academic tracking, assessments, and performance
+                            reporting. This
+                            module includes the Transcript Checker, which allows parents and guardians to monitor
+                            academic progress
+                            each term and for government and private institutions to track academic records of pupil and
+                            students.</p>
+                    </div>
+
+                    <div class="module-card">
+                        <h3>Staff Management</h3>
+                        <p>Facilitates processes related to staff records, workstations and performance reviews. This
+                            module
+                            streamlines human resource management and supports effective staff administration.</p>
+                    </div>
+
+                    <div class="module-card">
+                        <h3>Utility Applications</h3>
+                        <ul class="check-list" style="list-style: none; padding-left: 0; margin-bottom: 0.5rem;">
+                            <li><strong>i.</strong> Circulars</li>
+                            <li><strong>ii.</strong> File Systems</li>
+                            <li><strong>iii.</strong> Mails and Letters</li>
+                            <li><strong>iv.</strong> WorkStation Tool</li>
+                            <li><strong>v.</strong> Self Applications:
+                                <ul style="padding-left: 1rem; margin-top: 0.25rem; list-style: circle;">
+                                    <li>Promotions</li>
+                                    <li>Study Leave & Returns</li>
+                                    <li>Transfers</li>
+                                    <li>Upgrading</li>
+                                    <li>Assurance</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <h3>Data Analytics</h3>
+                        <p>Data analytics module is designed to help present life-informed data to help in decision
+                            making. This
+                            module helps users to analyze, and distribute actionable information derived from agencies’
+                            data. This
+                            typically includes information about pupil and students transcripts, staff informations,
+                            administrative
+                            records, and this information is presented in illustration format to easily made a quality
+                            decisions.
+                            Having
+                            this module helps data analysts format information to develop more effective strategies for
+                            all respective
+                            agencies.</p>
+                    </div>
+
+                    <div class="module-card">
+                        <h3>Learning Management System (LMS)</h3>
+                        <p class="mb-2">With the advent of GEDP ERP system, GES will be modernizing their library
+                            management systems
+                            to meet the evolving needs of pupil, students and facilitators. GEDP ERP enables digital
+                            cataloging,
+                            efficient resource tracking, and streamlined circulation processes, thus enhancing
+                            accessibility to
+                            educational materials and fostering a culture of continuous learning. Moreover, learners and
+                            facilitators
+                            will integrate library systems with other administrative functions. </p>
+                        <p>The LMS feature has interactive tools such as discussion forums, quizzes, and multimedia
+                            resources to
+                            support diverse teaching and learning styles. By promoting active engagement and
+                            collaboration, the LMS
+                            enhances the quality of instruction, facilitates personalized learning experiences, and
+                            empowers pupils
+                            and students to take ownership of their education.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer bg-primary text-white">
+        <div class="container pt-4 pb-2">
+            <div class="grid grid-3">
+                <div class="footer-info">
+                    <img src="/logo.jpg" alt="GEDP Logo" class="logo-image footer-logo" style="margin-bottom: 1rem;">
+                    <p>Modernizing Ghana's Education Landscape.</p>
+                    <div class="contact-links mt-2">
+                        <p><strong>Email:</strong> info@gedp.gov.gh</p>
+                        <p><strong>Location:</strong> Ministry of Education, Accra</p>
+                    </div>
+                </div>
+                <div class="footer-news">
+                    <h3>Latest News</h3>
+                    <ul class="news-list">
+                        <li><a href="#">Ministry launches GEDP Phase 2</a></li>
+                        <li><a href="#">Training sessions scheduled for rural districts</a></li>
+                        <li><a href="#">Understanding the new CSSPS placements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">GES Portal</a></li>
+                        <li><a href="#">MOE Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-3 pt-2 border-top">
+                <p>&copy; 2026 Ghana Education Digital Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
