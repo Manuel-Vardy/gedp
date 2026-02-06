@@ -273,7 +273,7 @@ ul {
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: transparent;
     cursor: pointer;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
@@ -1427,4 +1427,63 @@ section:last-of-type {
     100% {
         transform: translateX(-50%);
     }
+}
+
+/* Training / Support Section Spacing */
+.training-list {
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .training-list {
+        margin-top: 2.5rem;
+    }
+}
+
+/* Expert Form Styling */
+#expert-form {
+    margin-top: 1.5rem;
+}
+
+#expert-form input,
+#expert-form textarea {
+    border-radius: 50px;
+    border: 1px solid #94A3B8;
+    /* Darker border for visibility */
+    padding: 1rem 1.5rem;
+    /* Pill shape padding */
+    background: white;
+}
+
+#expert-form textarea {
+    border-radius: 25px;
+    /* Less aggressive rounding for text area */
+}
+
+/* Support Info Dark Card */
+.support-info {
+    background-color: var(--primary);
+    color: white;
+    padding: 3rem;
+    border-radius: 0;
+    /* Squared off as requested */
+    height: 100%;
+    /* Ensure it fills height if needed */
+}
+
+.support-info .section-title {
+    color: white !important;
+    text-align: left !important;
+    margin-bottom: 2rem;
+}
+
+.support-info h3,
+.support-info p,
+.support-info h4,
+.support-info li {
+    color: white !important;
+}
+
+.support-info .video-placeholder {
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
