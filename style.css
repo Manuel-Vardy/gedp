@@ -511,7 +511,7 @@ section:last-of-type {
     /* Extra left padding for the bar */
     border: none;
     box-shadow: none;
-    transition: all 0.4s ease;
+    transition: background 0.4s ease;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -537,6 +537,8 @@ section:last-of-type {
 .module-card:hover {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    box-shadow: none;
+    /* Explicitly ensure no shadow on hover */
 }
 
 .module-card:hover::before {
@@ -903,9 +905,46 @@ section:last-of-type {
     border-radius: 2px;
 }
 
+/* Centered support for section titles */
+.text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Page Header (Hero style for subpages) */
+.page-header {
+    padding: 120px 0;
+    /* Expanded space for premium feel */
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
+        url('/hero_modules_bg.png');
+    /* User provided image with blue-black overlay */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header .header-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    color: var(--ghana-gold);
+    margin-bottom: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Utilities */
 .grid {
     display: grid;
     gap: 2rem;
+}
+
+.page-header h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .grid-2 {
@@ -1171,4 +1210,149 @@ section:last-of-type {
     border-left: 4px solid var(--ghana-gold);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     list-style: none;
+}
+
+/* Decorative Background Lines */
+.intro-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-section .container {
+    position: relative;
+    z-index: 10;
+    /* High z-index to stay on top */
+}
+
+.bg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    /* Behind container */
+    opacity: 0.1;
+}
+
+.line-v,
+.line-h {
+    position: absolute;
+    background: var(--primary);
+}
+
+.line-v {
+    width: 1px;
+    height: 120px;
+}
+
+.line-h {
+    height: 1px;
+    width: 120px;
+}
+
+/* Default Laptop Positions */
+.line-1 {
+    top: 5%;
+    left: 5%;
+}
+
+.line-2 {
+    top: 5%;
+    left: 5%;
+    width: 180px;
+}
+
+.line-3 {
+    bottom: 5%;
+    right: 5%;
+    height: 180px;
+}
+
+.line-4 {
+    bottom: 5%;
+    right: 5%;
+}
+
+/* Mobile Specific Fix: Push section down and prevent clipping */
+@media (max-width: 768px) {
+    .bg-lines {
+        display: none !important;
+    }
+
+    .intro-section {
+        margin-top: 140px !important;
+        /* Push the whole section down away from header */
+        padding-top: 0 !important;
+        overflow: visible !important;
+        /* Prevent header text clipping */
+    }
+
+    .intro-section .container {
+        z-index: 100;
+        position: relative;
+    }
+}
+
+/* Marquee Header */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee-anim 30s linear infinite;
+    will-change: transform;
+}
+
+.marquee-content .section-title {
+    font-size: 5.5rem;
+    /* Larger font */
+    margin: 0 5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* Use original section-title styles inherited */
+}
+
+@media (max-width: 768px) {
+    .marquee-content .section-title {
+        font-size: 2.5rem;
+        /* Reduced for mobile */
+        margin: 0 2rem;
+        gap: 0.75rem;
+    }
+}
+
+.marquee-content .section-title svg {
+    width: 4rem;
+    height: 4rem;
+    color: var(--ghana-gold);
+}
+
+@media (max-width: 768px) {
+    .marquee-content .section-title svg {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+}
+
+/* Ensure gold underline is visible in marquee if desired,
+   but user said "old header style and the design",
+   so I should keep the underline if it was there. */
+
+@keyframes marquee-anim {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
