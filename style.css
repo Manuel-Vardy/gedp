@@ -82,24 +82,91 @@ ul {
     padding: 0 2rem;
 }
 
+/* Top Bar */
+.top-bar {
+    background: #0F172A;
+    /* Solid navy color restored as requested */
+    color: white;
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    font-weight: 200;
+    /* Ultra-light for refined look */
+    position: relative;
+    z-index: 1001;
+}
+
+.top-bar-title {
+    letter-spacing: 0.025em;
+    opacity: 0.9;
+}
+
+.top-bar-contact a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-contact a:hover {
+    opacity: 0.7;
+}
+
 /* Navigation Styles */
 .header {
-    height: 80px;
+    height: 100px;
     display: flex;
     position: sticky;
     top: 0;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: rgba(100, 116, 139, 0.02);
+    /* Ultra-transparent glass effect */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
     z-index: 1000;
-    height: 85px;
     transition: var(--transition);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: -100px;
+    /* Pull content up under the sticky header */
+    transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
+}
+
+.header.nav-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.header.nav-scrolled {
+    background: #0F172A;
+    /* Solid blue-black when scrolled past hero */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .nav-wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 250px 1fr auto;
     align-items: center;
     width: 100%;
+    padding: 0 2rem;
+}
+
+.main-nav {
+    justify-self: center;
+}
+
+.nav-actions {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.mobile-only-btn {
+    display: none;
 }
 
 .logo {
@@ -111,21 +178,33 @@ ul {
     height: 60px;
     width: auto;
     object-fit: contain;
+    filter: brightness(1.2);
+    /* Enhance logo on dark bg */
 }
 
 .main-nav ul {
     display: flex;
     gap: 1.5rem;
+    /* Reduced from 2.5rem */
 }
 
 .main-nav a {
     text-decoration: none;
-    color: var(--text-main);
-    font-weight: 500;
+    color: white !important;
+    font-weight: 200;
+    /* Reduced from 400 */
     font-size: 0.95rem;
+    /* Reduced from 1.05rem */
     transition: var(--transition);
     padding: 0.5rem 0;
     position: relative;
+    opacity: 0.95;
+    letter-spacing: 0.02em;
+}
+
+.main-nav a:hover {
+    color: var(--ghana-gold) !important;
+    opacity: 1;
 }
 
 .main-nav a::after {
@@ -144,101 +223,134 @@ ul {
     width: 100%;
 }
 
-.main-nav a:hover,
-.main-nav a:focus {
-    color: var(--primary);
-}
 
-.nav-actions {
+/* Action Buttons & Icons */
+.icon-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 1rem;
-}
-
-.search-bar input {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    border: 1px solid #E2E8F0;
-    outline: none;
-    font-size: 0.85rem;
-    transition: var(--transition);
-}
-
-.search-bar input:focus {
-    border-color: var(--primary-light);
-}
-
-/* Base buttons handled in utilities */
-
-/* Mobile Hamburger Menu */
-.mobile-only-btn {
-    display: none;
-}
-
-@media (max-width: 992px) {
-    .mobile-only-btn {
-        display: block;
-        margin-top: 0.5rem;
-    }
-
-    .mobile-only-btn .btn-link {
-        display: block;
-        text-align: center;
-        width: 100%;
-        border: 1px solid rgba(15, 23, 42, 0.1);
-        border-radius: 12px;
-        padding: 0.85rem !important;
-        font-weight: 500;
-        background: rgba(15, 23, 42, 0.05);
-    }
-
-    .mobile-only-btn .btn-link.highlight {
-        background-color: var(--primary);
-        color: white !important;
-        border-color: var(--primary);
-    }
-
-    .mobile-hide {
-        display: none !important;
-    }
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    z-index: 1001;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: var(--primary);
-    border-radius: 2px;
+    justify-content: center;
     transition: all 0.3s ease;
 }
 
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
 }
 
-.hamburger.active span:nth-child(2) {
+.pill-btn {
+    border-radius: 50px !important;
+    padding: 0.85rem 2.5rem !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: white !important;
+    font-weight: 200 !important;
+    /* Reduced from 400 for consistency */
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease !important;
+}
+
+.pill-btn:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-2px);
+}
+
+/* New 4-Dot Hamburger */
+.hamburger-new {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 0;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger-new:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.hamburger-dot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 6px);
+    gap: 4px;
+}
+
+.hamburger-dot-grid span {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.hamburger-new.active {
+    background: var(--ghana-gold);
+    border-color: var(--ghana-gold);
+}
+
+.hamburger-new.active .hamburger-dot-grid {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.hamburger-new.active .hamburger-dot-grid span {
+    background: #0F172A;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+/* Transform dots into an X */
+.hamburger-new.active .hamburger-dot-grid span:nth-child(1) {
+    width: 20px;
+    height: 2px;
+    margin-top: -1px;
+    margin-left: -10px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+}
+
+.hamburger-new.active .hamburger-dot-grid span:nth-child(2) {
+    width: 20px;
+    height: 2px;
+    margin-top: -1px;
+    margin-left: -10px;
+    transform: rotate(-45deg);
+    border-radius: 2px;
+}
+
+/* Hide the other two dots */
+.hamburger-new.active .hamburger-dot-grid span:nth-child(3),
+.hamburger-new.active .hamburger-dot-grid span:nth-child(4) {
     opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: scale(0);
 }
 
 /* Hero Slider Styles */
 .hero {
-    padding: 0;
-    height: 85vh;
-    /* Increased from 70vh for laptop view */
+    /* Aligned with header height */
+    height: 95vh;
+    /* Adjust height for overlay */
     min-height: 600px;
     position: relative;
     overflow: hidden;
@@ -349,17 +461,17 @@ ul {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transform: translateZ(-400px) scale(1.8);
-    /* Start deeper and larger */
-    transition: transform 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1);
+    transform-origin: center top;
+    /* Aligned zoom start */
+    transition: transform 4s linear;
+    /* Continuous 4s zoom-in */
     will-change: transform;
 }
 
 .slide.active .slide-image {
-    transform: translateZ(0) scale(1);
-    /* Smoothly travel to the foreground */
-    transition-delay: 1s;
-    /* Increased delay to allow text to lead */
+    transform: scale(1.15);
+    /* Cinematic enlargement */
 }
 
 .slide-image::after {
@@ -377,6 +489,7 @@ ul {
 .pupil-tablet {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
         url('/hero-vision.jpg');
+    background-size: cover;
 }
 
 .student-laptop {
@@ -394,61 +507,6 @@ ul {
     background-position: center;
 }
 
-.slider-controls {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    z-index: 10;
-}
-
-.slider-controls button {
-    display: none;
-    /* Removed as requested */
-}
-
-.dots {
-    display: flex;
-    gap: 0.5rem;
-    width: 100%;
-    justify-content: center;
-}
-
-.dot {
-    height: 2px;
-    /* Thinner inactive lines */
-    flex-grow: 1;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.dot.active {
-    height: 4px;
-    /* Thicker active line */
-    background: white;
-    /* Fallback */
-    border-radius: 2px;
-}
-
-/* Ghana Flag Colors for Active Dots */
-.dot:nth-child(1).active {
-    background-color: var(--ghana-red);
-}
-
-.dot:nth-child(2).active {
-    background-color: var(--ghana-gold);
-}
-
-.dot:nth-child(3).active {
-    background-color: var(--ghana-green);
-}
 
 .section {
     padding: var(--spacing-xl) 0;
@@ -463,7 +521,7 @@ section:last-of-type {
 /* Extra spacing for intro section after hero */
 .intro-section {
     margin-top: var(--spacing-lg);
-    padding-top: var(--spacing-xl);
+    /*  padding-top: var(--spacing-xl);*/
     perspective: 1500px;
 }
 
@@ -738,12 +796,11 @@ section:last-of-type {
     font-size: 0.9rem;
 }
 
-/* Footer Styles */
-/* Footer Styles */
 .footer {
     padding-top: 6rem;
     padding-bottom: 3rem;
     font-family: 'Inter', sans-serif;
+    font-weight: 200;
     position: relative;
 }
 
@@ -770,6 +827,7 @@ section:last-of-type {
 }
 
 .footer p {
+    font-weight: 200;
     font-size: 0.95rem;
     line-height: 1.6;
     opacity: 0.9;
@@ -779,6 +837,7 @@ section:last-of-type {
     font-family: 'Outfit', sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
+    /* Bold weight for better contrast */
     margin-bottom: 1.5rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -795,6 +854,7 @@ section:last-of-type {
     color: white;
     text-decoration: none;
     font-size: 0.95rem;
+    font-weight: 200;
     transition: all 0.2s ease;
     opacity: 0.85;
 }
@@ -811,6 +871,7 @@ section:last-of-type {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.85rem;
+    font-weight: 200;
     opacity: 0.7;
 }
 
@@ -913,11 +974,10 @@ section:last-of-type {
 
 /* Page Header (Hero style for subpages) */
 .page-header {
-    padding: 120px 0;
-    /* Expanded space for premium feel */
-    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
+    padding: 190px 0 120px 0;
+    /* Optimized for single overlay */
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
         url('/hero_modules_bg.png');
-    /* User provided image with blue-black overlay */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -935,6 +995,18 @@ section:last-of-type {
 }
 
 /* Utilities */
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
 .grid {
     display: grid;
     gap: 2rem;
@@ -1282,7 +1354,7 @@ section:last-of-type {
     }
 
     .intro-section {
-        margin-top: 140px !important;
+        margin-top: 60px !important;
         /* Push the whole section down away from header */
         padding-top: 0 !important;
         overflow: visible !important;

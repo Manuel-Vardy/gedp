@@ -20,12 +20,29 @@
 
 <body>
 
+    <div class="top-bar">
+        <div class="container flex justify-between align-center">
+            <span class="top-bar-title">Ghana Education Digital Platform</span>
+            <div class="top-bar-contact">
+                <a href="mailto:info@gedp.gov.gh">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-right: 6px; vertical-align: middle;">
+                        <path d="m22 2-7 20-4-9-9-4Z" />
+                        <path d="M22 2 11 13" />
+                    </svg>
+                    info@gedp.gov.gh
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation bar -->
     <header class="header sticky-nav">
         <div class="container nav-wrapper">
             <div class="logo">
                 <a href="index.html">
-                    <img src="/logo.jpg" alt="GEDP Logo" class="logo-image">
+                    <img src="/GEDP Logo with Coat of Arms 1.png" alt="GEDP Logo" class="logo-image">
                 </a>
             </div>
 
@@ -52,43 +69,38 @@
                         </a>
                     </li>
                     <li class="mobile-only-btn">
-                        <a href="#signup" class="nav-link btn-link highlight">
-                            Get Started
+                        <a href="#get-started" class="nav-link btn-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" style="margin-left: 8px;">
-                                <path d="M5 12h14" />
-                                <path d="m12 5 7 7-7 7" />
+                                stroke-linejoin="round" style="margin-right: 8px;">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
                             </svg>
+                            Get Started
                         </a>
+                    </li>
                     </li>
                 </ul>
             </nav>
 
             <div class="nav-actions">
-                <button class="btn btn-outline mobile-hide">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        style="margin-right: 8px;">
-                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-                        <polyline points="10 17 15 12 10 7" />
-                        <line x1="15" y1="12" x2="3" y2="12" />
-                    </svg>
-                    Login
-                </button>
-                <button class="btn btn-primary mobile-hide">
+                <button class="btn btn-primary mobile-hide pill-btn">
                     Get Started
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        style="margin-left: 8px;">
-                        <path d="M5 12h14" />
-                        <path d="m12 5 7 7-7 7" />
+                        style="margin-left: 10px;">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
                     </svg>
                 </button>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+
+                <button class="hamburger-new" id="hamburger" aria-label="Toggle menu">
+                    <div class="hamburger-dot-grid">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </button>
             </div>
         </div>

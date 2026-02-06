@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initSlider() {
   const slides = document.querySelectorAll('.slide');
-  const dotsContainer = document.querySelector('.dots');
-  const nextBtn = document.querySelector('.next');
-  const prevBtn = document.querySelector('.prev');
 
   // Guard clause for pages without slider
   if (slides.length === 0) return;
@@ -25,25 +22,13 @@ function initSlider() {
   let currentSlide = 0;
   let slideInterval;
 
-  // Create dots
-  slides.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.classList.add('dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToSlide(index));
-    dotsContainer.appendChild(dot);
-  });
-
-  const dots = document.querySelectorAll('.dot');
 
   function goToSlide(n) {
     slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
 
     currentSlide = (n + slides.length) % slides.length;
 
     slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
 
     resetInterval();
   }
@@ -65,8 +50,6 @@ function initSlider() {
     startInterval();
   }
 
-  nextBtn.addEventListener('click', nextSlide);
-  prevBtn.addEventListener('click', prevSlide);
 
   // Pause on hover - REMOVED as requested
   // const slider = document.querySelector('.hero');
@@ -155,12 +138,29 @@ function initNavEffects() {
 
   // Header scroll effect
   const header = document.querySelector('.header');
+  let lastScrollY = window.scrollY;
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
+    const currentScrollY = window.scrollY;
+
+    // Hide when crossing hero section (400px threshold)
+    if (currentScrollY > 400) {
+      if (currentScrollY > lastScrollY) {
+        // Scrolling Down
+        header.classList.add('nav-hidden');
+        header.classList.remove('nav-scrolled');
+      } else {
+        // Scrolling Up
+        header.classList.remove('nav-hidden');
+        header.classList.add('nav-scrolled');
+      }
     } else {
-      header.classList.remove('scrolled');
+      // Near Top (Over Hero)
+      header.classList.remove('nav-hidden');
+      header.classList.remove('nav-scrolled');
     }
+
+    lastScrollY = currentScrollY;
   });
 }
 
