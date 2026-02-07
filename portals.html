@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portals & Support | GEDP</title>
+    <meta name="description"
+        content="Access external education portals and get dedicated technical support for the Ghana Education Digital Platform (GEDP).">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Outfit:wght@300;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="container flex justify-between align-center">
+            <span class="top-bar-title">Ghana Education Digital Platform — Paperless System</span>
+            <div class="top-bar-contact">
+                <a href="mailto:info@gedp.gov.gh">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-right: 6px; vertical-align: middle;">
+                        <path d="m22 2-7 20-4-9-9-4Z" />
+                        <path d="M22 2 11 13" />
+                    </svg>
+                    info@gedp.gov.gh
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation bar -->
+    <header class="header sticky-nav">
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/GEDP Logo with Coat of Arms 1.png" alt="GEDP Logo" class="logo-image">
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="modules.html" class="nav-link">Modules</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="portals.html" class="nav-link active">External Portals</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+
+                    <!-- Mobile Only Buttons -->
+                    <li class="mobile-only-btn">
+                        <a href="#login" class="nav-link btn-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-right: 8px;">
+                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                                <polyline points="10 17 15 12 10 7" />
+                                <line x1="15" y1="12" x2="3" y2="12" />
+                            </svg>
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-primary mobile-hide pill-btn">
+                    Login
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-left: 10px;">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                        <polyline points="10 17 15 12 10 7" />
+                        <line x1="15" y1="12" x2="3" y2="12" />
+                    </svg>
+                </button>
+
+                <button class="hamburger-new" id="hamburger" aria-label="Toggle menu">
+                    <div class="hamburger-dot-grid">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header"
+            style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/hero_modules_bg.png');">
+            <div class="container text-center">
+                <h1 class="text-white" style="font-size: 3.5rem; margin-bottom: 1.5rem;">Portals & Support</h1>
+                <p class="text-white opacity-80" style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">
+                    Access specialized education portals and obtain expert technical assistance for all GEDP services.
+                </p>
+            </div>
+        </section>
+
+        <!-- Portals Section -->
+        <section class="portals-page-section" style="padding: 6rem 0; background-color: #fff;">
+            <div class="container">
+                <div class="mb-5">
+                    <span
+                        style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">External
+                        Services</span>
+                    <h2 class="section-title">National Education Portals</h2>
+                </div>
+
+                <div class="grid grid-3" style="gap: 2.5rem;">
+                    <!-- Portal 1 -->
+                    <div class="portal-card glass-panel hide-reveal" style="transition-delay: 0.1s;">
+                        <div class="portal-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-door-open">
+                                <path d="M13 4h3a2 2 0 0 1 2 2v14" />
+                                <path d="M2 20h3" />
+                                <path d="M13 20h9" />
+                                <path d="M10 12v.01" />
+                                <path
+                                    d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.562Z" />
+                            </svg>
+                        </div>
+                        <h3>Admission Portal</h3>
+                        <p>Complete automation of the admission cycle for schools and students.</p>
+                        <ul style="margin: 1rem 0; padding-left: 1.2rem; color: #475569;">
+                            <li>Admission Inquiry Forms</li>
+                            <li>Unique Student ID Generation</li>
+                            <li>Direct Management Link</li>
+                        </ul>
+                        <button class="btn btn-primary w-full mt-2">
+                            Access Portal
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 8px;">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Portal 2 -->
+                    <div class="portal-card glass-panel hide-reveal" style="transition-delay: 0.2s;">
+                        <div class="portal-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-briefcase">
+                                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                                <rect width="20" height="14" x="2" y="6" rx="2" />
+                            </svg>
+                        </div>
+                        <h3>Recruitment Portal</h3>
+                        <p>Streamlined hiring for GES and TVET teaching and non-teaching staff.</p>
+                        <ul style="margin: 1rem 0; padding-left: 1.2rem; color: #475569;">
+                            <li>User-friendly HUB</li>
+                            <li>Automation of 60% of tasks</li>
+                            <li>Transparent workflows</li>
+                        </ul>
+                        <button class="btn btn-primary w-full mt-2">
+                            Apply Here
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 8px;">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <line x1="19" y1="8" x2="19" y2="14" />
+                                <line x1="16" y1="11" x2="22" y2="11" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Portal 3 -->
+                    <div class="portal-card glass-panel hide-reveal" style="transition-delay: 0.3s;">
+                        <div class="portal-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-school">
+                                <path d="M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4" />
+                                <path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2" />
+                                <path d="M18 5v17" />
+                                <path d="M6 5v17" />
+                                <circle cx="12" cy="9" r="2" />
+                                <path d="M16 2h-8" />
+                                <path d="M16 5h-8" />
+                                <path d="M13 8h-2" />
+                            </svg>
+                        </div>
+                        <h3>School Placement</h3>
+                        <p>CSSPS platform for BECE candidates entering SHS and TVET.</p>
+                        <ul style="margin: 1rem 0; padding-left: 1.2rem; color: #475569;">
+                            <li>Equity and Transparency</li>
+                            <li>Free of Charge Service</li>
+                            <li>Real-time Placements</li>
+                        </ul>
+                        <button class="btn btn-primary w-full mt-2">
+                            Check Results
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 8px;">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <polyline points="10 9 9 9 8 9" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Section -->
+        <section class="support-grid-section" style="padding: 6rem 0; background-color: #F8FAFC;">
+            <div class="container">
+                <div class="mb-5">
+                    <span
+                        style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Resource
+                        Center</span>
+                    <h2 class="section-title">Training & Technical Support</h2>
+                </div>
+
+                <div class="grid grid-3" style="gap: 2.5rem;">
+                    <!-- GEDP EXPERT SUPPORT -->
+                    <div class="module-card hide-reveal" style="transition-delay: 0.1s; background: white;">
+                        <h3>GEDP Expert Support</h3>
+                        <p>As a GEDP user, you have hands-on technical support and expert guidance to help you master
+                            the system in no time – so you can enjoy immediate access to all the benefits the platform
+                            has to offer.</p>
+                    </div>
+
+                    <!-- App Support -->
+                    <div class="module-card hide-reveal" style="transition-delay: 0.2s; background: white;">
+                        <h3>App Support</h3>
+                        <p>You have access to a dedicated team of experts to provide your management staff, teachers,
+                            system admins, or parents with all the support they need on how to access the GEDP system.
+                        </p>
+                    </div>
+
+                    <!-- Communication Support -->
+                    <div class="module-card hide-reveal" style="transition-delay: 0.3s; background: white;">
+                        <h3>Communication Support</h3>
+                        <p>In case your school system administrator needs communication support for departments, our
+                            team will train them on how to relay information effectively to team members.</p>
+                    </div>
+
+                    <!-- Customer Success Consultants -->
+                    <div class="module-card hide-reveal" style="transition-delay: 0.4s; background: white;">
+                        <h3>Customer Success Consultants</h3>
+                        <p>Your Agency appoints its own dedicated GEDP consultant to ensure satisfaction with products
+                            and services, including specialized support for different institutional needs.</p>
+                    </div>
+
+                    <!-- Implementation Support -->
+                    <div class="module-card hide-reveal" style="transition-delay: 0.5s; background: white;">
+                        <h3>Implementation Support</h3>
+                        <p>We help you onboard all your users and data effortlessly. Our team will assist in setting up
+                            your modules of choice to ensure a smooth transition to digital processes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Form Section -->
+        <section class="support-form-section" style="padding: 6rem 0; background-color: #fff;">
+            <div class="container text-center">
+                <div class="mb-5 text-center">
+                    <span
+                        style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Need
+                        Assistance?</span>
+                    <h2 class="section-title">Talk To An Expert</h2>
+                    <p
+                        style="margin-top: 1.5rem; color: #475569; max-width: 700px; margin-left: auto; margin-right: auto;">
+                        Complete the form to speak with a product specialist or
+                        to set up a personalized call meeting with our expert.</p>
+                </div>
+
+                <div class="glass-panel"
+                    style="max-width: 650px; margin: 0 auto; padding: 3rem; text-align: left; border-radius: 24px;">
+                    <form id="support-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea rows="4" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-pill-solid"
+                            style="width: 100%; margin-top: 1.5rem; gap: 12px; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; justify-content: center;">
+                            Send Message
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" style="transform: rotate(10deg);">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-primary text-white">
+        <div class="container pt-4 pb-2">
+            <div class="grid grid-3">
+                <div class="footer-info">
+                    <img src="/logo.jpg" alt="GEDP Logo" class="logo-image footer-logo" style="margin-bottom: 1rem;">
+                    <p>Modernizing Ghana's Education Landscape.</p>
+                    <div class="contact-links mt-2">
+                        <p><strong>Email:</strong> info@gedp.gov.gh</p>
+                        <p><strong>Location:</strong> Ministry of Education, Accra</p>
+                    </div>
+                </div>
+                <div class="footer-news">
+                    <h3>Latest News</h3>
+                    <ul class="news-list">
+                        <li><a href="#">Ministry launches GEDP Phase 2</a></li>
+                        <li><a href="#">Training sessions scheduled for rural districts</a></li>
+                        <li><a href="#">Understanding the new CSSPS placements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="modules.html">System Modules</a></li>
+                        <li><a href="portals.html">External Portals</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Platform</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-3 pt-2 border-top">
+                <p>&copy; 2026 Ghana Education Digital Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

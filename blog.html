@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & News | GEDP</title>
+    <meta name="description"
+        content="Latest news, updates, and insights from the Ghana Education Digital Platform (GEDP).">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Outfit:wght@300;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="container flex justify-between align-center">
+            <span class="top-bar-title">Ghana Education Digital Platform — Paperless System</span>
+            <div class="top-bar-contact">
+                <a href="mailto:info@gedp.gov.gh">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-right: 6px; vertical-align: middle;">
+                        <path d="m22 2-7 20-4-9-9-4Z" />
+                        <path d="M22 2 11 13" />
+                    </svg>
+                    info@gedp.gov.gh
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation bar -->
+    <header class="header sticky-nav">
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/GEDP Logo with Coat of Arms 1.png" alt="GEDP Logo" class="logo-image">
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="modules.html" class="nav-link">Modules</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="portals.html" class="nav-link">External Portals</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+
+                    <!-- Mobile Only Buttons -->
+                    <li class="mobile-only-btn">
+                        <a href="#login" class="nav-link btn-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-right: 8px;">
+                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                                <polyline points="10 17 15 12 10 7" />
+                                <line x1="15" y1="12" x2="3" y2="12" />
+                            </svg>
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-primary mobile-hide pill-btn">
+                    Login
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-left: 10px;">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                        <polyline points="10 17 15 12 10 7" />
+                        <line x1="15" y1="12" x2="3" y2="12" />
+                    </svg>
+                </button>
+
+                <button class="hamburger-new" id="hamburger" aria-label="Toggle menu">
+                    <div class="hamburger-dot-grid">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header"
+            style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/hero_modules_bg.png');">
+            <div class="container text-center">
+                <h1 class="text-white" style="font-size: 3.5rem; margin-bottom: 1.5rem;">Blog & News</h1>
+                <p class="text-white opacity-80" style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">Stay
+                    updated with the latest developments, success stories, and announcements from the GEDP ecosystem.
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog Feed -->
+        <section class="blog-feed-section" style="padding: 6rem 0; background-color: #F8FAFC;">
+            <div class="container">
+                <div class="grid grid-3" style="gap: 2.5rem;">
+
+                    <!-- Post 1 -->
+                    <article class="module-card hide-reveal"
+                        style="padding: 0; overflow: hidden; background: white; border-radius: 16px; transition-delay: 0.1s;">
+                        <div
+                            style="height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                                <circle cx="9" cy="9" r="2" />
+                                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                            </svg>
+                        </div>
+                        <div style="padding: 2rem;">
+                            <span
+                                style="font-size: 0.8rem; font-weight: 600; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em;">Announcement</span>
+                            <h3 style="margin: 0.5rem 0 1rem 0; font-size: 1.4rem; line-height: 1.3;">Ministry launches
+                                GEDP Phase 2 Expansion</h3>
+                            <p style="margin-bottom: 1.5rem;">The Ministry of Education has officially launched the
+                                second phase of the Ghana Education Digital Platform...</p>
+                            <a href="#" class="read-more-btn">Read Full Article &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="module-card hide-reveal"
+                        style="padding: 0; overflow: hidden; background: white; border-radius: 16px; transition-delay: 0.2s;">
+                        <div
+                            style="height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                                <circle cx="9" cy="9" r="2" />
+                                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                            </svg>
+                        </div>
+                        <div style="padding: 2rem;">
+                            <span
+                                style="font-size: 0.8rem; font-weight: 600; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em;">Training</span>
+                            <h3 style="margin: 0.5rem 0 1rem 0; font-size: 1.4rem; line-height: 1.3;">Masterclass:
+                                Maximizing Data Analytics for GES</h3>
+                            <p style="margin-bottom: 1.5rem;">Our upcoming training session aims to equip administrators
+                                with the skills to interpret complex educational data...</p>
+                            <a href="#" class="read-more-btn">Read Full Article &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="module-card hide-reveal"
+                        style="padding: 0; overflow: hidden; background: white; border-radius: 16px; transition-delay: 0.3s;">
+                        <div
+                            style="height: 200px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                                <circle cx="9" cy="9" r="2" />
+                                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                            </svg>
+                        </div>
+                        <div style="padding: 2rem;">
+                            <span
+                                style="font-size: 0.8rem; font-weight: 600; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em;">Innovation</span>
+                            <h3 style="margin: 0.5rem 0 1rem 0; font-size: 1.4rem; line-height: 1.3;">Going Paperless:
+                                The Journey of 500 Schools</h3>
+                            <p style="margin-bottom: 1.5rem;">A deep dive into how 500 schools across Ghana successfully
+                                transitioned to fully digital administrative processes...</p>
+                            <a href="#" class="read-more-btn">Read Full Article &rarr;</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer bg-primary text-white">
+        <div class="container pt-4 pb-2">
+            <div class="grid grid-3">
+                <div class="footer-info">
+                    <img src="/logo.jpg" alt="GEDP Logo" class="logo-image footer-logo" style="margin-bottom: 1rem;">
+                    <p>Modernizing Ghana's Education Landscape.</p>
+                    <div class="contact-links mt-2">
+                        <p><strong>Email:</strong> info@gedp.gov.gh</p>
+                        <p><strong>Location:</strong> Ministry of Education, Accra</p>
+                    </div>
+                </div>
+                <div class="footer-news">
+                    <h3>Latest News</h3>
+                    <ul class="news-list">
+                        <li><a href="#">Ministry launches GEDP Phase 2</a></li>
+                        <li><a href="#">Training sessions scheduled for rural districts</a></li>
+                        <li><a href="#">Understanding the new CSSPS placements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="modules.html">System Modules</a></li>
+                        <li><a href="portals.html">External Portals</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Platform</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-3 pt-2 border-top">
+                <p>&copy; 2026 Ghana Education Digital Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -618,11 +618,10 @@ section:last-of-type {
     background: #FFFDD0;
     /* Cream yellow background */
     border-color: rgba(252, 209, 22, 0.3);
-    transform: translateX(10px);
 }
 
 .benefit-item.active span {
-    font-weight: 600;
+    font-weight: 500;
     color: #000;
 }
 
@@ -646,7 +645,6 @@ section:last-of-type {
 .module-card {
     background: transparent;
     padding: 1.5rem 1.5rem 1.5rem 2rem;
-    /* Extra left padding for the bar */
     border: none;
     box-shadow: none;
     transition: background 0.4s ease;
@@ -658,30 +656,10 @@ section:last-of-type {
     overflow: hidden;
 }
 
-/* Smooth Gold Bar Transition */
-.module-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background-color: var(--ghana-gold);
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
 .module-card:hover {
     background: rgba(255, 255, 255, 0.5);
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    border-radius: var(--radius-md);
     box-shadow: none;
-    /* Explicitly ensure no shadow on hover */
-}
-
-.module-card:hover::before {
-    transform: scaleY(1);
-    transform-origin: top;
 }
 
 .module-card .icon {
@@ -726,7 +704,7 @@ section:last-of-type {
 
 .module-card:hover h3::before {
     width: 150px;
-    /* Black fills the ash on hover */
+    /* Black fills the ash on hover - static position */
 }
 
 .module-card p {
@@ -816,22 +794,33 @@ section:last-of-type {
 
 .form-group label {
     display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid #CBD5E1;
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+    /* Pill shape */
+    border: 1.5px solid #CBD5E1;
     outline: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
 }
 
-.form-group input:focus {
+.form-group textarea {
+    border-radius: 20px;
+    /* Still very rounded but practical for boxes */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
     border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.05);
 }
 
 /* Compliance Section */
@@ -997,16 +986,25 @@ section:last-of-type {
     background-color: var(--primary);
     color: white;
     border: 1px solid var(--primary);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 14px 0 rgba(15, 23, 42, 0.3);
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-light);
-    border-color: var(--primary-light);
-    color: white;
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.25);
-    /* Professional glow */
+    background-color: #020617;
+    /* Even darker on hover */
+    border-color: #020617;
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 8px 25px rgba(2, 6, 23, 0.35);
+}
+
+.btn-pill-solid {
+    border-radius: 50px;
+    padding: 1.1rem 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-accent {
@@ -1592,4 +1590,17 @@ section:last-of-type {
 
 .support-info .video-placeholder {
     border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.portal-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portal-icon svg {
+    color: var(--secondary);
 }

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | GEDP</title>
+    <meta name="description"
+        content="Learn more about the Ghana Education Digital Platform (GEDP) and our mission to modernize education.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Outfit:wght@300;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="container flex justify-between align-center">
+            <span class="top-bar-title">Ghana Education Digital Platform — Paperless System</span>
+            <div class="top-bar-contact">
+                <a href="mailto:info@gedp.gov.gh">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-right: 6px; vertical-align: middle;">
+                        <path d="m22 2-7 20-4-9-9-4Z" />
+                        <path d="M22 2 11 13" />
+                    </svg>
+                    info@gedp.gov.gh
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation bar -->
+    <header class="header sticky-nav">
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/GEDP Logo with Coat of Arms 1.png" alt="GEDP Logo" class="logo-image">
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="modules.html" class="nav-link">Modules</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="portals.html" class="nav-link">External Portals</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+
+                    <!-- Mobile Only Buttons -->
+                    <li class="mobile-only-btn">
+                        <a href="#login" class="nav-link btn-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-right: 8px;">
+                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                                <polyline points="10 17 15 12 10 7" />
+                                <line x1="15" y1="12" x2="3" y2="12" />
+                            </svg>
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-primary mobile-hide pill-btn">
+                    Login
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-left: 10px;">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                        <polyline points="10 17 15 12 10 7" />
+                        <line x1="15" y1="12" x2="3" y2="12" />
+                    </svg>
+                </button>
+
+                <button class="hamburger-new" id="hamburger" aria-label="Toggle menu">
+                    <div class="hamburger-dot-grid">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header"
+            style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/hero_modules_bg.png');">
+            <div class="container text-center">
+                <h1 class="text-white" style="font-size: 3.5rem; margin-bottom: 1.5rem;">About Us</h1>
+                <p class="text-white opacity-80" style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">
+                    Modernizing Ghana's Education Landscape through Digital Innovation.</p>
+            </div>
+        </section>
+
+        <!-- Strategic Framework Section -->
+        <section class="policy-section"
+            style="padding: 6rem 0; background-color: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+            <div class="container">
+                <div class="grid grid-2" style="gap: 5rem; align-items: start;">
+                    <div class="policy-principles">
+                        <span
+                            style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Foundation</span>
+                        <h2 class="section-title" style="margin-bottom: 1.5rem;">Core Policy Principles</h2>
+                        <h3
+                            style="font-size: 1.35rem; font-weight: 600; color: #1e293b; margin-bottom: 1.5rem; line-height: 1.3;">
+                            Drive Informed Decision With Real-Time Analytics And Core Principles</h3>
+                        <p style="color: #475569; margin-bottom: 2.5rem; line-height: 1.7; font-size: 0.95rem;">GEDP
+                            empower Ministry of Education and its Agencies to have their operational efficiency,
+                            innovation, and scalable growth. GEDP meet the evolving needs of government and educational
+                            bodies, and provides secure solutions that streamline administration, enhance transparency,
+                            and support data-driven decision-making for national development.</p>
+
+                        <div class="principles-grid" style="display: grid; gap: 2rem;">
+                            <div class="principle-item" style="display: flex; gap: 1.5rem;">
+                                <div
+                                    style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-globe">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                        <path d="M2 12h20" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Access And
+                                        Inclusivity</h4>
+                                    <p style="color: #475569; font-size: 0.92rem;">Ensure Equitable Access For All
+                                        Users, Including Those In Rural And Urban Settings.</p>
+                                </div>
+                            </div>
+
+                            <div class="principle-item" style="display: flex; gap: 1.5rem;">
+                                <div
+                                    style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-shield-lock">
+                                        <path
+                                            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                        <path d="m18 10-2-2" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Data
+                                        Privacy And Security</h4>
+                                    <p style="color: #475569; font-size: 0.92rem;">Adhere To National And International
+                                        Data Protection Standards Using Encryption And Secure Authentication.</p>
+                                </div>
+                            </div>
+
+                            <div class="principle-item" style="display: flex; gap: 1.5rem;">
+                                <div
+                                    style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-users">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">
+                                        User-Centric Design</h4>
+                                    <p style="color: #475569; font-size: 0.92rem;">Create An Intuitive And Accessible
+                                        Platform For All Stakeholders.</p>
+                                </div>
+                            </div>
+
+                            <div class="principle-item" style="display: flex; gap: 1.5rem;">
+                                <div
+                                    style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-bar-chart-3">
+                                        <path d="M3 3v18h18" />
+                                        <path d="M18 17V9" />
+                                        <path d="M13 17V5" />
+                                        <path d="M8 17v-3" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">
+                                        Transparency And Accountability</h4>
+                                    <p style="color: #475569; font-size: 0.92rem;">Provide Robust Data Analytics And
+                                        Reporting Tools To Support Transparent Decision-Making.</p>
+                                </div>
+                            </div>
+
+                            <div class="principle-item" style="display: flex; gap: 1.5rem;">
+                                <div
+                                    style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-zap">
+                                        <path
+                                            d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">
+                                        Sustainability And Scalability</h4>
+                                    <p style="color: #475569; font-size: 0.92rem;">Build A Solution That Grows With The
+                                        Evolving Needs Of Educational Institutions in Ghana whiles Ministry of Education
+                                        together with its Agencies migrate to a paperless system.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="strategic-goals">
+                        <span
+                            style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Vision
+                            2026</span>
+                        <h2 class="section-title" style="margin-bottom: 1.5rem;">Strategic And Operational Goals</h2>
+                        <h3
+                            style="font-size: 1.35rem; font-weight: 600; color: #1e293b; margin-bottom: 1.5rem; line-height: 1.3;">
+                            Transforming Education Through Innovation and digitalization.</h3>
+                        <p style="color: #475569; margin-bottom: 2.5rem; line-height: 1.7; font-size: 0.95rem;">
+                            Experience seamless integration with features tailored to optimize educational processes,
+                            enhance student outcomes, and maximize institutional effectiveness—ensuring Ministry Of
+                            Education reaches its full potential.</p>
+
+                        <div class="goals-grid" style="display: grid; gap: 2rem;">
+                            <div class="goal-item" style="display: flex; gap: 1.5rem;">
+                                <div
+                                    style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-zap">
+                                        <path
+                                            d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Efficiency
+                                    </h4>
+                                    <p style="color: #475569; font-size: 0.92rem;">Automate And Streamline
+                                        Administrative Tasks.</p>
+                                </div>
+                            </div>
+
+                            <div class="goal-item" style="display: flex; gap: 1.5rem;">
+                                <div
+                                    style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-trending-up">
+                                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                                        <polyline points="16 7 22 7 22 13" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Academic
+                                        Excellence</h4>
+                                    <p style="color: #475569; font-size: 0.92rem;">Enhance Curriculum Delivery And
+                                        Monitor Student Performance.</p>
+                                </div>
+                            </div>
+
+                            <div class="goal-item" style="display: flex; gap: 1.5rem;">
+                                <div
+                                    style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-message-square">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Effective
+                                        Communication</h4>
+                                    <p style="color: #475569; font-size: 0.92rem;">Enable Real-Time Updates And
+                                        Messaging Functionalities.</p>
+                                </div>
+                            </div>
+
+                            <div class="goal-item" style="display: flex; gap: 1.5rem;">
+                                <div
+                                    style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-pie-chart">
+                                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                                        <path d="M22 12A10 10 0 0 0 12 2v10z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Data-Driven
+                                        Decision-Making</h4>
+                                    <p style="color: #475569; font-size: 0.92rem;">Equip Administrators With
+                                        Comprehensive Analytics.</p>
+                                </div>
+                            </div>
+
+                            <div class="goal-item" style="display: flex; gap: 1.5rem;">
+                                <div
+                                    style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-scale">
+                                        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+                                        <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+                                        <path d="M7 21h10" />
+                                        <path d="M12 3v18" />
+                                        <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Compliance
+                                    </h4>
+                                    <p style="color: #475569; font-size: 0.92rem;">Ensure Adherence To Educational
+                                        Policies, Data Protection Laws, And Other Regulatory Requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="grid grid-2 align-center" style="gap: 4rem;">
+                <div class="about-text-content">
+                    <h2 class="section-title">About GEDP</h2>
+                    <div class="content-body" style="font-size: 1.1rem; line-height: 1.8; color: #475569;">
+                        <p style="margin-bottom: 1.5rem;">GEDP is a comprehensive one-in-all ERP system,
+                            strategically engineered to streamline and digitize core administrative and
+                            service-delivery processes across the Ghana Education Service (GES) and to enhance data
+                            integrity, and provide actionable insights across various divisions at Ghana Education
+                            Service, withinclusion of self applications modules.</p>
+                        <p style="margin-bottom: 1.5rem;">The solution integrates tools for LMS, staff management,
+                            payroll processing, admissions and recruitment portal and performance tracking all
+                            within one unified platform. By automating routine tasks and providing real-time data
+                            insights, GEDP enhances operational efficiency, promotes transparency, and supports
+                            data-driven decision-making.</p>
+                        <p style="margin-bottom: 1.5rem;">GEDP offers smart, industry-tailored solutions to prevent
+                            problems and solve existing problems. As the educational landscape evolves, educational
+                            agencies and schools require robust, scalable, and intuitive solutions to modernize
+                            administrative processes, academic tracking, and overall school management.</p>
+                        <p>GEDP addresses these needs by integrating essential functions into a single platform that
+                            supports ministries, GES, school administrators, facilitators, students and pupil to
+                            enhance institutional efficiency, promote transparency, and improve communication among
+                            all stakeholders ultimately contributing to a higher quality of education.</p>
+                    </div>
+                </div>
+                <div class="about-visual hide-reveal"
+                    style="border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                    <img src="/girl.jpeg" alt="GEDP Impact" style="width: 100%; height: auto; display: block;">
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Benefits & Impact Section -->
+        <section class="benefits-impact-section" style="padding: 6rem 0; background-color: #F8FAFC;">
+            <div class="container">
+                <div class="mb-5">
+                    <span
+                        style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Benefits
+                        And Impact</span>
+                    <h2 class="section-title">EMPOWERING EDUCATION THROUGH INNOVATION</h2>
+                    <p style="max-width: 800px; margin-top: 1.5rem; color: #475569; font-size: 1.1rem;">GEDP
+                        delivers comprehensive benefits that transform educational institutions through innovative
+                        technology solutions. Our platform creates lasting positive impact by enhancing efficiency,
+                        collaboration, and data-driven decision making.</p>
+                </div>
+
+                <div style="margin-top: 4rem; margin-bottom: 2rem;">
+                    <span
+                        style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Key
+                        Benefits</span>
+                </div>
+
+                <div class="grid grid-3" style="gap: 2.5rem;">
+                    <!-- Benefit 1 -->
+                    <div class="glass-panel" style="padding: 2.5rem; border-radius: 20px;">
+                        <div
+                            style="width: 48px; height: 48px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-check-circle">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Enhanced Access to Education</h3>
+                        <p style="color: #475569;">Streamlined processes improve the educational experience for all
+                            stakeholders.</p>
+                    </div>
+
+                    <!-- Benefit 2 -->
+                    <div class="glass-panel" style="padding: 2.5rem; border-radius: 20px;">
+                        <div
+                            style="width: 48px; height: 48px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-check-circle">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Operational Efficiency</h3>
+                        <p style="color: #475569;">Automation reduces administrative workload and minimizes errors in
+                            school management.</p>
+                    </div>
+
+                    <!-- Benefit 3 -->
+                    <div class="glass-panel" style="padding: 2.5rem; border-radius: 20px;">
+                        <div
+                            style="width: 48px; height: 48px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-check-circle">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Cost-Effectiveness</h3>
+                        <p style="color: #475569;">Optimizes resource allocation while ensuring robust functionality
+                            across institutions.</p>
+                    </div>
+
+                    <!-- Benefit 4 -->
+                    <div class="glass-panel" style="padding: 2.5rem; border-radius: 20px;">
+                        <div
+                            style="width: 48px; height: 48px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-check-circle">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Real-Time Data Insights</h3>
+                        <p style="color: #475569;">Empowers decision-makers with actionable analytics for effective
+                            policy-making.</p>
+                    </div>
+
+                    <!-- Benefit 5 -->
+                    <div class="glass-panel" style="padding: 2.5rem; border-radius: 20px;">
+                        <div
+                            style="width: 48px; height: 48px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-check-circle">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Collaborative Engagement</h3>
+                        <p style="color: #475569;">Fosters better communication between educators, students, parents and
+                            agencies.</p>
+                    </div>
+
+                    <!-- Benefit 6 -->
+                    <div class="glass-panel" style="padding: 2.5rem; border-radius: 20px;">
+                        <div
+                            style="width: 48px; height: 48px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-check-circle">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Sustainable Growth</h3>
+                        <p style="color: #475569;">A scalable solution that supports long-term national development
+                            goals in education.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Contact Section -->
+        <section class="about-contact-section" style="padding: 6rem 0; background-color: #fff;">
+            <div class="container">
+                <div class="grid grid-2" style="gap: 4rem;">
+                    <div class="contact-info-column" style="padding-top: 1rem;">
+                        <h2 class="section-title">Contact Us</h2>
+                        <p style="font-size: 1.2rem; color: #475569; margin-bottom: 2.5rem;">Have questions about the
+                            platform? Reach out to our dedicated support team.</p>
+
+                        <div class="contact-method"
+                            style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: #f1f5f9; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m22 2-7 20-4-9-9-4Z" />
+                                    <path d="M22 2 11 13" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span style="display: block; font-weight: 700; color: #000;">Email Us</span>
+                                <a href="mailto:info@gedp.gov.gh"
+                                    style="color: var(--primary); text-decoration: none; font-size: 1.1rem; font-weight: 500;">info@gedp.gov.gh</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method"
+                            style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: #f1f5f9; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span style="display: block; font-weight: 700; color: #000;">Our Location</span>
+                                <span style="color: #475569; font-size: 1.1rem;">Ministry of Education, Accra -
+                                    Ghana</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-column">
+                        <div class="glass-panel" style="padding: 3rem; border-radius: 24px;">
+                            <form id="about-contact-form">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="Enter your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" placeholder="Enter your email">
+                                </div>
+                                <div class="form-group">
+                                    <label>Your Message</label>
+                                    <textarea rows="4" placeholder="How can we help you today?"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-pill-solid"
+                                    style="width: 100%; margin-top: 1.5rem; gap: 12px; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; justify-content: center;">
+                                    Send Message
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" style="transform: rotate(10deg);">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-primary text-white">
+        <div class="container pt-4 pb-2">
+            <div class="grid grid-3">
+                <div class="footer-info">
+                    <img src="/logo.jpg" alt="GEDP Logo" class="logo-image footer-logo" style="margin-bottom: 1rem;">
+                    <p>Modernizing Ghana's Education Landscape.</p>
+                    <div class="contact-links mt-2">
+                        <p><strong>Email:</strong> info@gedp.gov.gh</p>
+                        <p><strong>Location:</strong> Ministry of Education, Accra</p>
+                    </div>
+                </div>
+                <div class="footer-news">
+                    <h3>Latest News</h3>
+                    <ul class="news-list">
+                        <li><a href="#">Ministry launches GEDP Phase 2</a></li>
+                        <li><a href="#">Training sessions scheduled for rural districts</a></li>
+                        <li><a href="#">Understanding the new CSSPS placements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="modules.html">System Modules</a></li>
+                        <li><a href="portals.html">External Portals</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Platform</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-3 pt-2 border-top">
+                <p>&copy; 2026 Ghana Education Digital Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
