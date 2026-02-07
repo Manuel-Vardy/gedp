@@ -7,6 +7,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 modules: resolve(__dirname, 'modules.html'),
+                training: resolve(__dirname, 'training.html'),
             },
         },
     },
