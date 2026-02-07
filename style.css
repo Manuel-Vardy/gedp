@@ -767,6 +767,45 @@ section:last-of-type {
     overflow: hidden;
 }
 
+.training-section .video-embeds {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.training-section .video-embed {
+    aspect-ratio: 16/9;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(10px);
+}
+
+.training-section .video-embed iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+
+.training-section .contact-expert.glass-panel {
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.training-section .contact-expert.glass-panel h3,
+.training-section .contact-expert.glass-panel p {
+    color: white;
+}
+
+.training-section #expert-form label {
+    color: white;
+}
+
 .play-btn {
     width: 60px;
     height: 60px;
@@ -1596,11 +1635,168 @@ section:last-of-type {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     color: var(--primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .portal-icon svg {
     color: var(--secondary);
+}
+
+.image-separator {
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+    position: relative;
+    margin-top: -40px;
+    margin-bottom: -70px;
+    z-index: 1;
+}
+
+.image-separator::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 170px;
+}
+
+.image-separator-title {
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 90px;
+    z-index: 3;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    letter-spacing: 0;
+    text-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+    pointer-events: none;
+}
+
+.image-separator-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.training-section {
+    padding: 6rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.training-glass {
+    background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url('/bussiness-men.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    border-radius: 0;
+    padding: 3.5rem 3rem;
+    position: relative;
+    z-index: 3;
+    margin-top: -70px;
+    max-width: none;
+    width: calc(100% - 4px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.training-section .contact-expert.glass-panel {
+    background: rgba(226, 232, 240, 0.35);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 18px;
+}
+
+.training-section .contact-expert.glass-panel h3,
+.training-section .contact-expert.glass-panel p {
+    color: white;
+}
+
+.training-section .contact-expert #expert-form label {
+    color: white;
+}
+
+.training-section .contact-expert #expert-form input,
+.training-section .contact-expert #expert-form textarea {
+    background: rgba(15, 23, 42, 0.28);
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.training-section .contact-expert #expert-form input::placeholder,
+.training-section .contact-expert #expert-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.training-section .contact-expert #expert-form input:focus,
+.training-section .contact-expert #expert-form textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.support-info {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    height: 100%;
+}
+
+.btn-glass {
+    background: rgba(15, 23, 42, 0.55);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.btn-glass:hover {
+    background: rgba(15, 23, 42, 0.7);
+    border-color: rgba(255, 255, 255, 0.28);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .image-separator {
+        height: 240px;
+        margin-top: -20px;
+        margin-bottom: -50px;
+    }
+
+    .image-separator::after {
+        height: 150px;
+    }
+
+    .image-separator-title {
+        left: 18px;
+        right: 18px;
+        bottom: 70px;
+        font-size: 1.6rem;
+    }
+
+    .training-glass {
+        margin-top: -50px;
+        padding: 2.5rem 1.5rem;
+        background-position: center 20%;
+        padding-bottom: 4rem;
+    }
+
+    .training-section .support-info h3 {
+        margin-top: 1.25rem;
+    }
+
+    .training-section {
+        padding-bottom: 0;
+    }
+
+    .training-section .contact-expert.glass-panel {
+        margin-bottom: 1rem;
+    }
 }
