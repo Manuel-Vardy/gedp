@@ -1658,31 +1658,34 @@ section:last-of-type {
 .contact-info-panel {
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(30px);
-    padding: 3.5rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     color: white;
     position: relative;
     overflow: hidden;
+    justify-content: center;
+    /* Center content vertically */
 }
 
 .contact-info-panel h3 {
     font-size: 1.75rem;
-    font-weight: 700;
+    font-weight: 500;
+    /* Reduced from 700 */
     margin-bottom: 1.5rem;
     color: white;
 }
 
-.contact-info-panel > p {
+.contact-info-panel>p {
     font-size: 1.1rem;
     color: white;
     opacity: 0.95;
     line-height: 1.6;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .contact-info-panel .onboarding-steps {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .contact-info-panel .step {
@@ -1695,7 +1698,7 @@ section:last-of-type {
 }
 
 .contact-info-panel .video-embeds {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 .consultation-form-panel {
@@ -1850,11 +1853,43 @@ section:last-of-type {
     z-index: 3;
     color: white;
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 2.5rem;
-    letter-spacing: 0;
+    font-weight: 500;
+    /* Reduced from 700 */
+    font-size: 4.5rem;
+    /* Increased size */
+    letter-spacing: -1px;
     text-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
     pointer-events: none;
+    display: inline-block;
+}
+
+/* Animated Underline */
+.image-separator-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 6px;
+    background-color: white;
+    /* Changed to white */
+    width: 0;
+    animation: underline-anim 5s infinite ease-in-out;
+    /* Changed to 5s */
+}
+
+@keyframes underline-anim {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 200px;
+    }
+
+    /* Underline width */
+    100% {
+        width: 0;
+    }
 }
 
 .image-separator-img {
@@ -1881,10 +1916,7 @@ section:last-of-type {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: url('/bussiness-men.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background: none;
     z-index: 0;
 }
 
@@ -2013,4 +2045,32 @@ section:last-of-type {
         padding: 2.5rem 2rem;
     }
 
+}
+
+/* Fixes for Contact Expert Section */
+.contact-expert {
+    background-color: #f1f1f1;
+    color: black;
+    padding: 1.5rem;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-expert #expert-form label {
+    color: var(--primary);
+}
+
+.contact-expert h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Ensure responsiveness for tablet/mobile */
+@media (max-width: 992px) {
+    .training-grid-split {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
 }
