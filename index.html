@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GEDP | Ghana Education Digital Platform</title>
   <meta name="description"
-    content="Official Ghana Education Digital Platform (GEDP) for streamlining data for the Ministry of Education.">
+    content="Official Ghana Education Digital Platform (GEDP) Systems for Ghana Education Service.">
   <link rel="icon" type="image/x-icon" href="/GEDP.png">
 
   <!-- Fonts -->
@@ -238,25 +238,28 @@
           <div class="module-card hide-reveal" style="transition-delay: 0.1s;">
             <h3>Administrative Modules</h3>
             <p>Centralized day-to-day operations through a user-friendly dashboard with role-based access. It enables
-              efficient management of records, scheduling, and administrative communications for Ghana Education Service
-              (GES).</p>
-            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+              efficient management of records, scheduling, and administrative communications for Ghana<span
+                class="more-text" style="display:none"> Education Service (GES).</span>
+            </p>
+            <a href="javascript:void(0)" class="read-more-btn" onclick="toggleReadMore(this)">Read More &rarr;</a>
           </div>
 
           <div class="module-card hide-reveal-left" style="transition-delay: 0.2s;">
             <h3>Academic Modules</h3>
             <p>Provides tools for curriculum management, academic tracking, assessments, and performance reporting. This
-              module includes the transcript checker, which allows parents and guardians to monitor academic
-              progress........
+              module includes the transcript checker, which allows parents and<span class="more-text"
+                style="display:none"> guardians to monitor academic progress each term and for government and private
+                institutions to track academic records of pupil and students.</span>
             </p>
-            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+            <a href="javascript:void(0)" class="read-more-btn" onclick="toggleReadMore(this)">Read More &rarr;</a>
           </div>
 
           <div class="module-card hide-reveal" style="transition-delay: 0.3s;">
             <h3>Staff Management</h3>
-            <p>Facilitates staff related records, workstations and performance reviews. This module
-              streamlines human resource management and supports effective staff administration.</p>
-            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+            <p>Facilitates staff related records, workstations and performance reviews.This module
+              streamlines human <span class="more-text" style="display:none">resource management and supports effective
+                staff administration.</span></p>
+            <a href="javascript:void(0)" class="read-more-btn" onclick="toggleReadMore(this)">Read More &rarr;</a>
           </div>
 
           <div class="module-card hide-reveal-left" style="transition-delay: 0.4s;">
@@ -264,24 +267,51 @@
             <p>Essential school tools including Circulars, File Systems, Mails, Letters, and the WorkStation tool. Also
               includes Self Applications for promotions, study leaves and study leave returns, transfers, upgrading and
               assurance.</p>
-            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+            <div class="more-text" style="display:none; margin-top: 1rem;">
+              <ul class="check-list" style="list-style: none; padding-left: 0; margin-bottom: 0.5rem; color: #475569;">
+                <li><strong>i.</strong> Circulars</li>
+                <li><strong>ii.</strong> File Systems</li>
+                <li><strong>iii.</strong> Mails and Letters</li>
+                <li><strong>iv.</strong> WorkStation Tool</li>
+                <li><strong>v.</strong> Self Applications:
+                  <ul style="padding-left: 1rem; margin-top: 0.25rem; list-style: circle;">
+                    <li>Promotions</li>
+                    <li>Study Leave & Returns</li>
+                    <li>Transfers</li>
+                    <li>Upgrading</li>
+                    <li>Assurance</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <a href="javascript:void(0)" class="read-more-btn" onclick="toggleReadMore(this)">Read More &rarr;</a>
           </div>
 
           <div class="module-card hide-reveal" style="transition-delay: 0.5s;">
             <h3>Data Analytics</h3>
             <p>Data analytics module is designed to help present life-informed data to help in decision making. This
               module helps users to analyze and distribute actionable information driven by data analysis. This
-              typically includes</p>
-            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+              typically includes<span class="more-text" style="display:none"> information about pupil and students
+                transcripts, staff informations, administrative records, and this information is presented in
+                illustration format to easily made a quality decisions. Having this module helps data analysts format
+                information to develop more effective strategies for all respective agencies.</span></p>
+            <a href="javascript:void(0)" class="read-more-btn" onclick="toggleReadMore(this)">Read More &rarr;</a>
           </div>
 
           <div class="module-card hide-reveal-left" style="transition-delay: 0.6s;">
             <h3>Learning Management System (LMS)</h3>
             <p>With the advent of GEDP ERP system, GES will be modernizing their library
               management systems to meet the evolving needs of pupil, students and facilitators. GEDP ERP enables
-              digital cataloging, efficient resource tracking, and streamlined circulation processes, thus enhancing
-              accessibility to</p>
-            <a href="modules.html" class="read-more-btn">Read More &rarr;</a>
+              digital<span class="more-text" style="display:none"> cataloging, efficient resource tracking, and
+                streamlined circulation processes, thus enhancing accessibility to educational materials and fostering a
+                culture of continuous learning. Moreover, learners and facilitators will integrate library systems with
+                other administrative functions.
+                <br><br>
+                The LMS feature has interactive tools such as discussion forums, quizzes, and multimedia resources to
+                support diverse teaching and learning styles. By promoting active engagement and collaboration, the LMS
+                enhances the quality of instruction, facilitates personalized learning experiences, and empowers pupils
+                and students to take ownership of their education.</span></p>
+            <a href="javascript:void(0)" class="read-more-btn" onclick="toggleReadMore(this)">Read More &rarr;</a>
           </div>
         </div>
       </div>
@@ -346,18 +376,13 @@
     <section id="portals" class="portals-section" style="padding: 6rem 0; background-color: #fff;">
       <div class="container">
         <div class="mb-5">
-          <span
-            style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">External
-            Services</span>
-          <h2 class="section-title">National Education Portals</h2>
-          <p class="mt-2" style="max-width: 700px; color: #475569; margin-top: 1rem;">GEDP is mainly tailored for Ghana
-            Education Service (GES). It's a complete package for all stakeholders.</p>
+          <h2 class="section-title">External Portals</h2>
         </div>
 
         <div class="grid grid-3" style="gap: 2.5rem;">
           <!-- Portal 1 -->
           <div class="portal-card glass-panel hide-reveal" style="transition-delay: 0.1s;">
-            <div class="portal-icon">
+            <div class="portal-icon" style="color: #64748b; text-align: left;"> <!-- Ash color -->
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-door-open">
@@ -370,12 +395,12 @@
             </div>
             <h3>Admission Portal</h3>
             <p>Complete automation of the admission cycle for schools and students.</p>
-            <ul style="margin: 1rem 0; padding-left: 1.2rem; color: #475569;">
+            <ul style="margin: 1rem 0; color: #475569;">
               <li>Admission Inquiry Forms</li>
               <li>Unique Student ID Generation</li>
               <li>Direct Management Link</li>
             </ul>
-            <button class="btn btn-primary w-full mt-2">
+            <button class="btn btn-primary w-full mt-auto">
               Access Portal
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -389,7 +414,7 @@
 
           <!-- Portal 2 -->
           <div class="portal-card glass-panel hide-reveal" style="transition-delay: 0.2s;">
-            <div class="portal-icon">
+            <div class="portal-icon" style="color: #64748b; text-align: left;"> <!-- Ash color -->
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-briefcase">
@@ -399,12 +424,12 @@
             </div>
             <h3>Recruitment Portal</h3>
             <p>Streamlined hiring for GES and TVET teaching and non-teaching staff.</p>
-            <ul style="margin: 1rem 0; padding-left: 1.2rem; color: #475569;">
+            <ul style="margin: 1rem 0; color: #475569;">
               <li>User-friendly HUB</li>
               <li>Automation of 60% of tasks</li>
               <li>Transparent workflows</li>
             </ul>
-            <button class="btn btn-primary w-full mt-2">
+            <button class="btn btn-primary w-full mt-auto">
               Apply Here
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -419,7 +444,7 @@
 
           <!-- Portal 3 -->
           <div class="portal-card glass-panel hide-reveal" style="transition-delay: 0.3s;">
-            <div class="portal-icon">
+            <div class="portal-icon" style="color: #64748b; text-align: left;"> <!-- Ash color -->
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-school">
@@ -433,14 +458,14 @@
                 <path d="M13 8h-2" />
               </svg>
             </div>
-            <h3>School Placement</h3>
+            <h3>School Placement Portal</h3>
             <p>CSSPS platform for BECE candidates entering SHS and TVET.</p>
-            <ul style="margin: 1rem 0; padding-left: 1.2rem; color: #475569;">
+            <ul style="margin: 1rem 0; color: #475569;">
               <li>Equity and Transparency</li>
               <li>Free of Charge Service</li>
               <li>Real-time Placements</li>
             </ul>
-            <button class="btn btn-primary w-full mt-2">
+            <button class="btn btn-primary w-full mt-auto">
               Check Results
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -459,273 +484,69 @@
 
     <!-- Compliance Reporting -->
     <section id="compliance" class="compliance-section bg-alt-dark text-white" style="padding: 8rem 0;">
-      <div class="container text-center max-w-narrow">
-        <div class="lock-icon" style="font-size: 3rem; margin-bottom: 1.5rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-shield-check" style="color: var(--secondary);">
-            <path
-              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
-            <path d="m9 12 2 2 4-4" />
-          </svg>
-        </div>
-        <h2 class="section-title inverse" style="margin-bottom: 1.5rem;">Compliance Reporting</h2>
-        <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6;">A secure and confidential way to raise concerns or
-          report unethical behavior related to GEDP ERP system.
-          Anonymity is guaranteed unless you choose otherwise.</p>
-
-        <div class="grid grid-2 mt-4" style="gap: 2rem;">
-          <div class="report-box glass-panel text-left"
-            style="padding: 2.5rem; border-radius: 20px; color: var(--primary);">
-            <h3 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.4rem;">Report an Incident</h3>
-            <p style="margin-bottom: 1.5rem; opacity: 0.8; color: var(--primary);">To report an incident, click the
-              button below to start your submission.</p>
-            <button id="submit-report" class="btn btn-danger btn-link" style="width: 100%; font-weight: 700;">SUBMIT
-              REPORT</button>
-          </div>
-          <div class="follow-up-box glass-panel text-left"
-            style="padding: 2.5rem; border-radius: 20px; color: var(--primary);">
-            <h3 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.4rem;">Check Status</h3>
-            <p style="margin-bottom: 1.5rem; opacity: 0.8; color: var(--primary);">Already made a report? Use your
-              Report ID and PIN to follow-up.</p>
-            <div class="flex gap-1">
-              <button class="btn btn-primary" style="flex: 1; font-size: 0.85rem;">I Have A PIN</button>
-              <button class="btn btn-outline" style="flex: 1; font-size: 0.85rem;">No PIN?</button>
-            </div>
-          </div>
-        </div>
-        <p class="warning-text" style="margin-top: 2rem; opacity: 0.6; font-size: 0.9rem;">*Please note GEDP will only
-          investigate allegations involving GEDP staff, products, or services.</p>
-      </div>
-    </section>
-
-
-    <!-- Policy and Strategic Goals -->
-    <section class="policy-section" style="padding: 8rem 0; background-color: #f8fafc;">
       <div class="container">
-        <div class="grid grid-2" style="gap: 5rem; align-items: start;">
-          <div class="policy-principles">
-            <span class="hide-reveal-left"
-              style="transition-delay: 0.05s; display: block; font-size: 0.9rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Foundation</span>
-            <h2 class="section-title hide-reveal-left" style="transition-delay: 0.15s; margin-bottom: 1.5rem;">Core
-              Policy Principles</h2>
-            <h3 class="hide-reveal-left"
-              style="transition-delay: 0.25s; font-size: 1.35rem; font-weight: 600; color: #1e293b; margin-bottom: 1.5rem; line-height: 1.3;">
-              Drive Informed Decision With Real-Time Analytics And Core Principles</h3>
-            <p class="hide-reveal-left"
-              style="transition-delay: 0.35s; color: #475569; margin-bottom: 2.5rem; line-height: 1.7; font-size: 0.95rem;">
-              GEDP empower
-              Ministry of Education and its Agencies to have their operational efficiency, innovation, and scalable
-              growth. GEDP meet the evolving needs of government and educational bodies, and provides secure solutions
-              that streamline administration, enhance transparency, and support data-driven decision-making for national
-              development.</p>
+        <div class="grid grid-2 align-center" style="gap: 4rem;">
+          <!-- Left Side: Content -->
+          <div class="text-left">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+              <div class="lock-icon" style="font-size: 2.5rem; color: var(--secondary);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shield-check">
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <h2 class="section-title inverse" style="margin: 0; text-align: left;">Compliance Reporting</h2>
+            </div>
 
-            <div class="principles-grid" style="display: grid; gap: 2rem;">
-              <div class="principle-item hide-reveal-left" style="transition-delay: 0.45s; display: flex; gap: 1.5rem;">
-                <div
-                  style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-globe">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                    <path d="M2 12h20" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Access And Inclusivity</h4>
-                  <p style="color: #475569; font-size: 0.92rem;">Ensure Equitable Access For All Users, Including Those
-                    In Rural And Urban Settings.</p>
-                </div>
+            <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2.5rem;">
+              A secure and confidential way to raise concerns or report unethical behavior related to GEDP ERP system.
+              Anonymity is guaranteed unless you choose otherwise.
+            </p>
+
+            <div class="grid grid-2" style="gap: 1.5rem;">
+              <div class="report-box glass-panel text-left"
+                style="padding: 2rem; border-radius: 20px; color: var(--primary);">
+                <h3 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">Report an Incident</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8; font-size: 0.9rem; color: var(--primary);">
+                  To report an incident, click the button below to start your submission.
+                </p>
+                <button id="submit-report" class="btn btn-danger btn-link"
+                  style="width: 100%; font-weight: 700; padding: 0.75rem;">SUBMIT REPORT</button>
               </div>
 
-              <div class="principle-item hide-reveal-left" style="transition-delay: 0.55s; display: flex; gap: 1.5rem;">
-                <div
-                  style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-shield-lock">
-                    <path
-                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="m18 10-2-2" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Data Privacy And Security
-                  </h4>
-                  <p style="color: #475569; font-size: 0.92rem;">Adhere To National And International Data Protection
-                    Standards Using Encryption And Secure Authentication.</p>
-                </div>
-              </div>
-
-              <div class="principle-item hide-reveal-left" style="transition-delay: 0.65s; display: flex; gap: 1.5rem;">
-                <div
-                  style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-users">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">User-Centric Design</h4>
-                  <p style="color: #475569; font-size: 0.92rem;">Create An Intuitive And Accessible Platform For All
-                    Stakeholders.</p>
-                </div>
-              </div>
-
-              <div class="principle-item hide-reveal-left" style="transition-delay: 0.75s; display: flex; gap: 1.5rem;">
-                <div
-                  style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-bar-chart-3">
-                    <path d="M3 3v18h18" />
-                    <path d="M18 17V9" />
-                    <path d="M13 17V5" />
-                    <path d="M8 17v-3" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Transparency And
-                    Accountability</h4>
-                  <p style="color: #475569; font-size: 0.92rem;">Provide Robust Data Analytics And Reporting Tools To
-                    Support Transparent Decision-Making.</p>
-                </div>
-              </div>
-
-              <div class="principle-item hide-reveal-left" style="transition-delay: 0.85s; display: flex; gap: 1.5rem;">
-                <div
-                  style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-zap">
-                    <path
-                      d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Sustainability And
-                    Scalability</h4>
-                  <p style="color: #475569; font-size: 0.92rem;">Build A Solution That Grows With The Evolving Needs Of
-                    Educational Institutions in Ghana whiles Ministry of Education together with its Agencies migrate to
-                    a paperless system.</p>
+              <div class="follow-up-box glass-panel text-left"
+                style="padding: 2rem; border-radius: 20px; color: var(--primary);">
+                <h3 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">Check Status</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8; font-size: 0.9rem; color: var(--primary);">
+                  Already made a report? Use your Report ID and PIN to follow-up.
+                </p>
+                <div class="flex gap-2">
+                  <button class="btn btn-primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem;">I Have A
+                    PIN</button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.8rem; padding: 0.5rem;">No PIN?</button>
                 </div>
               </div>
             </div>
+
+
           </div>
 
-
-          <div class="strategic-goals">
-            <span class="hide-reveal"
-              style="transition-delay: 0.05s; display: block; font-size: 0.9rem; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Vision
-              2026</span>
-            <h2 class="section-title hide-reveal" style="transition-delay: 0.15s; margin-bottom: 1.5rem;">Strategic And
-              Operational Goals</h2>
-            <h3 class="hide-reveal"
-              style="transition-delay: 0.25s; font-size: 1.35rem; font-weight: 600; color: #1e293b; margin-bottom: 1.5rem; line-height: 1.3;">
-              Transforming Education Through Innovation and digitalization.</h3>
-            <p class="hide-reveal"
-              style="transition-delay: 0.35s; color: #475569; margin-bottom: 2.5rem; line-height: 1.7; font-size: 0.95rem;">
-              Experience seamless
-              integration with features tailored to optimize educational processes, enhance student outcomes, and
-              maximize institutional effectiveness—ensuring Ministry Of Education reaches its full potential.</p>
-
-            <div class="goals-grid" style="display: grid; gap: 2rem;">
-              <div class="goal-item hide-reveal" style="transition-delay: 0.45s; display: flex; gap: 1.5rem;">
-                <div
-                  style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-zap">
-                    <path
-                      d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Efficiency</h4>
-                  <p style="color: #475569; font-size: 0.92rem;">Automate And Streamline Administrative Tasks.</p>
-                </div>
-              </div>
-
-              <div class="goal-item hide-reveal" style="transition-delay: 0.55s; display: flex; gap: 1.5rem;">
-                <div
-                  style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-trending-up">
-                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-                    <polyline points="16 7 22 7 22 13" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Academic Excellence</h4>
-                  <p style="color: #475569; font-size: 0.92rem;">Enhance Curriculum Delivery And Monitor Student
-                    Performance.</p>
-                </div>
-              </div>
-
-              <div class="goal-item hide-reveal" style="transition-delay: 0.65s; display: flex; gap: 1.5rem;">
-                <div
-                  style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-message-square">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Effective Communication</h4>
-                  <p style="color: #475569; font-size: 0.92rem;">Enable Real-Time Updates And Messaging Functionalities.
-                  </p>
-                </div>
-              </div>
-
-              <div class="goal-item hide-reveal" style="transition-delay: 0.75s; display: flex; gap: 1.5rem;">
-                <div
-                  style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-pie-chart">
-                    <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
-                    <path d="M22 12A10 10 0 0 0 12 2v10z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Data-Driven Decision-Making
-                  </h4>
-                  <p style="color: #475569; font-size: 0.92rem;">Equip Administrators With Comprehensive Analytics.</p>
-                </div>
-              </div>
-
-              <div class="goal-item hide-reveal" style="transition-delay: 0.85s; display: flex; gap: 1.5rem;">
-                <div
-                  style="flex-shrink: 0; width: 44px; height: 44px; background: rgba(0, 116, 217, 0.1); color: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-scale">
-                    <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
-                    <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
-                    <path d="M7 21h10" />
-                    <path d="M12 3v18" />
-                    <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">Compliance</h4>
-                  <p style="color: #475569; font-size: 0.92rem;">Ensure Adherence To Educational Policies, Data
-                    Protection Laws, And Other Regulatory Requirements.</p>
-                </div>
-              </div>
+          <!-- Right Side: Image -->
+          <div class="hide-reveal" style="transition-delay: 0.2s; height: 100%;">
+            <div class="image-wrapper"
+              style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); height: 100%; min-height: 400px;">
+              <img src="/hero_modules_bg.png" alt="Compliance Security"
+                style="width: 100%; height: 100%; object-fit: cover;">
             </div>
           </div>
         </div>
-      </div>
     </section>
+
+
+
 
   </main>
 
@@ -749,16 +570,7 @@
             <li><a href="#">Understanding the new CSSPS placements</a></li>
           </ul>
         </div>
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="modules.html">System Modules</a></li>
-            <li><a href="portals.html">External Portals</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="about.html">About Platform</a></li>
-          </ul>
-        </div>
+
       </div>
       <div class="footer-bottom text-center mt-3 pt-2 border-top">
         <p>&copy; 2026 Ghana Education Digital Platform. All rights reserved.</p>
@@ -767,5 +579,19 @@
   </footer>
 
 </body>
+<script>
+  function toggleReadMore(btn) {
+    const card = btn.closest('.module-card');
+    const moreText = card.querySelector('.more-text');
+    if (moreText.style.display === 'none') {
+      const isBlock = moreText.tagName === 'DIV' || moreText.tagName === 'UL';
+      moreText.style.display = isBlock ? 'block' : 'inline';
+      btn.innerHTML = 'Read Less &uarr;';
+    } else {
+      moreText.style.display = 'none';
+      btn.innerHTML = 'Read More &rarr;';
+    }
+  }
+</script>
 
 </html>

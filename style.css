@@ -2078,3 +2078,28 @@ section:last-of-type {
         gap: 1rem;
     }
 }
+
+/* System Module Heading Bolder */
+.module-card h3 {
+    font-weight: 600;
+}
+
+/* Portal Card Alignment */
+.portal-card {
+    text-align: left !important;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.mt-auto {
+    margin-top: auto;
+}
+
+/* Force Portal Icon Color */
+.portal-card .portal-icon,
+.portal-card .portal-icon svg {
+    color: #64748b !important;
+    /* Ash color */
+    text-align: left !important;
+}
