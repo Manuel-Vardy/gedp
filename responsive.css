@@ -162,7 +162,7 @@
     }
 
     section {
-        padding: 3.5rem 0;
+        padding: 2rem 0;
     }
 
     .container {
@@ -270,7 +270,7 @@
 
     /* Reduce section padding for mobile to fix wide gaps */
     section {
-        padding: 2rem 0;
+        padding: 1.5rem 0;
     }
 
     /* Tighter intro spacing */

@@ -120,8 +120,8 @@ ul {
     top: 0;
     background: rgba(100, 116, 139, 0.02);
     /* Ultra-transparent glass effect */
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
     z-index: 1000;
     transition: var(--transition);
@@ -526,7 +526,7 @@ section:last-of-type {
 
 /* Extra spacing for intro section after hero */
 .intro-section {
-    padding: 8rem 0;
+    padding: 2rem 0;
     perspective: 1500px;
     position: relative;
 }
@@ -640,7 +640,7 @@ section:last-of-type {
 }
 
 .modules-section {
-    padding: var(--spacing-xl) 0;
+    padding: 3rem 0;
 }
 
 .module-card {
@@ -704,10 +704,11 @@ section:last-of-type {
     bottom: 0;
     left: 0;
     width: 60px;
+    /* Static black part */
     height: 2px;
     background-color: black;
-    /* Static black line */
     z-index: 2;
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .module-card h3::after {
@@ -715,17 +716,17 @@ section:last-of-type {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
+    width: 150px;
+    /* 1 part black (60px) + 1.5 part ash (90px) */
     height: 2px;
     background-color: #CBD5E1;
-    /* Grey expansion line */
+    /* Ash part */
     z-index: 1;
-    transition: width 0.3s ease;
 }
 
-.module-card:hover h3::after {
-    width: 120px;
-    /* Expand width on hover */
+.module-card:hover h3::before {
+    width: 150px;
+    /* Black fills the ash on hover */
 }
 
 .module-card p {
@@ -1042,12 +1043,13 @@ section:last-of-type {
     position: absolute;
     bottom: -10px;
     left: 0;
-    width: 240px;
-    /* Longer thin line */
+    width: 250px;
+    /* 1 part black (100px) + 1.5 part ash (150px) */
     height: 1px;
     background: #CBD5E1;
-    /* Light grey */
+    /* Ash background */
     border-radius: 1px;
+    z-index: 1;
 }
 
 .section-title::before {
@@ -1056,12 +1058,17 @@ section:last-of-type {
     bottom: -10px;
     left: 0;
     width: 100px;
-    /* Thick accent part */
+    /* Thick black part */
     height: 3px;
     background: #000;
-    /* Bold black */
     border-radius: 2px;
     z-index: 2;
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.section-title:hover::before {
+    width: 250px;
+    /* Black fills to match the ash width */
 }
 
 /* Centered support for section titles */
@@ -1404,7 +1411,7 @@ section:last-of-type {
     pointer-events: none;
     z-index: 1;
     /* Behind container */
-    opacity: 0.1;
+    opacity: 0.05;
 }
 
 .line-v,
@@ -1425,25 +1432,25 @@ section:last-of-type {
 
 /* Default Laptop Positions */
 .line-1 {
-    top: 5%;
-    left: 5%;
+    top: 20px;
+    left: 20px;
 }
 
 .line-2 {
-    top: 5%;
-    left: 5%;
+    top: 20px;
+    left: 20px;
     width: 180px;
 }
 
 .line-3 {
-    bottom: 5%;
-    right: 5%;
+    bottom: 20px;
+    right: 20px;
     height: 180px;
 }
 
 .line-4 {
-    bottom: 5%;
-    right: 5%;
+    bottom: 20px;
+    right: 20px;
 }
 
 /* Mobile Specific Fix: Push section down and prevent clipping */
