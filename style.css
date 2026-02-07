@@ -1656,8 +1656,11 @@ section:last-of-type {
 }
 
 .contact-info-panel {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(30px);
+    background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('/bussiness-men.jpg');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(50px);
+    /* Increased blur */
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -1869,7 +1872,8 @@ section:last-of-type {
     position: absolute;
     left: 0;
     bottom: -10px;
-    height: 6px;
+    height: 2px;
+    /* Reduced from 6px */
     background-color: white;
     /* Changed to white */
     width: 0;
