@@ -781,7 +781,7 @@ section:last-of-type {
     border-radius: var(--radius-md);
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: rgba(15, 23, 42, 0.35);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(25px);
 }
 
 .training-section .video-embed iframe {
@@ -791,9 +791,49 @@ section:last-of-type {
     border: 0;
 }
 
+.training-section .video-embed.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.training-section .video-embed.card-container:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.training-section .play-button-white {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.training-section .play-button-white:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.training-section .play-button-white:active {
+    transform: scale(0.95);
+}
+
+.training-section .play-button-white svg {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
 .training-section .contact-expert.glass-panel {
     background: rgba(15, 23, 42, 0.55);
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(30px);
     border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
@@ -1603,6 +1643,147 @@ section:last-of-type {
     /* Less aggressive rounding for text area */
 }
 
+/* Training Section Split Layout */
+.training-grid-split {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0;
+    width: 100%;
+    align-items: stretch;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info-panel {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(30px);
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info-panel h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.contact-info-panel > p {
+    font-size: 1.1rem;
+    color: white;
+    opacity: 0.95;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.contact-info-panel .onboarding-steps {
+    margin-top: 2rem;
+}
+
+.contact-info-panel .step {
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-panel .step span {
+    color: white;
+    font-size: 1rem;
+}
+
+.contact-info-panel .video-embeds {
+    margin-top: 1.5rem;
+}
+
+.consultation-form-panel {
+    background: #f1f5f9;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.form-description {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.consultation-form-panel #expert-form {
+    margin-top: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.consultation-form-panel .form-group {
+    margin-bottom: 1.25rem;
+}
+
+
+.consultation-form-panel .form-group input,
+.consultation-form-panel .form-group textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.consultation-form-panel .form-group input::placeholder,
+.consultation-form-panel .form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.consultation-form-panel .form-group textarea {
+    border-radius: 8px;
+    resize: vertical;
+}
+
+.consultation-form-panel .form-group input:focus,
+.consultation-form-panel .form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+.btn-consultation {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-consultation:hover {
+    background: #001f3f;
+}
+
+.btn-consultation svg {
+    margin-left: 8px;
+}
+
 /* Support Info Dark Card */
 .support-info {
     background-color: var(--primary);
@@ -1683,33 +1864,46 @@ section:last-of-type {
 }
 
 .training-section {
-    padding: 6rem 0;
+    padding: 0;
     position: relative;
     z-index: 2;
+    margin-top: -70px;
+    overflow: hidden;
 }
 
-.training-glass {
-    background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url('/bussiness-men.jpg');
+.training-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: url('/bussiness-men.jpg');
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-repeat: no-repeat;
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
-    border-radius: 0;
-    padding: 3.5rem 3rem;
-    position: relative;
-    z-index: 3;
-    margin-top: -70px;
-    max-width: none;
-    width: calc(100% - 4px);
-    margin-left: auto;
-    margin-right: auto;
+    z-index: 0;
 }
+
+.training-section .container {
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.training-section .container {
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
 
 .training-section .contact-expert.glass-panel {
     background: rgba(226, 232, 240, 0.35);
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(30px);
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 18px;
 }
@@ -1781,11 +1975,14 @@ section:last-of-type {
         font-size: 1.6rem;
     }
 
-    .training-glass {
+    .training-section {
         margin-top: -50px;
-        padding: 2.5rem 1.5rem;
         background-position: center 20%;
-        padding-bottom: 4rem;
+    }
+
+    .contact-info-panel {
+        padding: 2.5rem 1.5rem;
+        min-height: auto;
     }
 
     .training-section .support-info h3 {
@@ -1799,4 +1996,18 @@ section:last-of-type {
     .training-section .contact-expert.glass-panel {
         margin-bottom: 1rem;
     }
+
+    .training-grid-split {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .contact-info-panel {
+        padding: 2.5rem 2rem;
+    }
+
+    .consultation-form-panel {
+        padding: 2.5rem 2rem;
+    }
+
 }
