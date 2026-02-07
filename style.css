@@ -16,7 +16,7 @@
 
     --bg-main: #F8FAFC;
     --bg-white: #FFFFFF;
-    --text-main: #1E293B;
+    --text-main: #0F172A;
     --text-muted: #64748B;
 
     /* UI Elements */
@@ -45,7 +45,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-main);
     color: var(--text-main);
     line-height: 1.6;
@@ -57,7 +57,7 @@ h2,
 h3,
 h4,
 .font-heading {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     line-height: 1.2;
 }
@@ -355,6 +355,12 @@ ul {
     position: relative;
     overflow: hidden;
     margin-bottom: var(--spacing-lg);
+    /* Restore Hero Fonts as requested */
+    font-family: 'Inter', sans-serif;
+}
+
+.hero h1 {
+    font-family: 'Outfit', sans-serif !important;
 }
 
 .slider-container {
@@ -520,9 +526,9 @@ section:last-of-type {
 
 /* Extra spacing for intro section after hero */
 .intro-section {
-    margin-top: var(--spacing-lg);
-    /*  padding-top: var(--spacing-xl);*/
+    padding: 8rem 0;
     perspective: 1500px;
+    position: relative;
 }
 
 .intro-graphic {
@@ -534,10 +540,26 @@ section:last-of-type {
     transform: translateZ(0) rotateY(0) opacity(1);
 }
 
+.intro-graphic.glass-panel {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#intro-rotating-image {
+    transition: opacity 1s ease-in-out;
+}
+
 .intro-section .section-title {
     margin-bottom: 2rem;
-    font-size: 2.8rem;
-    line-height: 1.2;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: 1px;
+    color: #000;
+    line-height: 1.1;
 }
 
 .intro-section .section-title.hide-reveal-left {
@@ -549,6 +571,64 @@ section:last-of-type {
 .intro-section .section-title.reveal-left {
     opacity: 1;
     transform: translateX(0);
+}
+
+.benefits-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid transparent;
+}
+
+.benefit-icon {
+    width: 26px;
+    height: 26px;
+    background: #000;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.4s ease;
+}
+
+.benefit-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.benefit-item span {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    transition: all 0.4s ease;
+}
+
+.benefit-item.active {
+    background: #FFFDD0;
+    /* Cream yellow background */
+    border-color: rgba(252, 209, 22, 0.3);
+    transform: translateX(10px);
+}
+
+.benefit-item.active span {
+    font-weight: 600;
+    color: #000;
+}
+
+.benefit-item.active .benefit-icon {
+    transform: scale(1.15);
+    box-shadow: 0 4px 10px rgba(0, 166, 147, 0.2);
 }
 
 
@@ -609,10 +689,10 @@ section:last-of-type {
 }
 
 .module-card h3 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-main);
+    font-weight: 600;
+    color: #000;
     margin-bottom: 1rem;
     position: relative;
     padding-bottom: 1rem;
@@ -953,6 +1033,8 @@ section:last-of-type {
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
+    color: #000;
+    font-weight: 600;
 }
 
 .section-title::after {
@@ -960,14 +1042,31 @@ section:last-of-type {
     position: absolute;
     bottom: -10px;
     left: 0;
-    width: 60px;
-    height: 4px;
-    background: var(--ghana-gold);
+    width: 240px;
+    /* Longer thin line */
+    height: 1px;
+    background: #CBD5E1;
+    /* Light grey */
+    border-radius: 1px;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    /* Thick accent part */
+    height: 3px;
+    background: #000;
+    /* Bold black */
     border-radius: 2px;
+    z-index: 2;
 }
 
 /* Centered support for section titles */
-.text-center .section-title::after {
+.text-center .section-title::after,
+.text-center .section-title::before {
     left: 50%;
     transform: translateX(-50%);
 }

@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormHandlers();
   initNavEffects();
   initMobileMenu();
+  initIntroRotation();
+  initBenefitsRotation();
 });
 
 /**
@@ -197,4 +199,44 @@ function initMobileMenu() {
       document.body.style.overflow = '';
     }
   });
+}
+
+/**
+ * Intro Image Rotation (168-hour cycle)
+ */
+function initIntroRotation() {
+  const introImg = document.getElementById('intro-rotating-image');
+  if (!introImg) return;
+
+  const images = ['/girl.jpeg', '/hero_modules_bg.png'];
+
+  // Calculate index based on 168-hour (one week) cycles
+  const totalHours = Math.floor(Date.now() / (1000 * 60 * 60));
+  const weekIndex = Math.floor(totalHours / 168) % images.length;
+
+  introImg.src = images[weekIndex];
+}
+
+/**
+ * Benefits & Impact Rotation (1.5s iterative highlight)
+ */
+function initBenefitsRotation() {
+  const items = document.querySelectorAll('.benefit-item');
+  if (items.length === 0) return;
+
+  let currentIndex = 0;
+
+  // Initial state
+  items[currentIndex].classList.add('active');
+
+  setInterval(() => {
+    // Remove active from current
+    items[currentIndex].classList.remove('active');
+
+    // Move to next
+    currentIndex = (currentIndex + 1) % items.length;
+
+    // Add active to next
+    items[currentIndex].classList.add('active');
+  }, 3000);
 }
