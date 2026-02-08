@@ -946,11 +946,34 @@ section:last-of-type {
 }
 
 .footer {
-    padding-top: 6rem;
-    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
     font-family: 'Inter', sans-serif;
     font-weight: 200;
     position: relative;
+}
+
+.footer-links-minimal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.nav-link-footer {
+    color: white;
+    opacity: 0.8;
+    font-size: 0.95rem;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+.nav-link-footer:hover {
+    opacity: 1;
+    color: var(--ghana-gold);
+    transform: translateY(-1px);
 }
 
 .footer::before {
@@ -1016,8 +1039,8 @@ section:last-of-type {
 }
 
 .footer-bottom {
-    margin-top: 4rem;
-    padding-top: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.85rem;
     font-weight: 200;
@@ -1080,10 +1103,11 @@ section:last-of-type {
 
 .btn-pill-solid {
     border-radius: 50px;
-    padding: 1.1rem 2.5rem;
+    padding: 0.85rem 2.2rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    font-weight: 600;
 }
 
 .btn-accent {
@@ -2081,7 +2105,20 @@ section:last-of-type {
 
 /* System Module Heading Bolder */
 .module-card h3 {
-    font-weight: 600;
+    font-weight: 800;
+}
+
+.compliance-grid {
+    gap: 4rem;
+    grid-template-columns: 5fr 7fr;
+}
+
+.compliance-section {
+    padding: 8rem 0;
+}
+
+.portals-section {
+    padding: 6rem 0;
 }
 
 /* Portal Card Alignment */

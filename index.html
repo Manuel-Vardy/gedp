@@ -373,7 +373,7 @@
     </section>
 
     <!-- External Services / Portals -->
-    <section id="portals" class="portals-section" style="padding: 6rem 0; background-color: #fff;">
+    <section id="portals" class="portals-section" style="background-color: #fff;">
       <div class="container">
         <div class="mb-5">
           <h2 class="section-title">External Portals</h2>
@@ -483,9 +483,9 @@
     </section>
 
     <!-- Compliance Reporting -->
-    <section id="compliance" class="compliance-section bg-alt-dark text-white" style="padding: 8rem 0;">
+    <section id="compliance" class="compliance-section" style="background-color: #fff;">
       <div class="container">
-        <div class="grid grid-2 align-center" style="gap: 4rem;">
+        <div class="grid align-center compliance-grid">
           <!-- Left Side: Content -->
           <div class="text-left">
             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
@@ -498,23 +498,23 @@
                   <path d="m9 12 2 2 4-4" />
                 </svg>
               </div>
-              <h2 class="section-title inverse" style="margin: 0; text-align: left;">Compliance Reporting</h2>
+              <h2 class="section-title" style="margin: 0; text-align: left;">Compliance Reporting</h2>
             </div>
 
-            <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2.5rem;">
+            <p style="font-size: 1.1rem; color: #475569; line-height: 1.6; margin-bottom: 2.5rem;">
               A secure and confidential way to raise concerns or report unethical behavior related to GEDP ERP system.
               Anonymity is guaranteed unless you choose otherwise.
             </p>
 
-            <div class="grid grid-2" style="gap: 1.5rem;">
+            <div class="grid" style="gap: 1.5rem; grid-template-columns: 1fr;">
               <div class="report-box glass-panel text-left"
                 style="padding: 2rem; border-radius: 20px; color: var(--primary);">
                 <h3 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">Report an Incident</h3>
                 <p style="margin-bottom: 1.5rem; opacity: 0.8; font-size: 0.9rem; color: var(--primary);">
                   To report an incident, click the button below to start your submission.
                 </p>
-                <button id="submit-report" class="btn btn-danger btn-link"
-                  style="width: 100%; font-weight: 700; padding: 0.75rem;">SUBMIT REPORT</button>
+                <button id="submit-report" class="btn btn-danger btn-pill-solid"
+                  style="width: 100%; font-weight: 700;">SUBMIT REPORT</button>
               </div>
 
               <div class="follow-up-box glass-panel text-left"
@@ -523,10 +523,12 @@
                 <p style="margin-bottom: 1.5rem; opacity: 0.8; font-size: 0.9rem; color: var(--primary);">
                   Already made a report? Use your Report ID and PIN to follow-up.
                 </p>
-                <div class="flex gap-2">
-                  <button class="btn btn-primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem;">I Have A
-                    PIN</button>
-                  <button class="btn btn-outline" style="flex: 1; font-size: 0.8rem; padding: 0.5rem;">No PIN?</button>
+                <div class="flex gap-2" style="margin-top: 1rem;">
+                  <button class="btn btn-primary"
+                    style="flex: 1; font-size: 0.9rem; padding: 0.8rem; border-radius: 50px; background: #0F172A;">I
+                    Have A PIN</button>
+                  <button class="btn btn-outline"
+                    style="flex: 1; font-size: 0.9rem; padding: 0.8rem; border-radius: 50px;">No PIN?</button>
                 </div>
               </div>
             </div>
@@ -537,7 +539,7 @@
           <!-- Right Side: Image -->
           <div class="hide-reveal" style="transition-delay: 0.2s; height: 100%;">
             <div class="image-wrapper"
-              style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); height: 100%; min-height: 400px;">
+              style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); height: 100%; min-height: 550px;">
               <img src="/hero_modules_bg.png" alt="Compliance Security"
                 style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -552,27 +554,14 @@
 
   <!-- News Section Teaser in Footer -->
   <footer id="contact" class="footer bg-primary text-white">
-    <div class="container pt-4 pb-2">
-      <div class="grid grid-3">
-        <div class="footer-info">
-          <img src="/GEDP.png" alt="GEDP Logo" class="logo-image footer-logo" style="margin-bottom: 1rem;">
-          <p>Modernizing Ghana's Education Landscape.</p>
-          <div class="contact-links mt-2">
-            <p><strong>Email:</strong> info@gedp.gov.gh</p>
-            <p><strong>Location:</strong> Ministry of Education, Accra</p>
-          </div>
-        </div>
-        <div class="footer-news">
-          <h3>Latest News</h3>
-          <ul class="news-list">
-            <li><a href="#">Ministry launches GEDP Phase 2</a></li>
-            <li><a href="#">Training sessions scheduled for rural districts</a></li>
-            <li><a href="#">Understanding the new CSSPS placements</a></li>
-          </ul>
-        </div>
-
+    <div class="container pb-2">
+      <div class="footer-links-minimal">
+        <a href="#" class="nav-link-footer">Download Full Manual</a>
+        <a href="#" class="nav-link-footer">Privacy & Cookies</a>
+        <a href="#" class="nav-link-footer">Terms Of Use</a>
+        <a href="#" class="nav-link-footer">Contact Us</a>
       </div>
-      <div class="footer-bottom text-center mt-3 pt-2 border-top">
+      <div class="footer-bottom text-center">
         <p>&copy; 2026 Ghana Education Digital Platform. All rights reserved.</p>
       </div>
     </div>

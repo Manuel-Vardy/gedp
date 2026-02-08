@@ -129,6 +129,16 @@
         height: 50px;
     }
 
+    .compliance-section {
+        padding: 1rem 0 !important;
+        /* Further reduced to push up more */
+    }
+
+    .portals-section {
+        padding: 1.5rem 0 !important;
+        /* Reduced bottom padding to push next section up */
+    }
+
     /* Mobile Hero Adjustment */
     .hero {
         height: auto;
@@ -207,6 +217,44 @@
 
     .nav-actions .search-bar {
         display: none;
+    }
+
+    /* Compliance Mobile Layout */
+    .compliance-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .compliance-section .text-left {
+        text-align: center !important;
+    }
+
+    .compliance-section div[style*="display: flex; align-items: center; gap: 1rem;"] {
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.5rem !important;
+    }
+
+    .compliance-section .section-title {
+        text-align: center !important;
+    }
+
+    .compliance-section .glass-panel {
+        text-align: center !important;
+    }
+
+    .compliance-section .flex.gap-2 {
+        flex-direction: column;
+    }
+
+    /* Footer Mobile Alignment */
+    .footer-links-minimal {
+        gap: 1.5rem !important;
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        border-top-color: rgba(255, 255, 255, 0.15);
     }
 }
 
