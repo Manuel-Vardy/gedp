@@ -256,6 +256,16 @@
     .footer-bottom {
         border-top-color: rgba(255, 255, 255, 0.15);
     }
+
+    .footer-bottom p {
+        font-size: 0.75rem !important;
+        opacity: 0.6;
+    }
+
+    .compliance-section .image-wrapper {
+        min-height: 250px !important;
+        height: 250px !important;
+    }
 }
 
 @media (max-width: 480px) {
