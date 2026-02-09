@@ -15,6 +15,7 @@ export default defineConfig({
                 portals: resolve(__dirname, 'portals.html'),
                 privacy: resolve(__dirname, 'privacy.html'),
                 terms: resolve(__dirname, 'terms.html'),
+                'blog-post': resolve(__dirname, 'blog-post.html'),
             },
         },
     },

@@ -18,6 +18,10 @@
             "destination": "/blog.html"
         },
         {
+            "source": "/blog-post",
+            "destination": "/blog-post.html"
+        },
+        {
             "source": "/about",
             "destination": "/about.html"
         },
