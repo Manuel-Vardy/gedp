@@ -13,6 +13,8 @@ export default defineConfig({
                 blog: resolve(__dirname, 'blog.html'),
                 about: resolve(__dirname, 'about.html'),
                 portals: resolve(__dirname, 'portals.html'),
+                privacy: resolve(__dirname, 'privacy.html'),
+                terms: resolve(__dirname, 'terms.html'),
             },
         },
     },
