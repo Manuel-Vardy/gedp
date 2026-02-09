@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterclass: Maximizing Data Analytics for GES | GEDP</title>
+    <meta name="description" content="Insights and takeaways from the GEDP data analytics training masterclass.">
+    <link rel="icon" type="image/x-icon" href="/GEDP-fav.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Outfit:wght@300;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="container flex justify-between align-center">
+            <span class="top-bar-title">Ghana Education Digital Platform — Let's All Evolve Together</span>
+            <div class="top-bar-contact">
+                <a href="mailto:info@gedp.gov.gh">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-right: 6px; vertical-align: middle;">
+                        <path d="m22 2-7 20-4-9-9-4Z" />
+                        <path d="M22 2 11 13" />
+                    </svg>
+                    info@gedp.gov.gh
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation bar -->
+    <header class="header sticky-nav">
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/GEDP.png" alt="GEDP Logo" class="logo-image">
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="modules.html" class="nav-link">Modules</a></li>
+                    <li><a href="portals.html" class="nav-link">External Portals</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="mobile-only-btn">
+                        <a href="#login" class="nav-link btn-link">Login</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-primary mobile-hide pill-btn">Login</button>
+                <button class="hamburger-new" id="hamburger" aria-label="Toggle menu">
+                    <div class="hamburger-dot-grid">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Post Hero Banner -->
+        <section class="post-hero">
+            <img src="/director3.jpg" alt="Post Banner" class="post-hero-img">
+            <div class="post-hero-overlay">
+                <div class="container">
+                    <span class="post-category">Training</span>
+                    <h1 class="post-title">Masterclass: Maximizing Data Analytics for GES</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Post Content Wrapper -->
+        <section class="post-content-section">
+            <div class="container">
+                <div class="post-article-container">
+                    <!-- Main Article Content -->
+                    <article class="post-body">
+                        <div class="post-meta">
+                            <span class="post-date">February 9, 2026</span>
+                            <span class="post-author">By GEDP Editorial Team</span>
+                        </div>
+
+                        <p class="lead">Our upcoming training session aims to equip administrators with the skills to
+                            interpret complex educational data and transform it into actionable insights for the Ghana
+                            Education Service (GES).</p>
+
+                        <p>In today's rapidly evolving educational landscape, data is more than just numbers; it's a
+                            compass for successful policy-making and resource allocation. The Masterclass: Maximizing
+                            Data Analytics for GES is designed to bridge the gap between data collection and data
+                            utilization.</p>
+
+                        <h2>Key Learning Objectives</h2>
+                        <p>Participants will engage with a variety of modules throughout the masterclass, focusing on:
+                        </p>
+                        <ul>
+                            <li>Understanding the Data Analytics architecture within the GEDP platform.</li>
+                            <li>Techniques for cleaning and preparing institutional data for analysis.</li>
+                            <li>Creating visual dashboards that communicate performance trends effectively.</li>
+                            <li>Standardizing reporting across different regional blocks.</li>
+                        </ul>
+
+                        <blockquote>
+                            "The goal is simple: to ensure every decision made at the administrative level is backed by
+                            high-integrity, real-time data." — Director of Systems Integration, GEDP.
+                        </blockquote>
+
+                        <p>This masterclass is part of our ongoing commitment to ensure that the Ghana Education Service
+                            doesn't just digitize its records, but also adopts a data-driven culture. We believe that by
+                            empowering our staff with these advanced analytical tools, we can significantly improve
+                            educational outcomes for pupils and students nationwide.</p>
+
+                        <div class="post-tags">
+                            <span class="tag">#DataAnalytics</span>
+                            <span class="tag">#EducationTechnology</span>
+                            <span class="tag">#GEDP</span>
+                            <span class="tag">#GES</span>
+                        </div>
+
+                        <div class="post-navigation">
+                            <a href="blog.html" class="back-to-blog">&larr; Back to all articles</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer bg-primary text-white">
+        <div class="container pb-2">
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Ghana Education Digital Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const title = params.get('title');
+            const img = params.get('img');
+            const cat = params.get('cat');
+
+            if (title) {
+                document.title = title + " | GEDP";
+                const titleEl = document.querySelector('.post-title');
+                if (titleEl) titleEl.textContent = title;
+            }
+
+            if (img) {
+                const imgEl = document.querySelector('.post-hero-img');
+                if (imgEl) imgEl.src = img;
+            }
+
+            if (cat) {
+                const catEl = document.querySelector('.post-category');
+                if (catEl) catEl.textContent = cat;
+            }
+        })();
+    </script>
+</body>
+
+</html>
