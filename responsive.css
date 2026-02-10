@@ -68,7 +68,14 @@
         font-size: 1.05rem;
         color: #0F172A !important;
         /* Visible on white background */
-        font-weight: 200;
+        font-weight: 400;
+        opacity: 1 !important;
+    }
+
+    .main-nav li a,
+    .main-nav ul li a {
+        color: #0F172A !important;
+        opacity: 1 !important;
     }
 
     .main-nav a::after {
