@@ -375,7 +375,8 @@
     }
 
     .container {
-        padding: 0 1rem;
+        padding: 0 0.75rem;
+        /* Reduced from 1rem for wider reading area */
     }
 
     .btn {

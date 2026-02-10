@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery | GEDP</title>
+    <meta name="description"
+        content="Media gallery showcasing the Ghana Education Digital Platform activities and schools.">
+    <link rel="icon" type="image/x-icon" href="/GEDP-fav.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container flex justify-between align-center">
+            <span class="top-bar-title">Ghana Education Digital Platform — Let's All Evolve Together</span>
+            <div class="top-bar-contact">
+                <a href="mailto:info@gedp.gov.gh">info@gedp.gov.gh</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header sticky-nav">
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/GEDP.png" alt="GEDP Logo" class="logo-image">
+                </a>
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="modules.html" class="nav-link">Modules</a></li>
+                    <li><a href="portals.html" class="nav-link">External Portals</a></li>
+                    <li><a href="blog.html" class="nav-link">News</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="mobile-only-btn">
+                        <a href="#login" class="nav-link btn-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-right: 8px;">
+                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                                <polyline points="10 17 15 12 10 7" />
+                                <line x1="15" y1="12" x2="3" y2="12" />
+                            </svg>
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-primary mobile-hide pill-btn">
+                    Login
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-left: 10px;">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                        <polyline points="10 17 15 12 10 7" />
+                        <line x1="15" y1="12" x2="3" y2="12" />
+                    </svg>
+                </button>
+                <button class="hamburger-new" id="hamburger" aria-label="Toggle menu">
+                    <div class="hamburger-dot-grid">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header"
+            style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/hero_modules_bg.png');">
+            <div class="container text-center">
+                <h1 class="text-white" style="font-size: 3.5rem; margin-bottom: 1.5rem;">Media Gallery</h1>
+                <p class="text-white opacity-80" style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">A visual
+                    journey through the digital transformation of Ghana's education system.</p>
+            </div>
+        </section>
+
+        <section style="padding: 6rem 0; background-color: #F8FAFC;">
+            <div class="container">
+                <div class="grid grid-3" style="gap: 2rem;">
+                    <!-- Gallery Items -->
+                    <div class="module-card" style="padding: 0; overflow: hidden; border-radius: 12px;">
+                        <img src="/haruna4.jpg" alt="Event"
+                            style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    </div>
+                    <div class="module-card" style="padding: 0; overflow: hidden; border-radius: 12px;">
+                        <img src="/paperless.jpg" alt="Classroom"
+                            style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    </div>
+                    <div class="module-card" style="padding: 0; overflow: hidden; border-radius: 12px;">
+                        <img src="/director3.jpg" alt="Administration"
+                            style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    </div>
+                    <!-- Add more as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-primary text-white">
+        <div class="container pb-2">
+            <div class="footer-links-minimal">
+                <a href="gallery.html" class="nav-link-footer active">Gallery</a>
+                <a href="#" class="nav-link-footer">Download Full Manual</a>
+                <a href="privacy.html" class="nav-link-footer">Privacy & Cookies</a>
+                <a href="terms.html" class="nav-link-footer">Terms Of Use</a>
+                <a href="#" class="nav-link-footer">Contact Us</a>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Ghana Education Digital Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

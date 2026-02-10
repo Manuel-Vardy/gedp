@@ -26,6 +26,14 @@
             "destination": "/about.html"
         },
         {
+            "source": "/admin-login",
+            "destination": "/admin-login.html"
+        },
+        {
+            "source": "/admin",
+            "destination": "/admin.html"
+        },
+        {
             "source": "/portals",
             "destination": "/portals.html"
         },
@@ -36,6 +44,10 @@
         {
             "source": "/terms",
             "destination": "/terms.html"
+        },
+        {
+            "source": "/gallery",
+            "destination": "/gallery.html"
         }
     ],
     "headers": [
