@@ -34,6 +34,14 @@
             "destination": "/admin.html"
         },
         {
+            "source": "/gedp-admin-login",
+            "destination": "/gedp-admin-login.html"
+        },
+        {
+            "source": "/gedp-admin",
+            "destination": "/gedp-admin.html"
+        },
+        {
             "source": "/portals",
             "destination": "/portals.html"
         },
