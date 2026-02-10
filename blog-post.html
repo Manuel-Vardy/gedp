@@ -272,11 +272,11 @@
             const storedPosts = localStorage.getItem('gedp_articles');
             const articles = storedPosts ? JSON.parse(storedPosts) : defaultArticles;
 
-            // Filter out the current article and get 2 random related articles
+            // Filter out the current article and get 3 random related articles
             const relatedArticles = articles
                 .filter(art => art.title !== title)
                 .sort(() => Math.random() - 0.5)
-                .slice(0, 2);
+                .slice(0, 3);
 
             const relatedGrid = document.getElementById('relatedGrid');
             if (relatedGrid && relatedArticles.length > 0) {

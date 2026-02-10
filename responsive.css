@@ -160,6 +160,27 @@
         font-size: 1.75rem !important;
     }
 
+    /* Post Article Mobile Adjustment */
+    .post-article-container {
+        max-width: 100% !important;
+        padding: 0 0.25rem !important;
+        margin: 0.5rem auto 0.5rem auto !important;
+    }
+
+    .post-body {
+        width: 95% !important;
+        margin: 0 auto !important;
+    }
+
+    .article-content-rich,
+    .post-meta,
+    .post-title,
+    .post-tags,
+    .related-posts-section,
+    .post-navigation {
+        width: 100% !important;
+    }
+
     /* Mobile Hero Adjustment */
     .hero {
         height: auto;

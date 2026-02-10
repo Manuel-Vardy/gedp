@@ -2251,9 +2251,10 @@ section:last-of-type {
 }
 
 .post-article-container {
-    max-width: 850px;
-    margin: 4rem auto;
-    padding: 0 2rem;
+    max-width: 92%;
+    width: 100%;
+    margin: 1rem auto 1rem auto;
+    padding: 0 0.5rem;
 }
 
 /* Image Wrapping and Related Posts */
@@ -2300,17 +2301,16 @@ section:last-of-type {
 .related-news-row-card {
     display: flex;
     flex-direction: column;
-    background: #f8fafc;
-    border-radius: 12px;
+    background: transparent;
+    border-radius: 0;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #f1f5f9;
+    transition: transform 0.3s ease;
+    border: none;
 }
 
 .related-news-row-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 .related-img-container {
@@ -2363,10 +2363,10 @@ section:last-of-type {
 }
 
 .post-body {
-    background: white;
-    padding: 3.5rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .post-meta {
@@ -2525,8 +2525,8 @@ section:last-of-type {
     }
 
     .post-body {
-        padding: 1.5rem;
-        border-radius: 12px;
+        padding: 0;
+        border-radius: 0;
     }
 
     .post-body p {
@@ -2708,19 +2708,19 @@ section:last-of-type {
     align-items: center;
 }
 
-/* Hubtel Logo Badge Style (Partial) */
+/* News & Update Badge Style */
 .featured-brand-badge {
     position: absolute;
     top: 2rem;
     left: 2rem;
-    background: white;
-    padding: 1.5rem;
-    border-radius: 100px 100px 100px 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 3;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .featured-brand-badge img {
@@ -2757,7 +2757,7 @@ section:last-of-type {
     }
 
     .featured-brand-badge {
-        padding: 0.75rem;
+        padding: 0.4rem 0.75rem;
         top: 0.75rem;
         left: 0.75rem;
     }
