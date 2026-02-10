@@ -700,38 +700,56 @@
 
 </body>
 <script>
-  // Hamburger menu toggle
-  (function() {
-    const hamburger = document.getElementById('hamburger');
-    const mainNav = document.getElementById('mainNav');
-    const navLinks = document.querySelectorAll('.nav-link');
+  // Ensure DOM is fully loaded and ready
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      const hamburger = document.getElementById('hamburger');
+      const mainNav = document.getElementById('mainNav');
+      const navLinks = document.querySelectorAll('.nav-link');
 
-    if (hamburger && mainNav) {
-      hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        mainNav.classList.toggle('active');
-        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-      });
+      console.log('Window loaded - Hamburger:', hamburger);
+      console.log('Window loaded - MainNav:', mainNav);
+      console.log('Window loaded - NavLinks:', navLinks.length);
 
-      // Close menu when clicking on a link
-      navLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-          hamburger.classList.remove('active');
-          mainNav.classList.remove('active');
-          document.body.style.overflow = '';
+      if (hamburger && mainNav) {
+        // Remove any existing listeners first
+        const newHamburger = hamburger.cloneNode(true);
+        hamburger.parentNode.replaceChild(newHamburger, hamburger);
+        const currentHamburger = document.getElementById('hamburger');
+
+        currentHamburger.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('Hamburger clicked! Active:', !mainNav.classList.contains('active'));
+          currentHamburger.classList.toggle('active');
+          mainNav.classList.toggle('active');
+          document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
         });
-      });
 
-      // Close menu when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!mainNav.contains(e.target) && !hamburger.contains(e.target)) {
-          hamburger.classList.remove('active');
-          mainNav.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-    }
-  })();
+        // Close menu when clicking on a link
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            currentHamburger.classList.remove('active');
+            mainNav.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!mainNav.contains(e.target) && !currentHamburger.contains(e.target)) {
+            currentHamburger.classList.remove('active');
+            mainNav.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+
+        console.log('Hamburger menu initialized successfully!');
+      } else {
+        console.error('Failed to find hamburger or mainNav elements!');
+      }
+    }, 100);
+  });
 
   function toggleReadMore(btn) {
     const card = btn.closest('.module-card');

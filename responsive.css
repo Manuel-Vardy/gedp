@@ -27,14 +27,15 @@
         height: calc(100vh - 85px);
         background: white;
         transition: left 0.3s ease;
-        z-index: 999;
+        z-index: 1000;
         overflow-y: auto;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        display: block;
+        display: block !important;
     }
 
     .main-nav.active {
-        left: 0;
+        left: 0 !important;
+        display: block !important;
     }
 
     .main-nav ul {
@@ -505,6 +506,7 @@
 
     .main-nav {
         top: 70px !important;
+        height: calc(100vh - 70px) !important;
     }
 
     .container {

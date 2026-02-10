@@ -350,14 +350,15 @@
         }
     </script>
     <script>
-        // Hamburger menu toggle
-        (function() {
+        // Hamburger menu toggle - runs after DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
             const mainNav = document.getElementById('mainNav');
             const navLinks = document.querySelectorAll('.nav-link');
 
             if (hamburger && mainNav) {
-                hamburger.addEventListener('click', function() {
+                hamburger.addEventListener('click', function(e) {
+                    e.stopPropagation();
                     hamburger.classList.toggle('active');
                     mainNav.classList.toggle('active');
                     document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
@@ -379,7 +380,7 @@
                     }
                 });
             }
-        })();
+        });
     </script>
     <script type="module" src="./main.js"></script>
 </body>
