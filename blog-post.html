@@ -202,7 +202,7 @@
                 kept.forEach((imgEl, idx) => {
                     imgEl.removeAttribute('style');
                     imgEl.classList.remove('post-img-full', 'post-img-left', 'post-img-right');
-                    imgEl.classList.add(idx % 2 === 0 ? 'post-img-right' : 'post-img-left');
+                    imgEl.classList.add('post-img-full');
                 });
             }
 
@@ -286,6 +286,16 @@
                     excerpt: 'A deep dive into how 500 schools across Ghana successfully transitioned to fully digital administrative processes...',
                     date: 'February 9, 2026',
                     readTime: '5 min read',
+                    featured: true
+                },
+                {
+                    id: '7',
+                    title: 'Teacher Training Spotlight: Building Digital Confidence',
+                    img: '/director2.jpg',
+                    cat: 'Training',
+                    excerpt: 'Highlights from recent teacher training sessions focused on practical classroom tools and digital best practices...',
+                    date: 'February 9, 2026',
+                    readTime: '4 min read',
                     featured: true
                 }
             ];

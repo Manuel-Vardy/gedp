@@ -18,6 +18,8 @@ export default defineConfig({
                 'blog-post': resolve(__dirname, 'blog-post.html'),
                 'admin-login': resolve(__dirname, 'admin-login.html'),
                 admin: resolve(__dirname, 'admin.html'),
+                'gedp-admin-login': resolve(__dirname, 'gedp-admin-login.html'),
+                'gedp-admin': resolve(__dirname, 'gedp-admin.html'),
                 gallery: resolve(__dirname, 'gallery.html'),
             },
         },
