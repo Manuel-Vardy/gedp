@@ -190,8 +190,13 @@
                 sliderContainer.innerHTML = '';
 
                 featuredArticles.forEach((art, idx) => {
+                    const params = new URLSearchParams({ title: art.title, img: art.img, cat: art.cat });
+                    const url = `blog-post.html?${params.toString()}`;
+
                     const slide = document.createElement('div');
                     slide.className = `featured-slide ${idx === 0 ? 'active' : ''}`;
+                    slide.style.cursor = 'pointer';
+                    slide.onclick = () => window.location.href = url;
 
                     // News & Update Badge
                     const brandBadge = document.createElement('div');
@@ -211,9 +216,6 @@
                     const content = document.createElement('div');
                     content.className = 'featured-content';
 
-                    const params = new URLSearchParams({ title: art.title, img: art.img, cat: art.cat });
-                    const url = `blog-post.html?${params.toString()}`;
-
                     content.innerHTML = `
                         <span class="featured-badge">${art.cat}</span>
                         <h2 class="featured-title">${art.title}</h2>
@@ -223,8 +225,6 @@
                             <span>${art.readTime || '5 min read'}</span>
                         </div>
                     `;
-                    content.style.cursor = 'pointer';
-                    content.onclick = () => window.location.href = url;
 
                     slide.appendChild(content);
                     sliderContainer.appendChild(slide);

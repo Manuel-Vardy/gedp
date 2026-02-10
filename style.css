@@ -2243,6 +2243,10 @@ section:last-of-type {
     background: #F8FAFC;
 }
 
+.post-content-section .container {
+    padding: 0 0.5rem;
+}
+
 .post-layout {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -2251,10 +2255,10 @@ section:last-of-type {
 }
 
 .post-article-container {
-    max-width: 92%;
+    max-width: 98%;
     width: 100%;
-    margin: 1rem auto 1rem auto;
-    padding: 0 0.5rem;
+    margin: 0 auto 2rem auto;
+    padding: 0;
 }
 
 /* Image Wrapping and Related Posts */
