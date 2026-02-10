@@ -125,10 +125,14 @@
                                 new heights as the latest phase of the Ghana Education Digital Platform (GEDP) rollout
                                 begins.</p>
 
+                            <img src="/director1.jpg" alt="GEDP training session" class="post-img-right">
+
                             <p>Our commitment to excellence in education is reflected in every pixel of our platform. By
                                 empowering teachers with advanced data tools and students with accessible digital
                                 resources, we are not just changing how people learn; we are changing how they think
                                 about their future in a global economy.</p>
+
+                            <img src="/director2.jpg" alt="Education stakeholders" class="post-img-left">
 
                             <p>The transition to a paperless environment has already shown significant improvements in
                                 administrative efficiency across 500 pilot schools. "The difference is night and day,"
@@ -187,6 +191,21 @@
 
     <script>
         (function () {
+            function enforceArticleImageLimit() {
+                const contentArea = document.querySelector('.article-content-rich');
+                if (!contentArea) return;
+
+                const imgs = Array.from(contentArea.querySelectorAll('img'));
+                imgs.slice(2).forEach(img => img.remove());
+
+                const kept = Array.from(contentArea.querySelectorAll('img')).slice(0, 2);
+                kept.forEach((imgEl, idx) => {
+                    imgEl.removeAttribute('style');
+                    imgEl.classList.remove('post-img-full', 'post-img-left', 'post-img-right');
+                    imgEl.classList.add(idx % 2 === 0 ? 'post-img-right' : 'post-img-left');
+                });
+            }
+
             const params = new URLSearchParams(window.location.search);
             const title = params.get('title');
             const img = params.get('img');
@@ -234,6 +253,8 @@
                     }
                 }
             }
+
+            enforceArticleImageLimit();
 
             // Load related articles dynamically
             const defaultArticles = [
