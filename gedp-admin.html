@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEDP Admin | Content Management System</title>
+    <link rel="icon" type="image/x-icon" href="/GEDP-fav.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        :root {
+            --midnight: #0F172A;
+            --ghana-gold: #F1B434;
+            --sidebar-width: 260px;
+        }
+
+        body.admin-body {
+            background: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+            color: #1e293b;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--midnight);
+            color: white;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        .sidebar-logo {
+            width: 120px;
+            margin-bottom: 3rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link-admin {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            color: #94a3b8;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .nav-link-admin:hover,
+        .nav-link-admin.active {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        .nav-link-admin.active {
+            color: var(--ghana-gold);
+            background: rgba(241, 180, 52, 0.1);
+        }
+
+        .logout-btn {
+            margin-top: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fca5a5;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex-grow: 1;
+            padding: 2.5rem;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .admin-header h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin: 0;
+            font-size: 1.75rem;
+        }
+
+        .btn-add {
+            background: var(--ghana-gold);
+            color: var(--midnight);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: transform 0.2s;
+        }
+
+        .btn-add:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Stats Blocks */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .stat-card h4 {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-card p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--midnight);
+        }
+
+        /* Content Table */
+        .content-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: #F8FAFC;
+            padding: 1.25rem 1.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        td {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.9rem;
+        }
+
+        .status-badge {
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-published {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .action-icon {
+            color: #94a3b8;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .action-icon:hover {
+            color: var(--midnight);
+        }
+
+        .action-icon.delete:hover {
+            color: #ef4444;
+        }
+
+        /* Form Overlay */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-modal {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #94a3b8;
+        }
+
+        .admin-form .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #475569;
+        }
+
+        .admin-input {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: #fff;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .admin-input:focus {
+            outline: none;
+            border-color: var(--ghana-gold);
+        }
+
+        textarea.admin-input {
+            height: 200px;
+            resize: vertical;
+        }
+
+        .form-footer {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-form .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="admin-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="index.html">
+            <img src="/GEDP.png" alt="GEDP Logo" class="sidebar-logo">
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="javascript:void(0)" onclick="switchView('articles')" id="nav-articles"
+                    class="nav-link-admin active">News Items</a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0)" onclick="switchView('gallery')" id="nav-gallery"
+                    class="nav-link-admin">Media Gallery</a>
+            </li>
+        </ul>
+        <a href="javascript:void(0)" onclick="handleLogout()" class="nav-link-admin logout-btn">Logout</a>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+        <!-- Articles View -->
+        <div id="articlesView">
+            <header class="admin-header">
+                <div>
+                    <h2>Content Management</h2>
+                </div>
+                <button class="btn-add" onclick="openModal()">+ Add New Article</button>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Total Posts</h4>
+                    <p id="totalPosts">3</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Published</h4>
+                    <p>3</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Recent Views</h4>
+                    <p>1,248</p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Article Title</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="articleTableBody">
+                            <!-- Entries will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Media Gallery View -->
+        <div id="galleryView" style="display: none;">
+            <header class="admin-header">
+                <div>
+                    <h2>Media Gallery</h2>
+                </div>
+                <button class="btn-add" onclick="alert('Upload coming soon!')">Upload Image</button>
+            </header>
+
+            <div class="content-card" style="padding: 2rem;">
+                <div id="galleryGrid"
+                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem;">
+                    <!-- Images will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Form -->
+    <div class="modal" id="postModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Create New Article</h3>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+
+            <form id="articleForm" class="admin-form">
+                <div class="form-grid">
+                    <div class="full-width">
+                        <label class="form-label">Title</label>
+                        <input type="text" id="postTitle" class="admin-input" required
+                            placeholder="Enter clear, engaging title">
+                    </div>
+                    <div>
+                        <label class="form-label">Category</label>
+                        <select id="postCategory" class="admin-input">
+                            <option value="Announcement">Announcement</option>
+                            <option value="Training">Training</option>
+                            <option value="Innovation">Innovation</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label">Image Filename</label>
+                        <input type="text" id="postImage" class="admin-input" placeholder="e.g. director3.jpg" required>
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">Short Excerpt</label>
+                        <input type="text" id="postExcerpt" class="admin-input" required
+                            placeholder="A brief summary for the card view">
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">Body Content</label>
+                        <textarea id="postBody" class="admin-input" required
+                            placeholder="Type the full article content here..."></textarea>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <button type="button" onclick="closeModal()" class="btn btn-secondary pill-btn"
+                        style="background: #e2e8f0; border: none; padding: 0.8rem 1.5rem; border-radius: 10px;">Cancel</button>
+                    <button type="submit" class="btn btn-primary pill-btn"
+                        style="padding: 0.8rem 1.5rem; border-radius: 10px;">Save Article</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Check authentication
+        document.addEventListener('DOMContentLoaded', () => {
+            if (sessionStorage.getItem('gedp_logged_in') !== 'true') {
+                window.location.href = 'gedp-admin-login.html';
+            }
+            loadArticles();
+        });
+
+        function handleLogout() {
+            sessionStorage.removeItem('gedp_logged_in');
+            window.location.href = 'gedp-admin-login.html';
+        }
+
+        // Data Management
+        const defaultArticles = [
+            {
+                id: '1',
+                title: 'Minister launches GEDP Phase 2 Expansion',
+                img: '/haruna4.jpg',
+                cat: 'Announcement',
+                excerpt: 'The Ministry of Education has officially launched the second phase...',
+                date: 'February 9, 2026'
+            },
+            {
+                id: '2',
+                title: 'Masterclass: Maximizing Data Analytics for GES',
+                img: '/paperless.jpg',
+                cat: 'Training',
+                excerpt: 'Our upcoming training session aims to equip administrators...',
+                date: 'February 9, 2026'
+            },
+            {
+                id: '3',
+                title: 'Going Paperless: The Journey of 500 Schools',
+                img: '/director3.jpg',
+                cat: 'Innovation',
+                excerpt: 'A deep dive into how 500 schools across Ghana successfully transitioned...',
+                date: 'February 9, 2026'
+            }
+        ];
+
+        function getArticles() {
+            const stored = localStorage.getItem('gedp_articles');
+            let articles;
+            if (!stored) {
+                articles = defaultArticles;
+                localStorage.setItem('gedp_articles', JSON.stringify(articles));
+            } else {
+                articles = JSON.parse(stored);
+            }
+
+            // Migration logic
+            let migrationNeeded = false;
+            articles.forEach(a => {
+                if (a.img === '/Haruna-Iddrisu.webp') {
+                    a.img = '/haruna4.jpg';
+                    migrationNeeded = true;
+                }
+            });
+
+            if (migrationNeeded) {
+                localStorage.setItem('gedp_articles', JSON.stringify(articles));
+            }
+
+            return articles;
+        }
+
+        function loadArticles() {
+            const articles = getArticles();
+            const tbody = document.getElementById('articleTableBody');
+            const totalPostsEl = document.getElementById('totalPosts');
+
+            totalPostsEl.textContent = articles.length;
+            tbody.innerHTML = '';
+
+            articles.forEach(art => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><img src="${art.img}" style="width: 50px; height: 35px; object-fit: cover; border-radius: 4px;"></td>
+                    <td style="font-weight: 600;">${art.title}</td>
+                    <td>${art.cat}</td>
+                    <td><span class="status-badge status-published">Published</span></td>
+                    <td class="action-btns">
+                        <span class="action-icon" onclick="alert('Editor coming soon!')">✎</span>
+                        <span class="action-icon delete" onclick="deleteArticle('${art.id}')">🗑</span>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Modal Logic
+        function openModal() {
+            document.getElementById('postModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('postModal').style.display = 'none';
+            document.getElementById('articleForm').reset();
+        }
+
+        // Form Submission
+        document.getElementById('articleForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const articles = getArticles();
+            const newArticle = {
+                id: Date.now().toString(),
+                title: document.getElementById('postTitle').value,
+                cat: document.getElementById('postCategory').value,
+                img: '/' + document.getElementById('postImage').value.replace(/^\//, ''),
+                excerpt: document.getElementById('postExcerpt').value,
+                body: document.getElementById('postBody').value,
+                date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+            };
+
+            articles.unshift(newArticle);
+            localStorage.setItem('gedp_articles', JSON.stringify(articles));
+
+            loadArticles();
+            closeModal();
+        });
+
+        function deleteArticle(id) {
+            if (confirm('Are you sure you want to delete this article?')) {
+                let articles = getArticles();
+                articles = articles.filter(a => a.id !== id);
+                localStorage.setItem('gedp_articles', JSON.stringify(articles));
+                loadArticles();
+            }
+        }
+
+        // View Switching
+        function switchView(view) {
+            const articlesView = document.getElementById('articlesView');
+            const galleryView = document.getElementById('galleryView');
+            const navArticles = document.getElementById('nav-articles');
+            const navGallery = document.getElementById('nav-gallery');
+
+            if (view === 'articles') {
+                articlesView.style.display = 'block';
+                galleryView.style.display = 'none';
+                navArticles.classList.add('active');
+                navGallery.classList.remove('active');
+                loadArticles();
+            } else {
+                articlesView.style.display = 'none';
+                galleryView.style.display = 'grid';
+                navArticles.classList.remove('active');
+                navGallery.classList.add('active');
+                loadGallery();
+            }
+        }
+
+        // Gallery Logic
+        const siteImages = [
+            '/haruna4.jpg',
+            '/haruna2.jpg',
+            '/haruna3.jpg',
+            '/paperless.jpg',
+            '/director3.jpg',
+            '/GEDP.png',
+            '/hero_modules_bg.png',
+            '/GEDP-fav.png'
+        ];
+
+        function loadGallery() {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = '';
+
+            siteImages.forEach(imgSrc => {
+                const div = document.createElement('div');
+                div.style.cssText = 'background: #f1f5f9; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; position: relative; group;';
+                div.innerHTML = `
+                    <img src="${imgSrc}" style="width: 100%; height: 120px; object-fit: cover; display: block;">
+                    <div style="padding: 0.8rem; font-size: 0.75rem; color: #64748b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; background: white;">
+                        ${imgSrc.split('/').pop()}
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>
