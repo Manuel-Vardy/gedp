@@ -38,6 +38,13 @@
         display: block !important;
     }
 
+    .main-nav.active a {
+        color: #0F172A !important;
+        -webkit-text-fill-color: #0F172A !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
     .main-nav ul {
         display: flex;
         flex-direction: column;
