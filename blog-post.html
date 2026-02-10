@@ -156,29 +156,8 @@
                             <h3
                                 style="font-family: 'Poppins', sans-serif; font-weight: 700; margin-bottom: 2rem; color: var(--primary);">
                                 Related News</h3>
-                            <div class="related-grid">
-                                <article class="related-news-row-card" onclick="window.location.href='blog-post.html'">
-                                    <div class="related-img-container">
-                                        <img src="/haruna4.jpg" alt="Related">
-                                    </div>
-                                    <div class="related-content">
-                                        <span class="related-cat">ANNOUNCEMENT</span>
-                                        <h4 class="related-title">Phase 2 Implementation Progress</h4>
-                                        <p class="related-desc">Tracking the latest milestones in our nationwide digital
-                                            rollout across primary schools.</p>
-                                    </div>
-                                </article>
-                                <article class="related-news-row-card" onclick="window.location.href='blog-post.html'">
-                                    <div class="related-img-container">
-                                        <img src="/paperless.jpg" alt="Related">
-                                    </div>
-                                    <div class="related-content">
-                                        <span class="related-cat">TRAINING</span>
-                                        <h4 class="related-title">New Digital Classroom Tools</h4>
-                                        <p class="related-desc">Essential resources and training modules designed for
-                                            teachers to master the digital curriculum.</p>
-                                    </div>
-                                </article>
+                            <div class="related-grid" id="relatedGrid">
+                                <!-- Related articles will be loaded dynamically -->
                             </div>
                         </div>
 
@@ -254,6 +233,74 @@
                         contentArea.appendChild(extraImg3);
                     }
                 }
+            }
+
+            // Load related articles dynamically
+            const defaultArticles = [
+                {
+                    id: '1',
+                    title: 'Minister launches GEDP Phase 2 Expansion',
+                    img: '/haruna4.jpg',
+                    cat: 'Announcement',
+                    excerpt: 'The Ministry of Education has officially launched the second phase of the Ghana Education Digital Platform...',
+                    date: 'February 9, 2026',
+                    readTime: '4 min read',
+                    featured: true
+                },
+                {
+                    id: '3',
+                    title: 'Masterclass: Maximizing Data Analytics for GES',
+                    img: '/paperless.jpg',
+                    cat: 'Training',
+                    excerpt: 'Our upcoming training session aims to equip administrators with the skills to interpret complex educational data...',
+                    date: 'February 9, 2026',
+                    readTime: '6 min read',
+                    featured: true
+                },
+                {
+                    id: '5',
+                    title: 'Going Paperless: The Journey of 500 Schools',
+                    img: '/director3.jpg',
+                    cat: 'Innovation',
+                    excerpt: 'A deep dive into how 500 schools across Ghana successfully transitioned to fully digital administrative processes...',
+                    date: 'February 9, 2026',
+                    readTime: '5 min read',
+                    featured: true
+                }
+            ];
+
+            const storedPosts = localStorage.getItem('gedp_articles');
+            const articles = storedPosts ? JSON.parse(storedPosts) : defaultArticles;
+
+            // Filter out the current article and get 2 random related articles
+            const relatedArticles = articles
+                .filter(art => art.title !== title)
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 2);
+
+            const relatedGrid = document.getElementById('relatedGrid');
+            if (relatedGrid && relatedArticles.length > 0) {
+                relatedArticles.forEach(art => {
+                    const params = new URLSearchParams({ title: art.title, img: art.img, cat: art.cat });
+                    const articleUrl = `blog-post.html?${params.toString()}`;
+
+                    const article = document.createElement('article');
+                    article.className = 'related-news-row-card';
+                    article.style.cursor = 'pointer';
+                    article.onclick = () => window.location.href = articleUrl;
+
+                    article.innerHTML = `
+                        <div class="related-img-container">
+                            <img src="${art.img}" alt="Related">
+                        </div>
+                        <div class="related-content">
+                            <span class="related-cat">${art.cat.toUpperCase()}</span>
+                            <h4 class="related-title">${art.title}</h4>
+                            <p class="related-desc">${art.excerpt}</p>
+                        </div>
+                    `;
+                    relatedGrid.appendChild(article);
+                });
             }
         })();
     </script>
