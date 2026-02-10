@@ -125,8 +125,6 @@
                                 new heights as the latest phase of the Ghana Education Digital Platform (GEDP) rollout
                                 begins.</p>
 
-                            <img src="/paperless.jpg" alt="Education Innovation" class="post-img-right">
-
                             <p>Our commitment to excellence in education is reflected in every pixel of our platform. By
                                 empowering teachers with advanced data tools and students with accessible digital
                                 resources, we are not just changing how people learn; we are changing how they think
@@ -136,8 +134,6 @@
                                 administrative efficiency across 500 pilot schools. "The difference is night and day,"
                                 says one local headteacher. "We can now focus more on our students' progress and less on
                                 paperwork."</p>
-
-                            <img src="/director3.jpg" alt="Training Session" class="post-img-left">
 
                             <p>Looking ahead, the GEDP team is preparing for a series of masterclasses designed to equip
                                 every level of education management with data literacy. These sessions will ensure that
@@ -248,23 +244,14 @@
                         extraImg2.style.borderRadius = '12px';
                         paragraphs[1].after(extraImg2);
 
-                        // Inject haruna3.jpg after a few more
-                        if (paragraphs.length >= 4) {
-                            const extraImg3 = document.createElement('img');
-                            extraImg3.src = '/haruna1.jpg'; // Using haruna1 as an extra shot
-                            extraImg3.alt = 'Leadership focus';
-                            extraImg3.className = 'post-img-right';
-                            paragraphs[3].after(extraImg3);
-                        }
-
-                        // Add haruna3.jpg at the bottom or near it
-                        const extraImg4 = document.createElement('img');
-                        extraImg4.src = '/haruna3.jpg';
-                        extraImg4.alt = 'Community engagement';
-                        extraImg4.className = 'post-img-full';
-                        extraImg4.style.margin = '2rem 0';
-                        extraImg2.style.borderRadius = '12px';
-                        contentArea.appendChild(extraImg4);
+                        // Add haruna3.jpg at the bottom
+                        const extraImg3 = document.createElement('img');
+                        extraImg3.src = '/haruna3.jpg';
+                        extraImg3.alt = 'Community engagement';
+                        extraImg3.className = 'post-img-full';
+                        extraImg3.style.margin = '2rem 0';
+                        extraImg3.style.borderRadius = '12px';
+                        contentArea.appendChild(extraImg3);
                     }
                 }
             }
