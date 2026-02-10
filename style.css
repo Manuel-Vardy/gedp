@@ -2657,8 +2657,8 @@ section:last-of-type {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
-    /* Prioritize the face/upper portion of the photo */
+    object-position: center 35%;
+    /* Adjusted to show face better in portrait images */
 }
 
 .featured-overlay {

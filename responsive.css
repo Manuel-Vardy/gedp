@@ -139,6 +139,23 @@
         /* Reduced bottom padding to push next section up */
     }
 
+    /* News & Updates Section Mobile Adjustment */
+    .featured-news-section {
+        padding: 2rem 0 1rem 0 !important;
+    }
+
+    .featured-img {
+        object-position: center 40% !important;
+    }
+
+    .news-updates-header {
+        padding: 0rem 0 0.75rem 0 !important;
+    }
+
+    .news-updates-header h2 {
+        font-size: 1.75rem !important;
+    }
+
     /* Mobile Hero Adjustment */
     .hero {
         height: auto;
