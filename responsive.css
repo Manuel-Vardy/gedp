@@ -9,7 +9,10 @@
 
     .hamburger,
     .hamburger-new {
-        display: flex;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 1001 !important;
     }
 
     .mobile-hide {
