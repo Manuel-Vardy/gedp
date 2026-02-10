@@ -351,35 +351,42 @@
     </script>
     <script>
         // Hamburger menu toggle - runs after DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const mainNav = document.getElementById('mainNav');
-            const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const hamburger = document.getElementById('hamburger');
+                const mainNav = document.getElementById('mainNav');
+                const navLinks = document.querySelectorAll('.main-nav a');
 
-            if (hamburger && mainNav) {
-                hamburger.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    hamburger.classList.toggle('active');
-                    mainNav.classList.toggle('active');
-                    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-                });
+                if (hamburger && mainNav) {
+                    const newHamburger = hamburger.cloneNode(true);
+                    hamburger.parentNode.replaceChild(newHamburger, hamburger);
+                    const currentHamburger = document.getElementById('hamburger');
 
-                navLinks.forEach(function(link) {
-                    link.addEventListener('click', function() {
-                        hamburger.classList.remove('active');
-                        mainNav.classList.remove('active');
-                        document.body.style.overflow = '';
+                    currentHamburger.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        currentHamburger.classList.toggle('active');
+                        mainNav.classList.toggle('active');
+                        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
                     });
-                });
 
-                document.addEventListener('click', function(e) {
-                    if (!mainNav.contains(e.target) && !hamburger.contains(e.target)) {
-                        hamburger.classList.remove('active');
-                        mainNav.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
+                    navLinks.forEach(function(link) {
+                        link.addEventListener('click', function(e) {
+                            currentHamburger.classList.remove('active');
+                            mainNav.classList.remove('active');
+                            document.body.style.overflow = '';
+                        });
+                    });
+
+                    document.addEventListener('click', function(e) {
+                        if (!mainNav.contains(e.target) && !currentHamburger.contains(e.target)) {
+                            currentHamburger.classList.remove('active');
+                            mainNav.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                }
+            }, 100);
         });
     </script>
     <script type="module" src="./main.js"></script>
