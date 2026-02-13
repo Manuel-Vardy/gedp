@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sessionStorage.getItem('gedp_logged_in') !== 'true') {
         window.location.href = 'admin-login.html';
     }
+
+    initCategories();
+    initImageUploader();
     loadArticles();
 });
 
@@ -91,12 +94,156 @@ function loadArticles() {
 
 // Modal Logic
 function openModal() {
+    renderCategories();
     document.getElementById('postModal').style.display = 'flex';
 }
 
 function closeModal() {
     document.getElementById('postModal').style.display = 'none';
     document.getElementById('articleForm').reset();
+
+    const preview = document.getElementById('imagePreview');
+    const hint = document.getElementById('imageHint');
+    const filename = document.getElementById('imageFilename');
+    const hiddenImg = document.getElementById('postImage');
+    const fileInput = document.getElementById('postImageFile');
+    const dropzone = document.getElementById('imageDropzone');
+
+    if (preview) {
+        preview.src = '';
+        preview.style.display = 'none';
+    }
+    if (hint) hint.style.display = '';
+    if (filename) filename.textContent = '';
+    if (hiddenImg) hiddenImg.value = '';
+    if (fileInput) fileInput.value = '';
+    if (dropzone) dropzone.classList.remove('dragover');
+}
+
+function getCategories() {
+    const stored = localStorage.getItem('gedp_categories');
+    if (!stored) return ['Announcement', 'Training', 'Innovation'];
+    try {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length) return parsed;
+        return ['Announcement', 'Training', 'Innovation'];
+    } catch {
+        return ['Announcement', 'Training', 'Innovation'];
+    }
+}
+
+function setCategories(categories) {
+    localStorage.setItem('gedp_categories', JSON.stringify(categories));
+}
+
+function renderCategories(selectedValue) {
+    const select = document.getElementById('postCategory');
+    if (!select) return;
+
+    const categories = getCategories();
+    select.innerHTML = '';
+    categories.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat;
+        opt.textContent = cat;
+        select.appendChild(opt);
+    });
+
+    if (selectedValue && categories.includes(selectedValue)) {
+        select.value = selectedValue;
+    }
+}
+
+function initCategories() {
+    renderCategories();
+
+    const addBtn = document.getElementById('addCategoryBtn');
+    const input = document.getElementById('newCategory');
+    if (!addBtn || !input) return;
+
+    const add = () => {
+        const raw = input.value || '';
+        const value = raw.trim();
+        if (!value) return;
+
+        const categories = getCategories();
+        const exists = categories.some(c => c.toLowerCase() === value.toLowerCase());
+        if (!exists) {
+            categories.push(value);
+            setCategories(categories);
+        }
+
+        renderCategories(value);
+        input.value = '';
+    };
+
+    addBtn.addEventListener('click', add);
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            add();
+        }
+    });
+}
+
+function initImageUploader() {
+    const dropzone = document.getElementById('imageDropzone');
+    const fileInput = document.getElementById('postImageFile');
+    const hiddenImg = document.getElementById('postImage');
+    const preview = document.getElementById('imagePreview');
+    const hint = document.getElementById('imageHint');
+    const filename = document.getElementById('imageFilename');
+
+    if (!dropzone || !fileInput || !hiddenImg || !preview || !hint || !filename) return;
+
+    const setFile = (file) => {
+        if (!file || !file.type || !file.type.startsWith('image/')) return;
+
+        const reader = new FileReader();
+        reader.onload = () => {
+            const dataUrl = typeof reader.result === 'string' ? reader.result : '';
+            if (!dataUrl) return;
+
+            hiddenImg.value = dataUrl;
+            preview.src = dataUrl;
+            preview.style.display = 'block';
+            hint.style.display = 'none';
+            filename.textContent = file.name;
+        };
+        reader.readAsDataURL(file);
+    };
+
+    dropzone.addEventListener('click', () => fileInput.click());
+    dropzone.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            fileInput.click();
+        }
+    });
+
+    fileInput.addEventListener('change', () => {
+        const file = fileInput.files && fileInput.files[0];
+        if (file) setFile(file);
+    });
+
+    dropzone.addEventListener('dragenter', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('dragover');
+    });
+    dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('dragover');
+    });
+    dropzone.addEventListener('dragleave', () => {
+        dropzone.classList.remove('dragover');
+    });
+    dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('dragover');
+        const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+        if (!file) return;
+        setFile(file);
+    });
 }
 
 // Form Submission
@@ -108,7 +255,7 @@ document.getElementById('articleForm').addEventListener('submit', function (e) {
         id: Date.now().toString(),
         title: document.getElementById('postTitle').value,
         cat: document.getElementById('postCategory').value,
-        img: '/' + document.getElementById('postImage').value.replace(/^\//, ''),
+        img: document.getElementById('postImage').value,
         excerpt: document.getElementById('postExcerpt').value,
         body: document.getElementById('postBody').value,
         date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
