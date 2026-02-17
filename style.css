@@ -3130,3 +3130,11 @@ section:last-of-type {
         font-size: 0.95rem;
     }
 }
+
+/* Homepage Modules Section - Align Read More buttons to left */
+#modules .read-more-btn {
+    display: block;
+    width: fit-content;
+    margin: 0;
+    padding-left: 0;
+}
