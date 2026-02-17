@@ -195,8 +195,9 @@
 
     /* Mobile Hero Adjustment */
     .hero {
-        min-height: 80vh !important;
-        height: 80vh;
+        min-height: 90vh !important;
+        height: 90vh;
+        margin-bottom: 3rem !important;
     }
 
     .slide-content h1 {
@@ -391,9 +392,9 @@
     }
 
     .hero {
-        min-height: 85vh !important;
-        height: 85vh;
-        margin-bottom: 0 !important;
+        min-height: 95vh !important;
+        height: 95vh;
+        margin-bottom: 2rem !important;
         padding-bottom: 0 !important;
     }
 
