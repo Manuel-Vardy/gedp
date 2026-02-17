@@ -100,8 +100,7 @@
 
     /* Adjust Hero for Tablets */
     .hero {
-        height: auto;
-        min-height: 60vh;
+        overflow: hidden;
     }
 
     .slider-container {

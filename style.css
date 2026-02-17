@@ -1502,7 +1502,7 @@ section:last-of-type {
     }
 
     .hero {
-        height: auto;
+        overflow: hidden;
         padding: 4rem 0;
     }
 
