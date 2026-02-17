@@ -217,9 +217,9 @@ function initBenefitsRotation() {
   if (items.length === 0) return;
 
   const images = [
-    './New Images/1S9A4753.jpg',
-    './New Images/EDIT2_1S9A4549.jpg',
-    './New Images/EDIT2_1S9A4727.jpg'
+    '/New%20Images/1S9A4753.jpg',
+    '/New%20Images/EDIT2_1S9A4549.jpg',
+    '/New%20Images/EDIT2_1S9A4727.jpg'
   ];
 
   let currentIndex = 0;
