@@ -560,13 +560,13 @@ ul {
 
 .pupil-tablet {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-        url('/FINAL%20LOADS/MAIN%20SLIDES/EDIT_1S9A4509.jpg');
+        url('/New%20Images/EDIT_1S9A4509.jpg');
     background-size: cover;
 }
 
 .student-laptop {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-        url('/FINAL%20LOADS/MAIN%20SLIDES/EDIT1_1S9A4822.jpg');
+        url('/New%20Images/EDIT1_1S9A4822.jpg');
     background-size: cover;
     background-position: 50% 20%;
     /* Focus on student's face/upper body */
@@ -574,7 +574,7 @@ ul {
 
 .tvet-robotics {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-        url('/FINAL%20LOADS/MAIN%20SLIDES/EDIT_1S9A4331.jpg');
+        url('/New%20Images/young-man-woman-sitting-cafe.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -597,10 +597,15 @@ section:last-of-type {
     position: relative;
 }
 
+.align-start {
+    align-items: flex-start;
+}
+
 .intro-graphic {
-    transform: translateZ(-300px) rotateY(-10deg) opacity(0);
-    transition: transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1s ease-out;
-    height: clamp(320px, 38vw, 480px);
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    height: 600px;
+    align-self: flex-start;
 }
 
 .intro-graphic.reveal {
@@ -646,6 +651,7 @@ section:last-of-type {
 
 .benefits-list {
     margin-top: 2rem;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -699,6 +705,10 @@ section:last-of-type {
 .benefit-item.active .benefit-icon {
     transform: scale(1.15);
     box-shadow: 0 4px 10px rgba(0, 166, 147, 0.2);
+}
+
+.benefit-item:last-child {
+    padding-bottom: 0;
 }
 
 
@@ -1468,6 +1478,11 @@ section:last-of-type {
 
     .nav-actions .search-bar {
         display: none;
+    }
+
+    .intro-graphic {
+        height: 300px;
+        /* Reduced from 600px for mobile */
     }
 }
 

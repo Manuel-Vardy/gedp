@@ -202,30 +202,25 @@ function initMobileMenu() {
 }
 
 /**
- * Intro Image Rotation (168-hour cycle)
+ * Intro Image Rotation (Disabled in favor of benefits-synced rotation)
  */
 function initIntroRotation() {
-  const introImg = document.getElementById('intro-rotating-image');
-  if (!introImg) return;
-
-  const images = [
-    '/FINAL%20LOADS/The%20Girl%20with%20the%20Laptop/1S9A4541.jpg',
-    '/1S9A4487-1.jpg'
-  ];
-
-  // Calculate index based on 168-hour (one week) cycles
-  const totalHours = Math.floor(Date.now() / (1000 * 60 * 60));
-  const weekIndex = Math.floor(totalHours / 168) % images.length;
-
-  introImg.src = images[weekIndex];
+  return;
 }
 
 /**
- * Benefits & Impact Rotation (1.5s iterative highlight)
+ * Benefits & Impact Rotation (3s iterative highlight synced with image)
  */
 function initBenefitsRotation() {
   const items = document.querySelectorAll('.benefit-item');
+  const introImg = document.getElementById('intro-rotating-image');
   if (items.length === 0) return;
+
+  const images = [
+    '/New%20Images/1S9A4753.jpg',
+    '/New%20Images/EDIT2_1S9A4549.jpg',
+    '/New%20Images/EDIT2_1S9A4727.jpg'
+  ];
 
   let currentIndex = 0;
 
@@ -241,5 +236,27 @@ function initBenefitsRotation() {
 
     // Add active to next
     items[currentIndex].classList.add('active');
+
+    // Change image in sync (cycle through 3 images for 6 benefit items)
+    if (introImg) {
+      const parent = introImg.parentElement;
+      // Set parent background to current image to prevent white flash
+      parent.style.backgroundImage = `url("${introImg.src}")`;
+      parent.style.backgroundSize = 'cover';
+      parent.style.backgroundPosition = 'center';
+
+      introImg.style.opacity = '0';
+      setTimeout(() => {
+        const nextImg = images[currentIndex % images.length];
+        introImg.src = nextImg;
+
+        // Wait for next image to load before fading in
+        const imgObj = new Image();
+        imgObj.onload = () => {
+          introImg.style.opacity = '1';
+        };
+        imgObj.src = nextImg;
+      }, 500);
+    }
   }, 3000);
 }
