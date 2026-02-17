@@ -609,7 +609,8 @@ section:last-of-type {
 }
 
 .intro-graphic.reveal {
-    transform: translateZ(0) rotateY(0) opacity(1);
+    transform: translateZ(0) rotateY(0);
+    opacity: 1 !important;
 }
 
 .intro-graphic.glass-panel {
@@ -1483,6 +1484,18 @@ section:last-of-type {
     .intro-graphic {
         height: 300px;
         /* Reduced from 600px for mobile */
+    }
+
+    /* Fix Compliance Image on Mobile */
+    .compliance-section .image-wrapper {
+        height: 400px !important;
+        /* Smaller height for mobile */
+        min-height: 350px !important;
+    }
+
+    .compliance-section .image-wrapper img {
+        object-position: center 5% !important;
+        /* Prioritize the head */
     }
 }
 
