@@ -148,13 +148,13 @@
                 },
                 {
                     id: 'new-2',
-                    title: 'GES Boss Prof. Kofi Davis Announces Bold Reforms to Boost Credibility of 2025 BECE School Selection',
+                    title: 'Director General for GES, Prof. E.K.Davies Announces Bold Reforms to Boost Credibility of 2025 BECE School Selection',
                     img: '/director3.jpg',
                     cat: 'News',
-                    excerpt: 'Prof. Kofi Davis introduces targeted reforms to strengthen transparency and accountability in the 2025 BECE school selection process.',
+                    excerpt: 'Prof. E.K.Davies introduces targeted reforms to strengthen transparency and accountability in the 2025 BECE school selection process.',
                     date: 'February 17, 2026',
                     readTime: '6 min read',
-                    link: 'blog-post.html?id=new-2',
+                    link: 'blog-post.html?id=new-2&v=12',
                     featured: true
                 },
                 {
@@ -189,6 +189,17 @@
                     readTime: '5 min read',
                     link: 'blog-post.html?id=new-5&v=10',
                     featured: true
+                },
+                {
+                    id: 'new-6',
+                    title: 'GES 2025 Posting for Staff Returning from Study Leave with Pay – Check Here!',
+                    img: '/male-shaking-hands.jpg',
+                    cat: 'News',
+                    excerpt: 'GES has announced the posting process for staff returning from study leave with pay. Applications are open until Nov 7, 2025.',
+                    date: 'February 17, 2026',
+                    readTime: '6 min read',
+                    link: 'blog-post.html?id=new-6&v=11',
+                    featured: true
                 }
             ];
             const grid = document.getElementById('blogGrid');
@@ -196,10 +207,20 @@
             const storedPosts = localStorage.getItem('gedp_articles');
             let articles = storedPosts ? JSON.parse(storedPosts) : defaultArticles;
 
-            // Force update if new article is missing OR version is old
-            const hasNew5 = articles.find(a => a.id === 'new-5');
-            if (!hasNew5 || (articles.find(a => a.id === 'new-1') && !articles.find(a => a.id === 'new-1').link.includes('v=10'))) {
-                articles = defaultArticles;
+            // Non-destructive update: Ensure latest articles exist and are updated to v=11
+            let articlesUpdated = false;
+            defaultArticles.forEach(defArt => {
+                const existingIndex = articles.findIndex(a => a.id === defArt.id);
+                if (existingIndex === -1) {
+                    articles.unshift(defArt); // Add if missing
+                    articlesUpdated = true;
+                } else if (!articles[existingIndex].link.includes('v=11')) {
+                    articles[existingIndex] = defArt; // Update if old version
+                    articlesUpdated = true;
+                }
+            });
+
+            if (articlesUpdated) {
                 localStorage.setItem('gedp_articles', JSON.stringify(articles));
             }
 

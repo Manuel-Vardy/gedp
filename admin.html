@@ -291,218 +291,217 @@
             border-color: var(--ghana-gold);
         }
 
-            .form-footer {
-                margin-top: 2rem;
-                display: flex;
-                justify-content: flex-end;
-                gap: 1rem;
-            }
+        .form-footer {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
 
-            .admin-btn-primary {
-                color: #fff;
-            }
+        .admin-btn-primary {
+            color: #fff;
+        }
 
-            .category-inline {
-                display: flex;
-                gap: 0.75rem;
-                align-items: center;
-                margin-top: 0.75rem;
-            }
+        .category-inline {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            margin-top: 0.75rem;
+        }
 
-            .btn-admin-inline {
-                background: var(--midnight);
-                color: #fff;
-                border: none;
-                padding: 0.75rem 1rem;
-                border-radius: 10px;
-                font-weight: 700;
-                cursor: pointer;
-                font-family: 'Poppins', sans-serif;
-                white-space: nowrap;
-            }
+        .btn-admin-inline {
+            background: var(--midnight);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            white-space: nowrap;
+        }
 
-            .image-dropzone {
-                width: 100%;
-                border: 2px dashed #cbd5e1;
-                border-radius: 16px;
-                background: #f8fafc;
-                padding: 1.25rem;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 0.75rem;
-                cursor: pointer;
-                transition: border-color 0.2s, background 0.2s;
-                min-height: 220px;
-            }
+        .image-dropzone {
+            width: 100%;
+            border: 2px dashed #cbd5e1;
+            border-radius: 16px;
+            background: #f8fafc;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            min-height: 220px;
+        }
 
-            .image-dropzone.dragover {
-                border-color: var(--ghana-gold);
-                background: rgba(241, 180, 52, 0.08);
-            }
+        .image-dropzone.dragover {
+            border-color: var(--ghana-gold);
+            background: rgba(241, 180, 52, 0.08);
+        }
 
-            .image-dropzone .hint {
-                color: #64748b;
-                font-size: 0.9rem;
-                text-align: center;
-            }
+        .image-dropzone .hint {
+            color: #64748b;
+            font-size: 0.9rem;
+            text-align: center;
+        }
 
-            .image-preview {
-                width: 100%;
-                height: 220px;
-                object-fit: cover;
-                border-radius: 12px;
-                display: none;
-            }
-        </style>
-    </head>
+        .image-preview {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: none;
+        }
+    </style>
+</head>
 
-    <body class="admin-body">
+<body class="admin-body">
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <a href="index.html">
-                <img src="/GEDP.png" alt="GEDP Logo" class="sidebar-logo">
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="javascript:void(0)" onclick="switchView('articles')" id="nav-articles"
-                        class="nav-link-admin active">News Items</a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:void(0)" onclick="switchView('gallery')" id="nav-gallery"
-                        class="nav-link-admin">Media Gallery</a>
-                </li>
-            </ul>
-            <a href="javascript:void(0)" onclick="handleLogout()" class="nav-link-admin logout-btn">Logout</a>
-        </aside>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="index.html">
+            <img src="/GEDP.png" alt="GEDP Logo" class="sidebar-logo">
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="javascript:void(0)" onclick="switchView('articles')" id="nav-articles"
+                    class="nav-link-admin active">News Items</a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0)" onclick="switchView('gallery')" id="nav-gallery"
+                    class="nav-link-admin">Media Gallery</a>
+            </li>
+        </ul>
+        <a href="javascript:void(0)" onclick="handleLogout()" class="nav-link-admin logout-btn">Logout</a>
+    </aside>
 
-        <!-- Main -->
-        <main class="main-content">
-            <!-- Articles View -->
-            <div id="articlesView">
-                <header class="admin-header">
-                    <div>
-                        <h2>Content Management</h2>
-                    </div>
-                    <button class="btn-add" onclick="openModal()">+ Add New Article</button>
-                </header>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h4>Total Posts</h4>
-                        <p id="totalPosts">3</p>
-                    </div>
-                    <div class="stat-card">
-                        <h4>Published</h4>
-                        <p>3</p>
-                    </div>
-                    <div class="stat-card">
-                        <h4>Recent Views</h4>
-                        <p>1,248</p>
-                    </div>
+    <!-- Main -->
+    <main class="main-content">
+        <!-- Articles View -->
+        <div id="articlesView">
+            <header class="admin-header">
+                <div>
+                    <h2>Content Management</h2>
                 </div>
+                <button class="btn-add" onclick="openModal()">+ Add New Article</button>
+            </header>
 
-                <div class="content-card">
-                    <div class="table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Article Title</th>
-                                    <th>Category</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="articleTableBody">
-                                <!-- Entries will be loaded here -->
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Total Posts</h4>
+                    <p id="totalPosts">3</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Published</h4>
+                    <p>3</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Recent Views</h4>
+                    <p>1,248</p>
                 </div>
             </div>
 
-            <!-- Media Gallery View -->
-            <div id="galleryView" style="display: none;">
-                <header class="admin-header">
-                    <div>
-                        <h2>Media Gallery</h2>
-                    </div>
-                    <button class="btn-add" onclick="alert('Upload coming soon!')">Upload Image</button>
-                </header>
-
-                <div class="content-card" style="padding: 2rem;">
-                    <div id="galleryGrid"
-                        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem;">
-                        <!-- Images will be loaded here -->
-                    </div>
+            <div class="content-card">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Article Title</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="articleTableBody">
+                            <!-- Entries will be loaded here -->
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-        </main>
-
-        <!-- Modal Form -->
-        <div class="modal" id="postModal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 id="modalTitle">Create New Article</h3>
-                    <span class="close-modal" onclick="closeModal()">&times;</span>
-                </div>
-
-                <form id="articleForm" class="admin-form">
-                    <div class="form-grid">
-                        <div class="full-width">
-                            <label class="form-label">Title</label>
-                            <input type="text" id="postTitle" class="admin-input" required
-                                placeholder="Enter clear, engaging title">
-                        </div>
-                        <div>
-                            <label class="form-label">Category</label>
-                            <select id="postCategory" class="admin-input">
-                                <option value="Announcement">Announcement</option>
-                                <option value="Training">Training</option>
-                                <option value="Innovation">Innovation</option>
-                            </select>
-                            <div class="category-inline">
-                                <input type="text" id="newCategory" class="admin-input"
-                                    placeholder="Add new category">
-                                <button type="button" id="addCategoryBtn" class="btn-admin-inline">Add</button>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="form-label">Image</label>
-                            <div id="imageDropzone" class="image-dropzone" tabindex="0" role="button"
-                                aria-label="Upload image">
-                                <img id="imagePreview" class="image-preview" alt="Selected image preview">
-                                <div class="hint" id="imageHint">Click to select an image, or drag and drop here</div>
-                                <div class="hint" id="imageFilename" style="font-size: 0.8rem;"></div>
-                            </div>
-                            <input type="file" id="postImageFile" accept="image/*" style="display:none;">
-                            <input type="hidden" id="postImage" required>
-                        </div>
-                        <div class="full-width">
-                            <label class="form-label">Short Excerpt</label>
-                            <input type="text" id="postExcerpt" class="admin-input" required
-                                placeholder="A brief summary for the card view">
-                        </div>
-                        <div class="full-width">
-                            <label class="form-label">Body Content</label>
-                            <textarea id="postBody" class="admin-input" required
-                                placeholder="Type the full article content here..."></textarea>
-                        </div>
-                    </div>
-                    <div class="form-footer">
-                        <button type="button" onclick="closeModal()" class="btn btn-secondary"
-                            style="background: #e2e8f0; border: none; padding: 0.8rem 1.5rem; border-radius: 10px;">Cancel</button>
-                        <button type="submit" class="btn btn-primary admin-btn-primary"
-                            style="padding: 0.8rem 1.5rem; border-radius: 10px;">Save Article</button>
-                    </div>
-                </form>
             </div>
         </div>
 
-        <script src="./admin.js"></script>
-    </body>
+        <!-- Media Gallery View -->
+        <div id="galleryView" style="display: none;">
+            <header class="admin-header">
+                <div>
+                    <h2>Media Gallery</h2>
+                </div>
+                <button class="btn-add" onclick="alert('Upload coming soon!')">Upload Image</button>
+            </header>
 
-    </html>
+            <div class="content-card" style="padding: 2rem;">
+                <div id="galleryGrid"
+                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem;">
+                    <!-- Images will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Form -->
+    <div class="modal" id="postModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Create New Article</h3>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+
+            <form id="articleForm" class="admin-form">
+                <div class="form-grid">
+                    <div class="full-width">
+                        <label class="form-label">Title</label>
+                        <input type="text" id="postTitle" class="admin-input" required
+                            placeholder="Enter clear, engaging title">
+                    </div>
+                    <div>
+                        <label class="form-label">Category</label>
+                        <select id="postCategory" class="admin-input">
+                            <option value="Announcement">Announcement</option>
+                            <option value="Training">Training</option>
+                            <option value="Innovation">Innovation</option>
+                        </select>
+                        <div class="category-inline">
+                            <input type="text" id="newCategory" class="admin-input" placeholder="Add new category">
+                            <button type="button" id="addCategoryBtn" class="btn-admin-inline">Add</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="form-label">Image</label>
+                        <div id="imageDropzone" class="image-dropzone" tabindex="0" role="button"
+                            aria-label="Upload image">
+                            <img id="imagePreview" class="image-preview" alt="Selected image preview">
+                            <div class="hint" id="imageHint">Click to select an image, or drag and drop here</div>
+                            <div class="hint" id="imageFilename" style="font-size: 0.8rem;"></div>
+                        </div>
+                        <input type="file" id="postImageFile" accept="image/*" style="display:none;">
+                        <input type="hidden" id="postImage" required>
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">Short Excerpt</label>
+                        <input type="text" id="postExcerpt" class="admin-input" required
+                            placeholder="A brief summary for the card view">
+                    </div>
+                    <div class="full-width">
+                        <label class="form-label">Body Content</label>
+                        <textarea id="postBody" class="admin-input" required
+                            placeholder="Type the full article content here..."></textarea>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <button type="button" onclick="closeModal()" class="btn btn-secondary"
+                        style="background: #e2e8f0; border: none; padding: 0.8rem 1.5rem; border-radius: 10px;">Cancel</button>
+                    <button type="submit" class="btn btn-primary admin-btn-primary"
+                        style="padding: 0.8rem 1.5rem; border-radius: 10px;">Save Article</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./admin.js"></script>
+</body>
+
+</html>

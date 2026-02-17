@@ -3015,20 +3015,17 @@ section:last-of-type {
 
 @media (max-width: 768px) {
     .featured-slider-container {
-        height: 380px;
-        /* Reduced as requested */
+        height: 480px;
         border-radius: 0;
     }
 
     .featured-content {
-        padding: 1.5rem;
-        /* Tighter padding */
+        padding: 1.25rem;
     }
 
     .featured-title {
-        font-size: 1.4rem;
-        /* Smaller font as requested */
-        line-height: 1.3;
+        font-size: 1.5rem;
+        line-height: 1.2;
     }
 
     .featured-badge {

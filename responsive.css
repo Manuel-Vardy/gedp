@@ -247,6 +247,20 @@
         margin-bottom: 2rem;
     }
 
+    .page-header {
+        padding: 170px 0 80px 0 !important;
+    }
+
+    .page-header h1 {
+        font-size: 2.25rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .page-header p {
+        font-size: 1.1rem !important;
+        max-width: 90% !important;
+    }
+
     /* Adjusted Slider Controls for Mobile */
     .slider-controls {
         bottom: 2rem;
@@ -382,17 +396,17 @@
 
     .student-laptop {
         background-position: 45% 15% !important;
-        /* Mobile tweak to keep student visible */
     }
 
+    /* Range B: 376px - 480px (Mainstream Mobile) */
     .slide-content h1 {
-        font-size: 2.1rem;
+        font-size: 2.22rem !important;
         line-height: 1.05;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
     }
 
     .slide-content p {
-        font-size: 1rem;
+        font-size: 1.05rem !important;
     }
 
     .slide-content {
@@ -400,7 +414,6 @@
         padding: 0 1.5rem;
         padding-top: 4rem;
         text-align: left;
-        /* Left aligned text */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -416,12 +429,119 @@
         padding-bottom: 0 !important;
     }
 
-    /* Reduce section padding for mobile to fix wide gaps */
+    .page-header {
+        padding: 150px 0 60px 0 !important;
+    }
+
+    .page-header h1 {
+        font-size: 1.85rem !important;
+    }
+
+    .page-header p {
+        font-size: 0.95rem !important;
+    }
+
+    /* Range B Related News */
+    .related-news-row-card {
+        width: 98% !important;
+        margin: 0 auto 0.75rem auto !important;
+        padding: 0.6rem !important;
+        gap: 0.75rem !important;
+        background: transparent !important;
+        border-bottom: 1px solid #eee;
+        border-radius: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .related-img-container {
+        width: 120px !important;
+        height: 120px !important;
+        border-radius: 12px !important;
+        flex-shrink: 0;
+    }
+
+    .related-content {
+        height: 120px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        padding-left: 0.25rem;
+    }
+
+    .related-cat {
+        font-size: 0.65rem !important;
+        font-weight: 700 !important;
+        color: #008080 !important;
+        margin-bottom: 2px !important;
+        text-transform: uppercase;
+    }
+
+    .related-title {
+        font-size: 0.95rem !important;
+        font-weight: 500 !important;
+        line-height: 1.3 !important;
+        color: #000 !important;
+        margin: 0 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 5 !important;
+        line-clamp: 5 !important;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .hero-cta {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        position: absolute;
+        left: 1.5rem !important;
+        bottom: 15% !important;
+        align-items: flex-start;
+    }
+
+    /* Range A: 320px - 375px (Small Mobile / iPhone SE) */
+    @media (max-width: 375px) {
+        .slide-content h1 {
+            font-size: 1.85rem !important;
+            margin-bottom: 2.5rem;
+        }
+
+        .slide-content p {
+            font-size: 0.9rem !important;
+        }
+
+        .hero-cta {
+            bottom: 12% !important;
+        }
+
+        /* Range A Related News */
+        .related-img-container {
+            width: 100px !important;
+            height: 100px !important;
+        }
+
+        .related-content {
+            height: 100px !important;
+        }
+
+        .related-title {
+            font-size: 0.85rem !important;
+            -webkit-line-clamp: 4 !important;
+            line-clamp: 4 !important;
+        }
+
+        .module-card h3 {
+            font-size: 1.1rem !important;
+        }
+    }
+
+    /* Shared Small Mobile Fixes */
     section {
         padding: 1.5rem 0;
     }
 
-    /* Tighter intro spacing */
     .intro-section {
         padding-top: 0 !important;
         margin-top: 40px !important;
@@ -441,9 +561,28 @@
         width: 60px !important;
     }
 
+    #modules {
+        padding: 1.5rem 0 !important;
+    }
+
+    #modules .mb-4 {
+        margin-bottom: 0.7rem !important;
+    }
+
+    #modules .container {
+        width: 98% !important;
+        max-width: 98% !important;
+        padding: 0 1% !important;
+    }
+
+    #modules .grid-3 {
+        gap: 1.25rem !important;
+    }
+
     .module-card,
     .portal-card {
-        padding: 1.75rem;
+        padding: 1.2rem;
+        width: 100%;
     }
 
     .module-card .icon,
@@ -454,33 +593,27 @@
 
     .container {
         padding: 0 0.75rem;
-        /* Reduced from 1rem for wider reading area */
     }
 
-    .hero-btn,
+    .hero-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+        min-width: 110px;
+        width: fit-content;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
     .read-more-btn,
     .btn-pill-solid,
     .compliance-section .btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
-        width: auto !important;
-        min-width: 160px;
-        /* Balanced width instead of 100% */
+        min-width: 150px;
         display: flex !important;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0;
-    }
-
-    .hero-cta {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 0.35rem;
-        position: absolute;
-        left: 1.5rem !important;
-        bottom: 15% !important;
-        align-items: flex-start;
     }
 
     .grid-2,
@@ -488,14 +621,12 @@
         gap: 1.5rem;
     }
 
-    /* Footer Mobile Refinements */
     .footer {
         text-align: center;
     }
 
     .footer h3 {
         font-weight: 500;
-        /* Regular/Medium instead of Bold */
         font-size: 1.1rem;
         margin-bottom: 1rem;
         margin-top: 1.5rem;
@@ -505,7 +636,6 @@
     .footer a,
     .footer li {
         font-weight: 400;
-        /* Regular weight */
         font-size: 0.95rem;
         color: rgba(255, 255, 255, 0.9);
     }
@@ -536,6 +666,10 @@
     .intro-section .grid-2 {
         gap: 1.5rem;
         margin-top: 1rem !important;
+    }
+
+    .related-desc {
+        display: none !important;
     }
 }
 
@@ -569,7 +703,7 @@
 
     /* Featured News Slider */
     .featured-slider-container {
-        height: 320px !important;
+        height: 450px !important;
     }
 
     .featured-content {
@@ -607,11 +741,11 @@
 
     /* Blog Cards */
     .module-card h3 {
-        font-size: 1.1rem !important;
+        font-size: 1.2rem !important;
     }
 
     .module-card p {
-        font-size: 0.85rem !important;
+        font-size: 1.0rem !important;
     }
 
     /* Post Article */
@@ -626,4 +760,5 @@
     .article-content-rich {
         font-size: 0.95rem !important;
     }
+
 }
