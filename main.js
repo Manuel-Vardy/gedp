@@ -2,6 +2,16 @@
 import './style.css';
 import './responsive.css';
 
+// Page loader
+window.addEventListener('load', () => {
+  const loader = document.getElementById('page-loader');
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add('loaded');
+    }, 300);
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   initSlider();
   initScrollAnimations();

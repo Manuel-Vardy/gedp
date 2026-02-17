@@ -22,7 +22,7 @@
     <style>
         .gallery-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
         }
 
         @media (max-width: 992px) {
@@ -30,6 +30,7 @@
                 column-count: 2 !important;
                 column-gap: 1rem !important;
             }
+
             .gallery-item {
                 margin-bottom: 1rem !important;
             }
@@ -40,6 +41,7 @@
                 column-count: 1 !important;
                 column-gap: 0 !important;
             }
+
             .gallery-item {
                 margin-bottom: 1rem !important;
                 border-radius: 8px !important;
@@ -49,6 +51,13 @@
 </head>
 
 <body>
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <img src="/GEDP.png" alt="GEDP" class="loader-logo">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
     <div class="top-bar">
         <div class="container flex justify-between align-center">
             <span class="top-bar-title">Ghana Education Digital Platform — Let's All Evolve Together</span>
@@ -120,39 +129,41 @@
             <div class="container">
                 <div class="masonry-grid" style="column-count: 3; column-gap: 1.5rem;">
                     <!-- Gallery Items -->
-                    <div class="gallery-item" style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/haruna4.jpg" alt="Event"
-                            style="width: 100%; height: auto; display: block;">
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/haruna4.jpg" alt="Event" style="width: 100%; height: auto; display: block;">
                     </div>
-                    <div class="gallery-item" style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/paperless.jpg" alt="Classroom"
-                            style="width: 100%; height: auto; display: block;">
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/paperless.jpg" alt="Classroom" style="width: 100%; height: auto; display: block;">
                     </div>
-                    <div class="gallery-item" style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
                         <img src="/director3.jpg" alt="Administration"
                             style="width: 100%; height: auto; display: block;">
                     </div>
-                    <div class="gallery-item" style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/haruna1.jpg" alt="Event"
-                            style="width: 100%; height: auto; display: block;">
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/haruna1.jpg" alt="Event" style="width: 100%; height: auto; display: block;">
                     </div>
-                    <div class="gallery-item" style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/haruna2.jpg" alt="Classroom"
-                            style="width: 100%; height: auto; display: block;">
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/haruna2.jpg" alt="Classroom" style="width: 100%; height: auto; display: block;">
                     </div>
-                    <div class="gallery-item" style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/haruna3.jpg" alt="Administration"
-                            style="width: 100%; height: auto; display: block;">
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/haruna3.jpg" alt="Administration" style="width: 100%; height: auto; display: block;">
                     </div>
-                    <div class="gallery-item" style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/director1.jpg" alt="Event"
-                            style="width: 100%; height: auto; display: block;">
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/director1.jpg" alt="Event" style="width: 100%; height: auto; display: block;">
                     </div>
-                    <div class="gallery-item" style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/director2.jpg" alt="Classroom"
-                            style="width: 100%; height: auto; display: block;">
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/director2.jpg" alt="Classroom" style="width: 100%; height: auto; display: block;">
                     </div>
-                    <div class="gallery-item" style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
                         <img src="/director3.jpg" alt="Administration"
                             style="width: 100%; height: auto; display: block;">
                     </div>
@@ -161,9 +172,12 @@
         </section>
 
         <!-- Lightbox Modal -->
-        <div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 9999; justify-content: center; align-items: center; padding: 2rem;">
-            <button id="closeLightbox" style="position: absolute; top: 2rem; right: 2rem; background: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; z-index: 10000;">&times;</button>
-            <img id="lightboxImg" src="" alt="" style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px;">
+        <div id="lightbox"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 9999; justify-content: center; align-items: center; padding: 2rem;">
+            <button id="closeLightbox"
+                style="position: absolute; top: 2rem; right: 2rem; background: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; z-index: 10000;">&times;</button>
+            <img id="lightboxImg" src="" alt=""
+                style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px;">
         </div>
     </main>
 
@@ -191,7 +205,7 @@
 
         // Open lightbox when clicking on gallery item
         galleryItems.forEach(item => {
-            item.addEventListener('click', function() {
+            item.addEventListener('click', function () {
                 const img = this.querySelector('img');
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
@@ -201,13 +215,13 @@
         });
 
         // Close lightbox when clicking close button
-        closeLightbox.addEventListener('click', function() {
+        closeLightbox.addEventListener('click', function () {
             lightbox.style.display = 'none';
             document.body.style.overflow = 'auto'; // Re-enable scrolling
         });
 
         // Close lightbox when clicking outside the image
-        lightbox.addEventListener('click', function(e) {
+        lightbox.addEventListener('click', function (e) {
             if (e.target === lightbox) {
                 lightbox.style.display = 'none';
                 document.body.style.overflow = 'auto';
@@ -215,7 +229,7 @@
         });
 
         // Close lightbox with Escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && lightbox.style.display === 'flex') {
                 lightbox.style.display = 'none';
                 document.body.style.overflow = 'auto';

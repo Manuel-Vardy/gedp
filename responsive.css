@@ -194,9 +194,8 @@
 
     /* Mobile Hero Adjustment */
     .hero {
-        height: auto;
-        min-height: 80vh;
-        /* Taller on mobile for content */
+        min-height: 80vh !important;
+        height: 80vh;
     }
 
     .slide-content h1 {
@@ -380,6 +379,7 @@
     .slide-content {
         max-width: 100%;
         padding: 0 1.5rem;
+        padding-top: 4rem;
         text-align: left;
         /* Left aligned text */
         display: flex;
@@ -390,12 +390,10 @@
     }
 
     .hero {
-        height: auto;
-        min-height: 85vh;
-        /* Enough space for text + image bg */
+        min-height: 85vh !important;
+        height: 85vh;
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
-        /* Ensure no bottom padding */
     }
 
     /* Reduce section padding for mobile to fix wide gaps */
