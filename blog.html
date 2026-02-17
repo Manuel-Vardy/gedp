@@ -136,41 +136,72 @@
         document.addEventListener('DOMContentLoaded', () => {
             const defaultArticles = [
                 {
-                    id: '1',
-                    title: 'Minister launches GEDP Phase 2 Expansion',
-                    img: '/haruna4.jpg',
+                    id: 'new-1',
+                    title: 'GES Promotion Examination Centres 2025 – Check Here!',
+                    img: '/New Images/bece.jpg',
                     cat: 'Announcement',
-                    excerpt: 'The Ministry of Education has officially launched the second phase of the Ghana Education Digital Platform...',
-                    date: 'February 9, 2026',
-                    readTime: '4 min read',
-                    featured: true
-                },
-                {
-                    id: '3',
-                    title: 'Masterclass: Maximizing Data Analytics for GES',
-                    img: '/paperless.jpg',
-                    cat: 'Training',
-                    excerpt: 'Our upcoming training session aims to equip administrators with the skills to interpret complex educational data...',
-                    date: 'February 9, 2026',
-                    readTime: '6 min read',
-                    featured: true
-                },
-                {
-                    id: '5',
-                    title: 'Going Paperless: The Journey of 500 Schools',
-                    img: '/director3.jpg',
-                    cat: 'Innovation',
-                    excerpt: 'A deep dive into how 500 schools across Ghana successfully transitioned to fully digital administrative processes...',
-                    date: 'February 9, 2026',
+                    excerpt: 'The GES has officially released the Promotion Examination Centres. Check your region and centre details here.',
+                    date: 'February 17, 2026',
                     readTime: '5 min read',
+                    link: 'blog-post.html?id=new-1&v=7', // Incremented version to force update
+                    featured: true
+                },
+                {
+                    id: 'new-2',
+                    title: 'GES Boss Prof. Kofi Davis Announces Bold Reforms to Boost Credibility of 2025 BECE School Selection',
+                    img: '/director3.jpg',
+                    cat: 'News',
+                    excerpt: 'Prof. Kofi Davis introduces targeted reforms to strengthen transparency and accountability in the 2025 BECE school selection process.',
+                    date: 'February 17, 2026',
+                    readTime: '6 min read',
+                    link: 'blog-post.html?id=new-2',
+                    featured: true
+                },
+                {
+                    id: 'new-3',
+                    title: 'Why Professor Davis and the Minister of Education deserve national commendation',
+                    img: '/haruna4.jpg',
+                    cat: 'News',
+                    excerpt: 'Education stakeholders laud the success of the 2025 BECE and CSSPS as one of the most transparent in history.',
+                    date: 'February 17, 2026',
+                    readTime: '7 min read',
+                    link: 'blog-post.html?id=new-3&v=8',
+                    featured: true
+                },
+                {
+                    id: 'new-4',
+                    title: 'Engage with stakeholders to deliver robust digital education policy – Haruna to GES Council',
+                    img: '/haruna3.jpg',
+                    cat: 'News',
+                    excerpt: 'The GES Council has been tasked to develop Ghana’s first-ever comprehensive Digital Education Policy by early 2026.',
+                    date: 'February 17, 2026',
+                    readTime: '8 min read',
+                    link: 'blog-post.html?id=new-4&v=9',
+                    featured: true
+                },
+                {
+                    id: 'new-5',
+                    title: 'Government to commit ¢1bn to school infrastructure in 2026 – Education Minister',
+                    img: '/haruna2.jpg',
+                    cat: 'News',
+                    excerpt: 'The government will inject GH₵1 billion from the GETFund in 2026 to address infrastructure challenges and eliminate the double-track system.',
+                    date: 'February 17, 2026',
+                    readTime: '5 min read',
+                    link: 'blog-post.html?id=new-5&v=10',
                     featured: true
                 }
             ];
-
             const grid = document.getElementById('blogGrid');
             const sliderContainer = document.getElementById('featuredSlider');
             const storedPosts = localStorage.getItem('gedp_articles');
-            const articles = storedPosts ? JSON.parse(storedPosts) : defaultArticles;
+            let articles = storedPosts ? JSON.parse(storedPosts) : defaultArticles;
+
+            // Force update if new article is missing OR version is old
+            const hasNew5 = articles.find(a => a.id === 'new-5');
+            if (!hasNew5 || (articles.find(a => a.id === 'new-1') && !articles.find(a => a.id === 'new-1').link.includes('v=10'))) {
+                articles = defaultArticles;
+                localStorage.setItem('gedp_articles', JSON.stringify(articles));
+            }
 
             // --- Featured Slider Logic ---
             let migrationNeeded = false;
@@ -198,11 +229,13 @@
                 sliderContainer.innerHTML = '';
 
                 featuredArticles.forEach((art, idx) => {
-                    const params = new URLSearchParams({ title: art.title, img: art.img, cat: art.cat });
+                    const params = new URLSearchParams({ id: art.id, title: art.title, img: art.img, cat: art.cat });
                     const url = `blog-post.html?${params.toString()}`;
 
                     const slide = document.createElement('div');
                     slide.className = `featured-slide ${idx === 0 ? 'active' : ''}`;
+                    slide.style.backgroundColor = '#0F172A'; // Dark background for text visibility
+                    slide.style.minHeight = '400px'; // Ensure height since image is gone
                     slide.style.cursor = 'pointer';
                     slide.onclick = () => window.location.href = url;
 
@@ -212,10 +245,13 @@
                     brandBadge.innerHTML = `<span style="font-size: 0.75rem; font-weight: 600; color: #fff; text-transform: uppercase; letter-spacing: 0.05em;">News & Update</span>`;
                     slide.appendChild(brandBadge);
 
+                    // Image restored
                     const img = document.createElement('img');
                     img.src = art.img;
+                    img.alt = art.title;
                     img.className = 'featured-img';
                     slide.appendChild(img);
+
 
                     const overlay = document.createElement('div');
                     overlay.className = 'featured-overlay';
@@ -275,20 +311,20 @@
                 articleEl.className = 'module-card hide-reveal clickable-news-card';
                 articleEl.style.cssText = `padding: 0; overflow: hidden; background: white; border-radius: 16px; transition-delay: ${0.1 * (index + 1)}s; opacity: 1; transform: translateY(0); cursor: pointer;`;
 
-                const params = new URLSearchParams({ title: art.title, img: art.img, cat: art.cat });
+                const params = new URLSearchParams({ id: art.id, title: art.title, img: art.img, cat: art.cat });
                 const articleUrl = `blog-post.html?${params.toString()}`;
 
                 articleEl.setAttribute('onclick', `window.location.href='${articleUrl}'`);
 
                 articleEl.innerHTML = `
-                    <div class="blog-card-image-container">
-                        <img src="${art.img}" alt="${art.title}" class="blog-card-image">
+                    <div style="height: 240px; overflow: hidden;">
+                        <img src="${art.img}" alt="${art.title}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                     </div>
-                    <div style="padding: 2rem;">
+                    <div class="news-card-body">
                         <span style="font-size: 0.8rem; font-weight: 600; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em;">${art.cat}</span>
-                        <h3 style="margin: 0.5rem 0 1rem 0; font-size: 1.4rem; line-height: 1.3;">${art.title}</h3>
+                        <h3>${art.title}</h3>
                         <p style="margin-bottom: 1.5rem;">${art.excerpt}</p>
-                        <a href="${articleUrl}" class="read-more-btn" onclick="event.stopPropagation();">Read Full Article &rarr;</a>
+                        <a href="${articleUrl}" class="read-more-btn" style="margin-top: auto;" onclick="event.stopPropagation();">Read Full Article &rarr;</a>
                     </div>
                 `;
                 grid.appendChild(articleEl);

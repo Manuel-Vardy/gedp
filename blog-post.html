@@ -197,23 +197,27 @@
     </footer>
 
     <script>
-        (function () {
+        document.addEventListener('DOMContentLoaded', () => {
             function enforceArticleImageLimit() {
                 const contentArea = document.querySelector('.article-content-rich');
                 if (!contentArea) return;
 
-                const imgs = Array.from(contentArea.querySelectorAll('img'));
-                imgs.slice(2).forEach(img => img.remove());
-
-                const kept = Array.from(contentArea.querySelectorAll('img')).slice(0, 2);
-                kept.forEach((imgEl, idx) => {
-                    imgEl.removeAttribute('style');
-                    imgEl.classList.remove('post-img-full', 'post-img-left', 'post-img-right');
-                    imgEl.classList.add('post-img-full');
-                });
+                // Remove ALL images from the article body as requested
+                const imgs = contentArea.querySelectorAll('img');
+                imgs.forEach(img => img.remove());
             }
 
+            // Safety fallback: Force hide loader after 3 seconds in case window.load is slow on mobile
+            setTimeout(() => {
+                const loader = document.getElementById('page-loader');
+                if (loader && !loader.classList.contains('loaded')) {
+                    loader.classList.add('loaded');
+                }
+            }, 3000);
+
             const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+
             const title = params.get('title');
             const img = params.get('img');
             const cat = params.get('cat');
@@ -261,54 +265,452 @@
                 }
             }
 
+            if (id === 'new-1' || (title && (title.includes('GES Promotion') || title.includes('Examination Centres')))) {
+                // Manually inject content for the GES Promotion News
+                const newTitle = 'GES Promotion Examination Centres 2025 – Check Here!';
+                const newCat = 'Announcement';
+                const newDate = 'February 17, 2026';
+
+                document.title = newTitle + " | GEDP";
+                document.querySelector('.post-title').textContent = newTitle;
+                document.querySelector('.post-category').textContent = newCat;
+                document.querySelector('.post-date').textContent = newDate;
+
+                // Ensure hero image is visible and set correctly
+                const heroImg = document.querySelector('.post-hero-img');
+                if (heroImg) {
+                    heroImg.style.display = 'block';
+                    heroImg.src = '/New Images/bece.jpg';
+                }
+
+                const contentArea = document.querySelector('.article-content-rich');
+                if (contentArea) {
+                    contentArea.innerHTML = `
+                        <p class="lead">The Ghana Education Service (GES) has officially released the 2025 Promotion Examination Centres as part of the ongoing Teachers’ Promotion Exercise. This announcement is crucial for all shortlisted candidates, as it provides clarity on where the promotion examinations will be conducted nationwide and what candidates must do to verify their centres ahead of the examination dates. The release of the centres follows the successful dispatch of index numbers via SMS to shortlisted applicants and the circulation of the full list of candidates to District, Municipal, Metro, and Regional Education Directorates across Ghana. The 2025 GES Promotion Examination is designed to assess teachers seeking advancement to higher ranks within the Service. The exercise covers candidates across multiple grades, including:</p>
+
+                        <ul>
+                            <li>Principal Superintendent (PS)</li>
+                            <li>Assistant Director II (AD II)</li>
+                            <li>Assistant Director I (AD I)</li>
+                            <li>Deputy Director (DD)</li>
+                        </ul>
+
+                        <p>Candidates who have not received SMS notifications containing their Staff ID, Index Number, and Examination Centre are advised to check directly with their respective education offices for confirmation.</p>
+                        
+                        <h3>2025 GES Promotion Examination Dates</h3>
+                        <p>The examinations will be conducted over two days nationwide:</p>
+                        <ul>
+                            <li><strong>Monday, 29th December 2025</strong><br>
+                                Ranks: <em>Principal Superintendent (PS) and Assistant Director II (AD II)</em><br>
+                                Time: 9:00 am – 12:00 noon</li>
+                            <li><strong>Tuesday, 30th December 2025</strong><br>
+                                Ranks: <em>Assistant Director I (AD I) and Deputy Director (DD)</em><br>
+                                Time: 9:00 am – 12:00 noon</li>
+                        </ul>
+
+                        <h3>GES Promotion Examination Centres 2025</h3>
+                        <p>GES has designated approved examination centres across all regions to ensure accessibility for candidates nationwide. Candidates are expected to report to the centres indicated in their SMS notifications or as confirmed at their district or regional offices.</p>
+
+                        <p>Below is a regional overview of the 2025 GES Promotion Examination Centres:</p>
+
+                        <h4>Ahafo Region</h4>
+                        <ul>
+                            <li>St. Joseph’s College of Education, Bechem</li>
+                            <li>Ahafoman Senior High School, Goaso</li>
+                        </ul>
+
+                        <h4>Ashanti Region</h4>
+                        <ul>
+                            <li>Agogo College of Education, Akim Agogo</li>
+                            <li>Akrokerri College of Education, Akrokerri</li>
+                            <li>Offinso College of Education, Offinso</li>
+                            <li>St. Monica’s College of Education, Mampong</li>
+                            <li>Akenten Appiah-Menka University of Skills Training and Entrepreneurial Development (AAMUSTED)</li>
+                            <li>St. Louis College of Education, Kumasi</li>
+                            <li>Kumasi Anglican Senior High School (KASS)</li>
+                            <li>Kumasi Senior High Technical School (KSHTS)</li>
+                            <li>Osei Tutu Senior High School</li>
+                            <li>Wesley College of Education, Kumasi</li>
+                        </ul>
+
+                        <h4>Bono Region</h4>
+                        <ul>
+                            <li>Al-Farouq College of Education, Wenchi</li>
+                            <li>Berekum College of Education, Berekum</li>
+                            <li>St. Ambrose College of Education, Dormaa</li>
+                        </ul>
+
+                        <h4>Bono East Region</h4>
+                        <ul>
+                            <li>Atebubu College of Education, Atebubu</li>
+                            <li>UEW CoDeL Office, Techiman</li>
+                        </ul>
+
+                        <h4>Central Region</h4>
+                        <ul>
+                            <li>Foso College of Education, Assin Foso</li>
+                            <li>NLT, University of Cape Coast</li>
+                            <li>OLA College of Education</li>
+                            <li>University of Education, Winneba – Central Campus</li>
+                            <li>UEW Winneba – North Campus</li>
+                        </ul>
+
+                        <h4>Eastern Region</h4>
+                        <ul>
+                            <li>Abetifi College of Education</li>
+                            <li>Kibi College of Education</li>
+                            <li>Methodist College of Education</li>
+                            <li>Mount Mary College of Education</li>
+                            <li>Presbyterian College of Education, Akropong-Akwapim</li>
+                            <li>SDA College of Education, Asokore–Koforidua</li>
+                        </ul>
+
+                        <h4>Greater Accra Region</h4>
+                        <ul>
+                            <li>Accra College of Education</li>
+                            <li>Presbyterian Senior High School (PRESEC), Legon</li>
+                            <li>Ada College of Education</li>
+                            <li>Chemu Senior High School, Tema</li>
+                            <li>University of Cape Coast Accra Study Centre (UCC CoDe)</li>
+                        </ul>
+
+                        <h4>Northern & Savannah Zones</h4>
+                        <ul>
+                            <li>Bagabaga College of Education, Tamale</li>
+                            <li>Tamale College of Education</li>
+                            <li>Bimbilla College of Education, Bimbilla</li>
+                        </ul>
+
+                        <h4>North East Region</h4>
+                        <ul>
+                            <li>Gambaga College of Education, Gambaga</li>
+                        </ul>
+
+                        <h4>Upper East Region</h4>
+                        <ul>
+                            <li>Gbewaa College of Education, Pusiga</li>
+                            <li>St. John Bosco College of Education, Navrongo</li>
+                        </ul>
+
+                        <h4>Upper West Region</h4>
+                        <ul>
+                            <li>Nusrat Jahan Ahmadiyya College of Education, Wa</li>
+                            <li>Tumu College of Education, Tumu</li>
+                        </ul>
+
+                        <h4>Oti Region</h4>
+                        <ul>
+                            <li>Dambai College of Education</li>
+                            <li>Jasikan College of Education</li>
+                        </ul>
+
+                        <h4>Volta Region</h4>
+                        <ul>
+                            <li>Holy Spirit College of Education, Ho</li>
+                            <li>Ho Technical University</li>
+                            <li>St. Francis’ College of Education, Hohoe</li>
+                            <li>St. Teresa’s College of Education, Hohoe</li>
+                            <li>Akatsi College of Education, Akatsi</li>
+                        </ul>
+
+                        <h4>Western & Western North Zones</h4>
+                        <ul>
+                            <li>Holy Child College of Education, Takoradi</li>
+                            <li>Fijai Senior High School, Takoradi</li>
+                            <li>St. John’s College, Takoradi</li>
+                            <li>Wiawso College of Education, Sefwi Wiawso</li>
+                            <li>(Some districts in Western Region will write at Western North centres)</li>
+                        </ul>
+
+                        <h3>Special Examination Centres for Candidates with Special Needs</h3>
+                        <p>GES has provided designated centres for candidates with special needs, especially visually challenged candidates:</p>
+                        <ul>
+                            <li>Wesley College of Education, Kumasi</li>
+                            <li>Presbyterian College of Education, Akropong</li>
+                            <li>Nusrat Jahan Ahmadiyya College of Education, Wa</li>
+                        </ul>
+                        <p>Candidates requiring special assistance are expected to make prior arrangements before the examination date.</p>
+
+                        <h3>Important Examination Day Guidelines</h3>
+                        <p>Candidates must:</p>
+                        <ul>
+                            <li>Report to their designated examination centres early.</li>
+                            <li>Present a valid National Identification Card.</li>
+                            <li>Clearly write their Staff ID and Index Number on all examination papers.</li>
+                        </ul>
+
+                        <h3>Support and Enquiries</h3>
+                        <p>Candidates facing challenges regarding centres, index numbers, or other examination-related issues may contact the GES Promotion Examination Support Team via:</p>
+                        <ul>
+                            <li>Phone/WhatsApp/Voice Call: <strong>0550326931</strong></li>
+                            <li>Email: <a href="mailto:gespromotionexams@gmail.com">gespromotionexams@gmail.com</a></li>
+                        </ul>
+
+                        <h3>Conclusion</h3>
+                        <p>The release of the GES Promotion Examination Centres 2025 marks a key milestone in the promotion process. Candidates are encouraged to verify their centres early, make necessary travel arrangements, and adhere strictly to all examination guidelines to ensure a smooth and successful examination experience.</p>
+                        
+                        <p><strong>Source:</strong> <a href="https://geshub.org" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">GESHub.org</a></p>
+                    `;
+                }
+            }
+
+            if (id === 'new-2' || (title && title.includes('Kofi Davis'))) {
+                const newTitle = 'GES Boss Prof. Kofi Davis Announces Bold Reforms to Boost Credibility of 2025 BECE School Selection';
+                const newCat = 'News';
+                const newDate = 'February 17, 2026';
+
+                document.title = newTitle + " | GEDP";
+                document.querySelector('.post-title').textContent = newTitle;
+                document.querySelector('.post-category').textContent = newCat;
+                document.querySelector('.post-date').textContent = newDate;
+
+                const heroImg = document.querySelector('.post-hero-img');
+                if (heroImg) {
+                    heroImg.style.display = 'block';
+                    heroImg.src = '/director3.jpg';
+                }
+
+                const contentArea = document.querySelector('.article-content-rich');
+                if (contentArea) {
+                    contentArea.innerHTML = `
+                        <p class="lead">The Director-General of the Ghana Education Service, Prof. Kofi Davis, has introduced targeted reforms to strengthen transparency and accountability in the 2025 BECE school selection process.</p>
+
+                        <h3>Transparent Processes for Equitable Placement</h3>
+                        <p>Prof. Kofi Davis, Director-General of the Ghana Education Service (GES), used the 2025 BECE School Selection Guidelines launch to announce key administrative and technological reforms aimed at improving placement accuracy and restoring public trust. He emphasized that GES is deploying upgraded software that automates cross-checking of candidate data to minimize human error and bias in placement.</p>
+
+                        <h3>Reinforcing the Role of Parents</h3>
+                        <p>A major highlight of his presentation was the insistence that no headteacher or teacher should fill out school selection forms on behalf of a candidate without written consent from a parent or guardian. Prof. Davis reiterated that parents must remain the primary decision-makers in this process, and their signatures on the form are non-negotiable.</p>
+
+                        <h3>Training and Monitoring Nationwide</h3>
+                        <p>GES, under his direction, will roll out an intensive nationwide training exercise for school heads and district education directors. Monitoring teams will be deployed across all 16 regions to ensure compliance with the new guidelines. Schools found to be flouting these rules may face administrative sanctions.</p>
+
+                        <h3>Digital Verification of Choices</h3>
+                        <p>Another innovation announced was the introduction of a digital verification portal, where students and parents can confirm their selected schools via SMS or online using a unique BECE index number. This step aims to curb incidents of form tampering or incorrect submissions by intermediaries.</p>
+
+                        <h3>RELATED STORIES</h3>
+                        <ul>
+                            <li>GES Announces 2025 BECE and WASSCE Dates for School Candidates</li>
+                            <li>Dr. Eric Nkansah Relieved as GES Director-General; Prof. Ernest Kofi Davis Appointed Successor</li>
+                            <li>CETAG Declares Indefinite Strike Over Unresolved Grievances starting January 2</li>
+                            <li>WAEC to Release 2024 WASSCE Results Soon After Government Disburses GH₵25 Million</li>
+                            <li>GES Assures 2024 WASSCE Results May Be Released by Year-End Amid WAEC Debt Challenges</li>
+                        </ul>
+
+                        <h3>Appeals and Resolution Process Improved</h3>
+                        <p>Prof. Davis noted that the appeals window for school placements would now be more streamlined. A dedicated hotline and regional help desks will be established to address complaints within a 5-day resolution period after placement results are released.</p>
+
+                        <h3>Concluding Summary:</h3>
+                        <p>GES, led by Prof. Kofi Davis, is introducing a proactive and transparent approach to the 2025 BECE school selection process. From digital verification and nationwide training to enforcing parental consent and swift complaint resolution, these reforms are intended to empower students, engage families, and uphold the integrity of Ghana’s basic education system</p>
+                    `;
+                }
+            }
+
+            if (id === 'new-3' || (title && title.includes('Commendation'))) {
+                const newTitle = 'Why Professor Davis and the Minister of Education deserve national commendation';
+                const newCat = 'News';
+                const newDate = 'February 17, 2026';
+
+                document.title = newTitle + " | GEDP";
+                document.querySelector('.post-title').textContent = newTitle;
+                document.querySelector('.post-category').textContent = newCat;
+                document.querySelector('.post-date').textContent = newDate;
+
+                const heroImg = document.querySelector('.post-hero-img');
+                if (heroImg) {
+                    heroImg.style.display = 'block';
+                    heroImg.src = '/haruna4.jpg';
+                }
+
+                const contentArea = document.querySelector('.article-content-rich');
+                if (contentArea) {
+                    contentArea.innerHTML = `
+                        <p class="lead">When the 2025 Basic Education Certificate Examination (BECE) ended smoothly and the subsequent Computerized School Selection and Placement System (CSSPS) was hailed as one of the most transparent and efficient in recent history, two key figures stood prominently behind the success - Prof Ernest Kofi Davis, Director General of the Ghana Education Service (GES), and the Minister of Education.</p>
+
+                        <p>On Wednesday, September 17, 2025, the announcement of placements came with an air of relief and satisfaction. For the first time in many years, the exercise was not marred by the familiar cries of corruption, frustration, and systemic loopholes.</p>
+
+                        <p>Parents, students, and education stakeholders across the country lauded the process as the most successful and corruption-free placement in recent memory.</p>
+
+                        <h3>Policy Direction and Execution</h3>
+                        <p>Education experts point out that this historic success was the result of apt policy directions from the Minister of Education, Haruna Iddrisu, coupled with the pragmatic leadership style of Prof Davis and his formidable GES team. While the Minister provided the framework of reforms and insisted on strict adherence to transparency and accountability, Prof Davis ensured effective implementation on the ground.</p>
+
+                        <p>This synergy of vision and execution is being hailed as a model for how Ghana's education sector can be transformed.</p>
+
+                        <h3>Stringent Measures Against Corruption</h3>
+                        <p>Prof Davis introduced strict checks and accountability frameworks to ensure that the placement system operated on merit rather than influence.</p>
+
+                        <p>The notorious "placement paralysis," which in previous years had compelled desperate parents to pay bribes to secure schools for their children, was firmly tackled. Under his stewardship, special monitoring teams, enhanced digital security, and strict oversight mechanisms were deployed - leaving little room for manipulation.</p>
+
+                        <h3>Smooth Examinations, Timely Support</h3>
+                        <p>The credibility of the placement also rested on the smooth conduct of the BECE nationwide. Unlike in the past when delays in funding created bottlenecks, this year funds were released promptly to WAEC, allowing the exams to be conducted without hitches and results to be processed in record time.</p>
+
+                        <p>Even more striking is the growing anticipation surrounding the 2025 WASSCE, which observers predict could be another landmark success. Education analysts note that the combined efforts of the Minister and Prof Davis - policy foresight on one hand, and integrity-driven execution on the other - are setting a new standard for Ghana's educational administration.</p>
+
+                        <h3>From UCC to GES: A Record of Excellence</h3>
+                        <p>Before assuming his current role, Prof Davis had already carved an enviable legacy at the University of Cape Coast (UCC), where he served as Provost of the College of Education Studies. There, he was celebrated for introducing academic reforms, strengthening teacher education programs, and championing innovations that bridged theory with practice.</p>
+
+                        <p>His transition from academia to public service has only amplified his reputation as a results-oriented administrator and one of Ghana's most genuine thinkers.</p>
+
+                        <h3>A Leadership Duo Worthy of Commendation</h3>
+                        <p>In an era when public confidence in institutions is often eroded by allegations of corruption, the collaboration between the Minister of Education and Prof. Davis offers renewed hope. By ensuring fairness in school placements, instituting stronger accountability systems, and restoring trust in the educational system, they have not only shaped the future of thousands of Ghanaian children but also reaffirmed that public service can indeed be honorable and impactful.</p>
+
+                        <p>Voices across the country - from parents to educationists, civil society groups, and policy makers - are calling for national commendation for the Minister of Education, Prof. Ernest Kofi Davis, and his dedicated team at GES. Their joint vision and integrity are steadily redefining Ghana's educational narrative.</p>
+                    `;
+                }
+            }
+
+            if (id === 'new-4' || (title && title.includes('Digital Education Policy'))) {
+                const newTitle = 'Engage with stakeholders to deliver robust digital education policy – Haruna to GES Council';
+                const newCat = 'News';
+                const newDate = 'February 17, 2026';
+
+                document.title = newTitle + " | GEDP";
+                document.querySelector('.post-title').textContent = newTitle;
+                document.querySelector('.post-category').textContent = newCat;
+                document.querySelector('.post-date').textContent = newDate;
+
+                const heroImg = document.querySelector('.post-hero-img');
+                if (heroImg) {
+                    heroImg.style.display = 'block';
+                    heroImg.src = '/haruna3.jpg';
+                }
+
+                const contentArea = document.querySelector('.article-content-rich');
+                if (contentArea) {
+                    contentArea.innerHTML = `
+                        <p class="lead">The newly inaugurated Ghana Education Service (GES) Council, in consultation with stakeholders, has been tasked to develop Ghana’s first-ever comprehensive Digital Education Policy by early 2026.</p>
+
+                        <p>Speaking at the official inauguration of the Council at the Ministry of Education, the sector minister, Haruna Iddrisu, indicated that the proposed policy is part of a broader vision to transform education in Ghana by investing in infrastructure, teacher development, among others.</p>
+
+                        <p>“On your shoulders rests the future of Ghana’s education. The President expects that before the end of this year and into early 2026, you will work with stakeholders to deliver a robust digital education policy that integrates ICT from the kindergarten level to the secondary level,” he charged.</p>
+
+                        <p>The Minister affirmed the government’s commitment to free, compulsory, and universal basic education, assuring that this priority will not be compromised by other flagship programs. Mr. Iddrisu further emphasized the need to address pressing challenges such as the double-track system in SHS, calling it an “uncomfortable truth” that has led to overcrowding, reduced contact hours, and a decline in academic quality.</p>
+
+                        <p>“We are not here to manage an education crisis, we are here to solve it,” the sector minister stated, adding that the government will roll out a nationwide infrastructure program under President Mahama’s “Big Push” initiative to abolish the system.</p>
+
+                        <p>The Minister disclosed that a new mathematics curriculum for blind students is being developed, along with a Ghanaian Sign Language curriculum to support deaf students. He also highlighted efforts with the National Council for Curriculum and Assessment (NaCCA) to embed ethics, integrity, and patriotism into the revised national curriculum.</p>
+
+                        <p>On teacher welfare, the Minister assured that future educational infrastructure projects would incorporate teacher accommodation and announced a review of the teacher licensing exams to maintain professional standards. He also warned school heads over complaints about poor-quality food supplies, stating that the President had taken a personal interest in the matter.</p>
+
+                        <p>A strong message was also sent to the West African Examinations Council (WAEC), with the Minister urging alignment of Ghana’s academic calendar with regional standards to prevent unnecessary delays in university admissions. He called for a national means test to better target free education resources and proposed a TVET Fund to support the National Apprenticeship Program and technical education.</p>
+
+                        <p>The Minister concluded by stressing that education remains a fundamental human right, not a privilege, and urged the Council to lead transformative change that will position Ghana’s human capital as globally competitive.</p>
+
+                        <p>"The task before you is not just to manage policies but to transform human lives," he reminded the Council. "Ghana's education system must be one that opens doors for every child, regardless of background."</p>
+                    `;
+                }
+            }
+
+            if (id === 'new-5' || (title && title.includes('¢1bn to school infrastructure'))) {
+                const newTitle = 'Government to commit ¢1bn to school infrastructure in 2026 – Education Minister';
+                const newCat = 'News';
+                const newDate = 'February 17, 2026';
+
+                document.title = newTitle + " | GEDP";
+                document.querySelector('.post-title').textContent = newTitle;
+                document.querySelector('.post-category').textContent = newCat;
+                document.querySelector('.post-date').textContent = newDate;
+
+                const heroImg = document.querySelector('.post-hero-img');
+                if (heroImg) {
+                    heroImg.style.display = 'block';
+                    heroImg.src = '/haruna2.jpg';
+                }
+
+                const contentArea = document.querySelector('.article-content-rich');
+                if (contentArea) {
+                    contentArea.innerHTML = `
+                        <p class="lead">The Minister for Education, Haruna Iddrisu, has disclosed that the government will inject GH₵1 billion from the GETFund in 2026 to address long-standing infrastructure challenges in schools nationwide.</p>
+
+                        <p>The intervention, he explained, is central to efforts aimed at eliminating the double-track system in senior high schools.</p>
+
+                        <p>“This investment will enable us to deal decisively with the infrastructure gap and, in doing so, help phase out the double-track system,” Mr Iddrisu said during a working tour of the Upper East Region.</p>
+
+                        <p>He visited Zebilla Senior High Technical School, where he interacted with WASSCE candidates and assessed the impact of the protracted Bawku conflict on education in the area.</p>
+
+                        <p>Encouraging students to stay committed to their studies, he emphasised that peace is critical for learning.</p>
+
+                        <p>“We need to say no to war, no to conflict. Education remains our surest bet to fight ignorance and poverty, so seize the opportunity and give it your best,” he urged.</p>
+
+                        <p>Appealing for calm in Bawku, the Minister underscored the urgency of restoring lasting peace to rebuild the city and create a stable learning environment.</p>
+
+                        <p>He further noted the unfair disadvantage faced by students in conflict-affected areas.</p>
+
+                        <p>“Unfortunately, examiners will not consider the fact that students here lacked serenity and peace of mind to study, yet they will be assessed equally with their counterparts in peaceful areas,” he lamented.</p>
+                    `;
+                }
+            }
+
             enforceArticleImageLimit();
 
             // Load related articles dynamically
             const defaultArticles = [
                 {
-                    id: '1',
-                    title: 'Minister launches GEDP Phase 2 Expansion',
-                    img: '/haruna4.jpg',
+                    id: 'new-1',
+                    title: 'GES Promotion Examination Centres 2025 – Check Here!',
+                    img: '/New Images/bece.jpg',
                     cat: 'Announcement',
-                    excerpt: 'The Ministry of Education has officially launched the second phase of the Ghana Education Digital Platform...',
-                    date: 'February 9, 2026',
-                    readTime: '4 min read',
-                    featured: true
-                },
-                {
-                    id: '3',
-                    title: 'Masterclass: Maximizing Data Analytics for GES',
-                    img: '/paperless.jpg',
-                    cat: 'Training',
-                    excerpt: 'Our upcoming training session aims to equip administrators with the skills to interpret complex educational data...',
-                    date: 'February 9, 2026',
-                    readTime: '6 min read',
-                    featured: true
-                },
-                {
-                    id: '5',
-                    title: 'Going Paperless: The Journey of 500 Schools',
-                    img: '/director3.jpg',
-                    cat: 'Innovation',
-                    excerpt: 'A deep dive into how 500 schools across Ghana successfully transitioned to fully digital administrative processes...',
-                    date: 'February 9, 2026',
+                    excerpt: 'The GES has officially released the Promotion Examination Centres. Check your region and centre details here.',
+                    date: 'February 17, 2026',
                     readTime: '5 min read',
+                    link: 'blog-post.html?id=new-1&v=8',
                     featured: true
                 },
                 {
-                    id: '7',
-                    title: 'Teacher Training Spotlight: Building Digital Confidence',
-                    img: '/director2.jpg',
-                    cat: 'Training',
-                    excerpt: 'Highlights from recent teacher training sessions focused on practical classroom tools and digital best practices...',
-                    date: 'February 9, 2026',
-                    readTime: '4 min read',
+                    id: 'new-2',
+                    title: 'GES Boss Prof. Kofi Davis Announces Bold Reforms to Boost Credibility of 2025 BECE School Selection',
+                    img: '/director3.jpg',
+                    cat: 'News',
+                    excerpt: 'Prof. Kofi Davis introduces targeted reforms to strengthen transparency and accountability in the 2025 BECE school selection process.',
+                    date: 'February 17, 2026',
+                    readTime: '6 min read',
+                    link: 'blog-post.html?id=new-2',
+                    featured: true
+                },
+                {
+                    id: 'new-3',
+                    title: 'Why Professor Davis and the Minister of Education deserve national commendation',
+                    img: '/haruna4.jpg',
+                    cat: 'News',
+                    excerpt: 'Education stakeholders laud the success of the 2025 BECE and CSSPS as one of the most transparent in history.',
+                    date: 'February 17, 2026',
+                    readTime: '7 min read',
+                    link: 'blog-post.html?id=new-3&v=8',
+                    featured: true
+                },
+                {
+                    id: 'new-4',
+                    title: 'Engage with stakeholders to deliver robust digital education policy – Haruna to GES Council',
+                    img: '/haruna3.jpg',
+                    cat: 'News',
+                    excerpt: 'The GES Council has been tasked to develop Ghana’s first-ever comprehensive Digital Education Policy by early 2026.',
+                    date: 'February 17, 2026',
+                    readTime: '8 min read',
+                    link: 'blog-post.html?id=new-4&v=9',
+                    featured: true
+                },
+                {
+                    id: 'new-5',
+                    title: 'Government to commit ¢1bn to school infrastructure in 2026 – Education Minister',
+                    img: '/haruna2.jpg',
+                    cat: 'News',
+                    excerpt: 'The government will inject GH₵1 billion from the GETFund in 2026 to address infrastructure challenges and eliminate the double-track system.',
+                    date: 'February 17, 2026',
+                    readTime: '5 min read',
+                    link: 'blog-post.html?id=new-5&v=10',
                     featured: true
                 }
             ];
 
             const storedPosts = localStorage.getItem('gedp_articles');
-            const articles = storedPosts ? JSON.parse(storedPosts) : defaultArticles;
+            let articles = storedPosts ? JSON.parse(storedPosts) : defaultArticles;
+
+            // Force update if new article is missing or old version
+            const hasNew5 = articles.find(a => a.id === 'new-5');
+            const hasCorrectV = articles.find(a => a.id === 'new-1' && a.link.includes('v=10'));
+            if (!hasNew5 || !hasCorrectV) {
+                articles = defaultArticles;
+                localStorage.setItem('gedp_articles', JSON.stringify(articles));
+            }
 
             // Filter out the current article and get 3 random related articles
             const relatedArticles = articles
@@ -319,7 +721,7 @@
             const relatedGrid = document.getElementById('relatedGrid');
             if (relatedGrid && relatedArticles.length > 0) {
                 relatedArticles.forEach(art => {
-                    const params = new URLSearchParams({ title: art.title, img: art.img, cat: art.cat });
+                    const params = new URLSearchParams({ id: art.id, title: art.title, img: art.img, cat: art.cat });
                     const articleUrl = `blog-post.html?${params.toString()}`;
 
                     const article = document.createElement('article');
@@ -329,7 +731,7 @@
 
                     article.innerHTML = `
                         <div class="related-img-container">
-                            <img src="${art.img}" alt="Related">
+                            <img src="${art.img}" alt="${art.title}" class="related-img">
                         </div>
                         <div class="related-content">
                             <span class="related-cat">${art.cat.toUpperCase()}</span>
@@ -340,7 +742,7 @@
                     relatedGrid.appendChild(article);
                 });
             }
-        })();
+        });
     </script>
 </body>
 
