@@ -208,7 +208,10 @@ function initIntroRotation() {
   const introImg = document.getElementById('intro-rotating-image');
   if (!introImg) return;
 
-  const images = ['/girl.jpeg', '/hero_modules_bg.png'];
+  const images = [
+    '/FINAL%20LOADS/The%20Girl%20with%20the%20Laptop/1S9A4541.jpg',
+    '/1S9A4487-1.jpg'
+  ];
 
   // Calculate index based on 168-hour (one week) cycles
   const totalHours = Math.floor(Date.now() / (1000 * 60 * 60));

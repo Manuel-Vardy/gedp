@@ -467,6 +467,66 @@ ul {
     opacity: 0.9;
 }
 
+.hero-cta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    position: absolute;
+    left: 10%;
+    bottom: 12%;
+    z-index: 4;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.4rem;
+    border-radius: 50px;
+    font-weight: 500;
+    line-height: 1;
+    min-height: 52px;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1), transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1), background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn-arrow {
+    margin-left: 10px;
+    flex-shrink: 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.hero-btn:hover .hero-btn-arrow {
+    transform: translateX(4px);
+}
+
+.hero-btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.hero-btn-primary:hover {
+    background: var(--primary-light);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.hero-btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.hero-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
 .slide-image {
     position: absolute;
     top: 0;
@@ -477,9 +537,7 @@ ul {
     background-position: center;
     transform: scale(1);
     transform-origin: center top;
-    /* Aligned zoom start */
     transition: transform 4s linear;
-    /* Continuous 4s zoom-in */
     will-change: transform;
 }
 
@@ -502,13 +560,13 @@ ul {
 
 .pupil-tablet {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-        url('/hero-vision.jpg');
+        url('/FINAL%20LOADS/MAIN%20SLIDES/EDIT_1S9A4509.jpg');
     background-size: cover;
 }
 
 .student-laptop {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-        url('/hero-tvet.jpg');
+        url('/FINAL%20LOADS/MAIN%20SLIDES/EDIT1_1S9A4822.jpg');
     background-size: cover;
     background-position: 50% 20%;
     /* Focus on student's face/upper body */
@@ -516,7 +574,7 @@ ul {
 
 .tvet-robotics {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-        url('/hero-electronics.jpg');
+        url('/FINAL%20LOADS/MAIN%20SLIDES/EDIT_1S9A4331.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -542,6 +600,7 @@ section:last-of-type {
 .intro-graphic {
     transform: translateZ(-300px) rotateY(-10deg) opacity(0);
     transition: transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1s ease-out;
+    height: clamp(320px, 38vw, 480px);
 }
 
 .intro-graphic.reveal {
@@ -558,6 +617,10 @@ section:last-of-type {
 
 #intro-rotating-image {
     transition: opacity 1s ease-in-out;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .intro-section .section-title {
@@ -1357,6 +1420,10 @@ section:last-of-type {
         font-size: 2.25rem;
     }
 
+    .slide-content {
+        padding-bottom: 7rem;
+    }
+
     .main-nav {
         display: none;
     }
@@ -1368,6 +1435,35 @@ section:last-of-type {
     .hero {
         height: auto;
         padding: 4rem 0;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 32%;
+        min-width: 170px;
+        max-width: 260px;
+        left: 6%;
+        transform: none;
+        bottom: 6%;
+        gap: 0.75rem;
+    }
+
+    .hero-btn {
+        width: 100%;
+        display: flex;
+    }
+
+    .hero-cta .hero-btn {
+        padding: 0.55rem 0.85rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .hero-btn-arrow {
+        width: 16px;
+        height: 16px;
+        margin-left: 8px;
     }
 
     .nav-actions .search-bar {
@@ -1851,7 +1947,7 @@ section:last-of-type {
 
 .image-separator {
     width: 100%;
-    height: 340px;
+    height: 420px;
     overflow: hidden;
     position: relative;
     margin-top: -40px;
@@ -2017,7 +2113,7 @@ section:last-of-type {
 
 @media (max-width: 768px) {
     .image-separator {
-        height: 240px;
+        height: 300px;
         margin-top: -20px;
         margin-bottom: -50px;
     }
