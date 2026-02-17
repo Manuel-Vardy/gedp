@@ -194,8 +194,8 @@
 
     /* Mobile Hero Adjustment */
     .hero {
-        min-height: 90vh !important;
-        height: 90vh;
+        min-height: 70vh !important;
+        height: 70vh;
         margin-bottom: 1rem !important;
     }
 
