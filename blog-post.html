@@ -255,6 +255,23 @@
                 document.getElementById('twitter-image').setAttribute('content', absoluteImageUrl);
             }
 
+            function getRelativeMonthsLabel(anchorDateString) {
+                const from = new Date(anchorDateString);
+                if (Number.isNaN(from.getTime())) return 'months ago';
+
+                const now = new Date();
+                let months =
+                    (now.getFullYear() - from.getFullYear()) * 12 +
+                    (now.getMonth() - from.getMonth());
+
+                if (now.getDate() < from.getDate()) {
+                    months -= 1;
+                }
+
+                if (months < 1) months = 1;
+                return `${months} months ago`;
+            }
+
             // Safety fallback: Force hide loader after 3 seconds in case window.load is slow on mobile
             setTimeout(() => {
                 const loader = document.getElementById('page-loader');
@@ -327,7 +344,7 @@
                 // Manually inject content for the GES Promotion News
                 const newTitle = 'GES Promotion Examination Centres 2025 – Check Here!';
                 const newCat = 'Announcement';
-                const newDate = '3 months ago';
+                const newDate = '19th December, 2025';
 
                 document.title = newTitle + " | GEDP";
                 document.querySelector('.post-title').textContent = newTitle;
@@ -516,7 +533,7 @@
             else if (id === 'new-2' || (title && title.includes('E.K.Davies')) || (title && title.includes('Kofi Davis'))) {
                 const newTitle = 'Director General for GES, Prof. E.K.Davies Announces Bold Reforms to Boost Credibility of 2025 BECE School Selection';
                 const newCat = 'News';
-                const newDate = '3 months ago';
+                const newDate = '27th May, 2025';
 
                 document.title = newTitle + " | GEDP";
                 document.querySelector('.post-title').textContent = newTitle;
@@ -559,7 +576,7 @@
             else if (id === 'new-3' || (title && title.includes('E.K.Davies')) || (title && title.includes('Commendation'))) {
                 const newTitle = 'Why Professor Davis and the Minister of Education deserve national commendation';
                 const newCat = 'News';
-                const newDate = '1 month ago';
+                const newDate = '3rd October, 2025';
 
                 document.title = newTitle + " | GEDP";
                 document.querySelector('.post-title').textContent = newTitle;
@@ -613,7 +630,7 @@
             else if (id === 'new-4' || (title && title.includes('Digital Education Policy'))) {
                 const newTitle = 'Engage with stakeholders to deliver robust digital education policy – Haruna to GES Council';
                 const newCat = 'News';
-                const newDate = '10 months ago';
+                const newDate = getRelativeMonthsLabel('2025-04-18');
 
                 document.title = newTitle + " | GEDP";
                 document.querySelector('.post-title').textContent = newTitle;
@@ -656,7 +673,7 @@
             else if (id === 'new-6' || (title && title.includes('Study Leave with Pay'))) {
                 const newTitle = 'GES 2025 Posting for Staff Returning from Study Leave with Pay – Check Here!';
                 const newCat = 'News';
-                const newDate = '4 months ago';
+                const newDate = '4th November, 2025';
 
                 document.title = newTitle + " | GEDP";
                 document.querySelector('.post-title').textContent = newTitle;
@@ -720,7 +737,7 @@
             else if (id === 'new-5' || (title && title.includes('¢1bn to school infrastructure'))) {
                 const newTitle = 'Government to commit ¢1bn to school infrastructure in 2026 – Education Minister';
                 const newCat = 'News';
-                const newDate = '3 weeks ago';
+                const newDate = '15th September, 2025';
 
                 document.title = newTitle + " | GEDP";
                 document.querySelector('.post-title').textContent = newTitle;
@@ -768,8 +785,7 @@
                     img: '/New%20Images/bece.jpg',
                     cat: 'Announcement',
                     excerpt: 'The GES has officially released the Promotion Examination Centres. Check your region and centre details here.',
-                    date: '3 months ago',
-                    readTime: '5 min read',
+                    date: '19th December, 2025',
                     link: 'blog-post.html?id=new-1&v=13',
                     featured: true
                 },
@@ -779,8 +795,7 @@
                     img: '/director3.jpg',
                     cat: 'News',
                     excerpt: 'Prof. E.K.Davies introduces targeted reforms to strengthen transparency and accountability in the 2025 BECE school selection process.',
-                    date: '3 months ago',
-                    readTime: '6 min read',
+                    date: '27th May, 2025',
                     link: 'blog-post.html?id=new-2&v=12',
                     featured: true
                 },
@@ -790,8 +805,7 @@
                     img: '/haruna4.jpg',
                     cat: 'News',
                     excerpt: 'Education stakeholders laud the success of the 2025 BECE and CSSPS as one of the most transparent in history.',
-                    date: '1 month ago',
-                    readTime: '7 min read',
+                    date: '3rd October, 2025',
                     link: 'blog-post.html?id=new-3&v=8',
                     featured: true
                 },
@@ -802,7 +816,7 @@
                     cat: 'News',
                     excerpt: 'The GES Council has been tasked to develop Ghana’s first-ever comprehensive Digital Education Policy by early 2026.',
                     date: '10 months ago',
-                    readTime: '8 min read',
+                    relativeFrom: '2025-04-18',
                     link: 'blog-post.html?id=new-4&v=9',
                     featured: true
                 },
@@ -812,8 +826,7 @@
                     img: '/haruna2.jpg',
                     cat: 'News',
                     excerpt: 'The government will inject GH₵1 billion from the GETFund in 2026 to address infrastructure challenges and eliminate the double-track system.',
-                    date: '3 weeks ago',
-                    readTime: '5 min read',
+                    date: '15th September, 2025',
                     link: 'blog-post.html?id=new-5&v=10',
                     featured: true
                 },
@@ -823,8 +836,7 @@
                     img: '/male-shaking-hands.jpg',
                     cat: 'News',
                     excerpt: 'GES has announced the posting process for staff returning from study leave with pay. Applications are open until Nov 7, 2025.',
-                    date: '4 months ago',
-                    readTime: '6 min read',
+                    date: '4th November, 2025',
                     link: 'blog-post.html?id=new-6&v=11',
                     featured: true
                 }

@@ -141,8 +141,7 @@
                     img: '/New%20Images/bece.jpg',
                     cat: 'Announcement',
                     excerpt: 'The GES has officially released the Promotion Examination Centres. Check your region and centre details here.',
-                    date: '3 months ago',
-                    readTime: '5 min read',
+                    date: '19th December, 2025',
                     link: 'blog-post.html?id=new-1&v=13',
                     featured: true
                 },
@@ -152,8 +151,7 @@
                     img: '/director3.jpg',
                     cat: 'News',
                     excerpt: 'Prof. E.K.Davies introduces targeted reforms to strengthen transparency and accountability in the 2025 BECE school selection process.',
-                    date: '3 months ago',
-                    readTime: '6 min read',
+                    date: '27th May, 2025',
                     link: 'blog-post.html?id=new-2&v=12',
                     featured: true
                 },
@@ -163,8 +161,7 @@
                     img: '/haruna4.jpg',
                     cat: 'News',
                     excerpt: 'Education stakeholders laud the success of the 2025 BECE and CSSPS as one of the most transparent in history.',
-                    date: '1 month ago',
-                    readTime: '7 min read',
+                    date: '3rd October, 2025',
                     link: 'blog-post.html?id=new-3&v=8',
                     featured: true
                 },
@@ -175,7 +172,8 @@
                     cat: 'News',
                     excerpt: 'The GES Council has been tasked to develop Ghana’s first-ever comprehensive Digital Education Policy by early 2026.',
                     date: '10 months ago',
-                    readTime: '8 min read',
+                    // Anchor date for relative month counter (starts at ~10 months ago from Feb 2026)
+                    relativeFrom: '2025-04-18',
                     link: 'blog-post.html?id=new-4&v=9',
                     featured: true
                 },
@@ -185,8 +183,7 @@
                     img: '/haruna2.jpg',
                     cat: 'News',
                     excerpt: 'The government will inject GH₵1 billion from the GETFund in 2026 to address infrastructure challenges and eliminate the double-track system.',
-                    date: '3 weeks ago',
-                    readTime: '5 min read',
+                    date: '15th September, 2025',
                     link: 'blog-post.html?id=new-5&v=10',
                     featured: true
                 },
@@ -196,8 +193,7 @@
                     img: '/male-shaking-hands.jpg',
                     cat: 'News',
                     excerpt: 'GES has announced the posting process for staff returning from study leave with pay. Applications are open until Nov 7, 2025.',
-                    date: '4 months ago',
-                    readTime: '6 min read',
+                    date: '4th November, 2025',
                     link: 'blog-post.html?id=new-6&v=11',
                     featured: true
                 }
@@ -246,6 +242,27 @@
             const featuredArticles = articles.filter(a => a.featured).slice(0, 4);
             let currentFeatIndex = 0;
 
+            function getRelativeDateLabel(article) {
+                if (article && article.relativeFrom) {
+                    const from = new Date(article.relativeFrom);
+                    if (Number.isNaN(from.getTime())) return article.date;
+                    const now = new Date();
+
+                    let months =
+                        (now.getFullYear() - from.getFullYear()) * 12 +
+                        (now.getMonth() - from.getMonth());
+
+                    // If current day is before the anchor day, don't count the partial month yet
+                    if (now.getDate() < from.getDate()) {
+                        months -= 1;
+                    }
+
+                    if (months < 1) months = 1;
+                    return `${months} months ago`;
+                }
+                return article.date;
+            }
+
             function renderFeaturedSlides() {
                 sliderContainer.innerHTML = '';
 
@@ -292,10 +309,8 @@
                                     <circle cx="12" cy="12" r="9" />
                                     <polyline points="12 7 12 12 15 14" />
                                 </svg>
-                                <span>${art.date}</span>
+                                <span>${getRelativeDateLabel(art)}</span>
                             </span>
-                            <span>|</span>
-                            <span>${art.readTime || '5 min read'}</span>
                         </div>
                     `;
 
@@ -361,10 +376,8 @@
                                     <circle cx="12" cy="12" r="9" />
                                     <polyline points="12 7 12 12 15 14" />
                                 </svg>
-                                <span>${art.date}</span>
+                                <span>${getRelativeDateLabel(art)}</span>
                             </span>
-                            <span style="opacity: 0.4;">•</span>
-                            <span>${art.readTime || '5 min read'}</span>
                         </div>
                         <a href="${articleUrl}" class="read-more-btn" style="margin-top: auto;" onclick="event.stopPropagation();">Read Full Article &rarr;</a>
                     </div>
