@@ -210,9 +210,22 @@
                 if (existingIndex === -1) {
                     articles.unshift(defArt); // Add if missing
                     articlesUpdated = true;
-                } else if (!articles[existingIndex].link.includes('v=11')) {
-                    articles[existingIndex] = defArt; // Update if old version
-                    articlesUpdated = true;
+                } else {
+                    const existing = articles[existingIndex] || {};
+                    const needsUpdate =
+                        existing.title !== defArt.title ||
+                        existing.img !== defArt.img ||
+                        existing.cat !== defArt.cat ||
+                        existing.excerpt !== defArt.excerpt ||
+                        existing.date !== defArt.date ||
+                        existing.relativeFrom !== defArt.relativeFrom ||
+                        existing.featured !== defArt.featured ||
+                        existing.link !== defArt.link;
+
+                    if (needsUpdate) {
+                        articles[existingIndex] = { ...existing, ...defArt };
+                        articlesUpdated = true;
+                    }
                 }
             });
 

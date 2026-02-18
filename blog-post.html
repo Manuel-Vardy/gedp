@@ -852,9 +852,22 @@
                 if (existingIndex === -1) {
                     articles.unshift(defArt); // Add new system articles
                     articlesUpdated = true;
-                } else if (!articles[existingIndex].link.includes('v=13')) {
-                    articles[existingIndex] = defArt; // Update existing system articles
-                    articlesUpdated = true;
+                } else {
+                    const existing = articles[existingIndex] || {};
+                    const needsUpdate =
+                        existing.title !== defArt.title ||
+                        existing.img !== defArt.img ||
+                        existing.cat !== defArt.cat ||
+                        existing.excerpt !== defArt.excerpt ||
+                        existing.date !== defArt.date ||
+                        existing.relativeFrom !== defArt.relativeFrom ||
+                        existing.featured !== defArt.featured ||
+                        existing.link !== defArt.link;
+
+                    if (needsUpdate) {
+                        articles[existingIndex] = { ...existing, ...defArt };
+                        articlesUpdated = true;
+                    }
                 }
             });
 
