@@ -141,7 +141,7 @@
                     img: '/New%20Images/bece.jpg',
                     cat: 'Announcement',
                     excerpt: 'The GES has officially released the Promotion Examination Centres. Check your region and centre details here.',
-                    date: 'February 17, 2026',
+                    date: '3 months ago',
                     readTime: '5 min read',
                     link: 'blog-post.html?id=new-1&v=13',
                     featured: true
@@ -152,7 +152,7 @@
                     img: '/director3.jpg',
                     cat: 'News',
                     excerpt: 'Prof. E.K.Davies introduces targeted reforms to strengthen transparency and accountability in the 2025 BECE school selection process.',
-                    date: 'February 17, 2026',
+                    date: '3 months ago',
                     readTime: '6 min read',
                     link: 'blog-post.html?id=new-2&v=12',
                     featured: true
@@ -163,7 +163,7 @@
                     img: '/haruna4.jpg',
                     cat: 'News',
                     excerpt: 'Education stakeholders laud the success of the 2025 BECE and CSSPS as one of the most transparent in history.',
-                    date: 'February 17, 2026',
+                    date: '1 month ago',
                     readTime: '7 min read',
                     link: 'blog-post.html?id=new-3&v=8',
                     featured: true
@@ -174,7 +174,7 @@
                     img: '/haruna3.jpg',
                     cat: 'News',
                     excerpt: 'The GES Council has been tasked to develop Ghana’s first-ever comprehensive Digital Education Policy by early 2026.',
-                    date: 'February 17, 2026',
+                    date: '2 weeks ago',
                     readTime: '8 min read',
                     link: 'blog-post.html?id=new-4&v=9',
                     featured: true
@@ -185,7 +185,7 @@
                     img: '/haruna2.jpg',
                     cat: 'News',
                     excerpt: 'The government will inject GH₵1 billion from the GETFund in 2026 to address infrastructure challenges and eliminate the double-track system.',
-                    date: 'February 17, 2026',
+                    date: '3 weeks ago',
                     readTime: '5 min read',
                     link: 'blog-post.html?id=new-5&v=10',
                     featured: true
@@ -196,7 +196,7 @@
                     img: '/male-shaking-hands.jpg',
                     cat: 'News',
                     excerpt: 'GES has announced the posting process for staff returning from study leave with pay. Applications are open until Nov 7, 2025.',
-                    date: 'February 17, 2026',
+                    date: '4 months ago',
                     readTime: '6 min read',
                     link: 'blog-post.html?id=new-6&v=11',
                     featured: true
@@ -285,7 +285,15 @@
                         <span class="featured-badge">${art.cat}</span>
                         <h2 class="featured-title">${art.title}</h2>
                         <div class="featured-meta">
-                            <span>${art.date}</span>
+                            <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" style="opacity: 0.85;">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <polyline points="12 7 12 12 15 14" />
+                                </svg>
+                                <span>${art.date}</span>
+                            </span>
                             <span>|</span>
                             <span>${art.readTime || '5 min read'}</span>
                         </div>
@@ -345,6 +353,19 @@
                         <span style="font-size: 0.8rem; font-weight: 600; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em;">${art.cat}</span>
                         <h3>${art.title}</h3>
                         <p style="margin-bottom: 1.5rem;">${art.excerpt}</p>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #64748B; margin-bottom: 1.25rem;">
+                            <span style="display: inline-flex; align-items: center; gap: 4px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" style="opacity: 0.9;">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <polyline points="12 7 12 12 15 14" />
+                                </svg>
+                                <span>${art.date}</span>
+                            </span>
+                            <span style="opacity: 0.4;">•</span>
+                            <span>${art.readTime || '5 min read'}</span>
+                        </div>
                         <a href="${articleUrl}" class="read-more-btn" style="margin-top: auto;" onclick="event.stopPropagation();">Read Full Article &rarr;</a>
                     </div>
                 `;
