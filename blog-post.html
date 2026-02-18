@@ -330,7 +330,7 @@
                 const heroImg = document.querySelector('.post-hero-img');
                 if (heroImg) {
                     heroImg.style.display = 'block';
-                    heroImg.src = '/New Images/bece.jpg';
+                    heroImg.src = '/New%20Images/bece.jpg';
                 }
 
                 const contentArea = document.querySelector('.article-content-rich');
@@ -751,12 +751,12 @@
                 {
                     id: 'new-1',
                     title: 'GES Promotion Examination Centres 2025 – Check Here!',
-                    img: '/New Images/bece.jpg',
+                    img: '/New%20Images/bece.jpg',
                     cat: 'Announcement',
                     excerpt: 'The GES has officially released the Promotion Examination Centres. Check your region and centre details here.',
                     date: 'February 17, 2026',
                     readTime: '5 min read',
-                    link: 'blog-post.html?id=new-1&v=8',
+                    link: 'blog-post.html?id=new-1&v=13',
                     featured: true
                 },
                 {
@@ -826,7 +826,7 @@
                 if (existingIndex === -1) {
                     articles.unshift(defArt); // Add new system articles
                     articlesUpdated = true;
-                } else if (!articles[existingIndex].link.includes('v=11')) {
+                } else if (!articles[existingIndex].link.includes('v=13')) {
                     articles[existingIndex] = defArt; // Update existing system articles
                     articlesUpdated = true;
                 }

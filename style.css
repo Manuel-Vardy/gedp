@@ -2372,6 +2372,16 @@ section:last-of-type {
     padding: 8rem 0;
 }
 
+.compliance-section .image-wrapper {
+    min-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .compliance-section .image-wrapper {
+        min-height: 360px;
+    }
+}
+
 .portals-section {
     padding: 6rem 0;
 }

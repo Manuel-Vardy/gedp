@@ -19,7 +19,7 @@ const defaultArticles = [
     {
         id: 'new-1',
         title: 'GES Promotion Examination Centres 2025 – Check Here!',
-        img: '/New Images/bece.jpg',
+        img: '/New%20Images/bece.jpg',
         cat: 'Announcement',
         excerpt: 'The GES has officially released the Promotion Examination Centres. Check your region and centre details here.',
         date: 'February 17, 2026',
