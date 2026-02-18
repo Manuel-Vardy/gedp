@@ -25,6 +25,57 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
         }
 
+        /* Lightbox navigation (modern arrows) */
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            border-radius: 999px;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            user-select: none;
+            z-index: 10000;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            color: #ffffff;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.38);
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+        }
+
+        .lightbox-nav:active {
+            transform: translateY(-50%) scale(0.98);
+        }
+
+        .lightbox-nav:focus-visible {
+            outline: 3px solid rgba(56, 189, 248, 0.95);
+            outline-offset: 4px;
+        }
+
+        .lightbox-nav svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .lightbox-prev {
+            left: 1.25rem;
+        }
+
+        .lightbox-next {
+            right: 1.25rem;
+        }
+
         @media (max-width: 992px) {
             .masonry-grid {
                 column-count: 2 !important;
@@ -45,6 +96,19 @@
             .gallery-item {
                 margin-bottom: 1rem !important;
                 border-radius: 8px !important;
+            }
+
+            .lightbox-nav {
+                width: 48px;
+                height: 48px;
+            }
+
+            .lightbox-prev {
+                left: 0.75rem;
+            }
+
+            .lightbox-next {
+                right: 0.75rem;
             }
         }
     </style>
@@ -136,10 +200,6 @@
 
                     <div class="gallery-item"
                         style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/New%20Images/EDIT_1S9A4509.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
-                    </div>
-                    <div class="gallery-item"
-                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
                         <img src="/New%20Images/EDIT1_1S9A4822.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
                     </div>
                     <div class="gallery-item"
@@ -156,37 +216,66 @@
                     </div>
                     <div class="gallery-item"
                         style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/paperless.jpg" alt="Classroom" style="width: 100%; height: auto; display: block;">
-                    </div>
-                    <div class="gallery-item"
-                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
                         <img src="/director3.jpg" alt="Administration"
                             style="width: 100%; height: auto; display: block;">
                     </div>
+
+                    <!-- Images from /public/Gallery -->
                     <div class="gallery-item"
                         style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/haruna1.jpg" alt="Event" style="width: 100%; height: auto; display: block;">
+                        <img src="/Gallery/1S9A4388.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
                     </div>
                     <div class="gallery-item"
                         style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/haruna2.jpg" alt="Classroom" style="width: 100%; height: auto; display: block;">
+                        <img src="/Gallery/1S9A4466.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
                     </div>
                     <div class="gallery-item"
                         style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/haruna3.jpg" alt="Administration" style="width: 100%; height: auto; display: block;">
+                        <img src="/Gallery/1S9A4475.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
                     </div>
                     <div class="gallery-item"
                         style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/director1.jpg" alt="Event" style="width: 100%; height: auto; display: block;">
+                        <img src="/Gallery/1S9A4490.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
                     </div>
                     <div class="gallery-item"
                         style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/director2.jpg" alt="Classroom" style="width: 100%; height: auto; display: block;">
+                        <img src="/Gallery/1S9A4493.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
                     </div>
                     <div class="gallery-item"
                         style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <img src="/director3.jpg" alt="Administration"
-                            style="width: 100%; height: auto; display: block;">
+                        <img src="/Gallery/1S9A4607.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/Gallery/1S9A4627.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/Gallery/1S9A4631.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/Gallery/1S9A4635.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/Gallery/1S9A4665.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/Gallery/1S9A4675.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/Gallery/1S9A4695.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/Gallery/1S9A4703.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <div class="gallery-item"
+                        style="break-inside: avoid; margin-bottom: 1.5rem; cursor: pointer; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <img src="/Gallery/1S9A4838.jpg" alt="Gallery" style="width: 100%; height: auto; display: block;">
                     </div>
                 </div>
             </div>
@@ -195,10 +284,26 @@
         <!-- Lightbox Modal -->
         <div id="lightbox"
             style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 9999; justify-content: center; align-items: center; padding: 2rem;">
+            <button id="prevLightbox"
+                aria-label="Previous image"
+                class="lightbox-nav lightbox-prev">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
             <button id="closeLightbox"
                 style="position: absolute; top: 2rem; right: 2rem; background: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; z-index: 10000;">&times;</button>
             <img id="lightboxImg" src="" alt=""
                 style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px;">
+            <button id="nextLightbox"
+                aria-label="Next image"
+                class="lightbox-nav lightbox-next">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
         </div>
     </main>
 
@@ -222,38 +327,91 @@
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
         const closeLightbox = document.getElementById('closeLightbox');
-        const galleryItems = document.querySelectorAll('.gallery-item');
+        const prevLightbox = document.getElementById('prevLightbox');
+        const nextLightbox = document.getElementById('nextLightbox');
+        const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+        const galleryImages = galleryItems
+            .map(item => item.querySelector('img'))
+            .filter(Boolean);
+        let currentIndex = -1;
+
+        function setLightboxImage(index) {
+            if (!galleryImages.length) return;
+            currentIndex = (index + galleryImages.length) % galleryImages.length;
+            const img = galleryImages[currentIndex];
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt || 'Gallery';
+        }
+
+        function openLightboxAt(index) {
+            setLightboxImage(index);
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightboxModal() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        function showPrev() {
+            if (lightbox.style.display !== 'flex') return;
+            setLightboxImage(currentIndex - 1);
+        }
+
+        function showNext() {
+            if (lightbox.style.display !== 'flex') return;
+            setLightboxImage(currentIndex + 1);
+        }
 
         // Open lightbox when clicking on gallery item
-        galleryItems.forEach(item => {
+        galleryImages.forEach((img, idx) => {
+            const item = img.closest('.gallery-item');
+            if (!item) return;
             item.addEventListener('click', function () {
-                const img = this.querySelector('img');
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
-                lightbox.style.display = 'flex';
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                openLightboxAt(idx);
             });
         });
 
         // Close lightbox when clicking close button
         closeLightbox.addEventListener('click', function () {
-            lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
+            closeLightboxModal();
         });
 
         // Close lightbox when clicking outside the image
         lightbox.addEventListener('click', function (e) {
             if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
+                closeLightboxModal();
             }
+        });
+
+        // Navigate with arrows
+        prevLightbox.addEventListener('click', function (e) {
+            e.stopPropagation();
+            showPrev();
+        });
+        nextLightbox.addEventListener('click', function (e) {
+            e.stopPropagation();
+            showNext();
         });
 
         // Close lightbox with Escape key
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && lightbox.style.display === 'flex') {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
+            if (lightbox.style.display !== 'flex') return;
+
+            if (e.key === 'Escape') {
+                closeLightboxModal();
+                return;
+            }
+
+            if (e.key === 'ArrowLeft') {
+                showPrev();
+                return;
+            }
+
+            if (e.key === 'ArrowRight') {
+                showNext();
+                return;
             }
         });
     </script>
