@@ -217,56 +217,6 @@
                                 </svg></span>
                             <span><strong>iv.</strong> WorkStation Tool</span>
                         </div>
-                        <div class="check-item-module" style="margin-top: 1rem;">
-                            <span class="check-item-module-icon"><svg width="18" height="18" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg></span>
-                            <span><strong>v. Self Applications:</strong></span>
-                        </div>
-                        <div style="padding-left: 2.25rem;">
-                            <div class="check-item-module">
-                                <span class="check-item-module-icon"><svg width="14" height="14" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg></span>
-                                <a href="#">Promotions</a>
-                            </div>
-                            <div class="check-item-module">
-                                <span class="check-item-module-icon"><svg width="14" height="14" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg></span>
-                                <a href="#">Study Leave & Returns</a>
-                            </div>
-                            <div class="check-item-module">
-                                <span class="check-item-module-icon"><svg width="14" height="14" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg></span>
-                                <a href="#">Transfers</a>
-                            </div>
-                            <div class="check-item-module">
-                                <span class="check-item-module-icon"><svg width="14" height="14" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg></span>
-                                <a href="#">Upgrading</a>
-                            </div>
-                            <div class="check-item-module">
-                                <span class="check-item-module-icon"><svg width="14" height="14" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg></span>
-                                <a href="#">Assurance</a>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="module-card hide-reveal" style="transition-delay: 0.5s;">
@@ -322,6 +272,218 @@
                             &rarr;</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Self Applications Section -->
+        <section class="section" style="padding-top: 0; margin-top: -3rem;">
+            <div class="container">
+
+                <style>
+                    .self-app-section-heading {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.75rem;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 1.15rem;
+                        font-weight: 700;
+                        color: #1e293b;
+                        margin-bottom: 1.25rem;
+                        padding-bottom: 0.6rem;
+                        border-bottom: 2px solid #e2e8f0;
+                    }
+
+                    .self-app-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 1.1rem;
+                    }
+
+                    @media (max-width: 992px) {
+                        .self-app-grid {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+
+                    @media (max-width: 640px) {
+                        .self-app-grid {
+                            grid-template-columns: 1fr;
+                            gap: 0.85rem;
+                            max-width: 320px;
+                            margin: 0 auto;
+                        }
+
+                        .self-app-card {
+                            height: 160px;
+                            /* Slightly shorter on mobile */
+                        }
+                    }
+
+                    .self-app-card {
+                        position: relative;
+                        display: block;
+                        height: 200px;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        cursor: pointer;
+                        text-decoration: none;
+                        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+                        transition: transform 0.28s ease, box-shadow 0.28s ease;
+                    }
+
+                    .self-app-card:hover {
+                        transform: translateY(-5px) scale(1.025);
+                        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32);
+                    }
+
+                    .self-app-card img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                        transition: transform 0.45s ease;
+                    }
+
+                    .self-app-card:hover img {
+                        transform: scale(1.09);
+                    }
+
+                    .self-app-card .sa-overlay {
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(145deg, rgba(0, 10, 35, 0.74) 0%, rgba(8, 35, 95, 0.65) 100%);
+                        transition: background 0.3s ease;
+                    }
+
+                    .self-app-card:hover .sa-overlay {
+                        background: linear-gradient(145deg, rgba(0, 10, 35, 0.55) 0%, rgba(8, 35, 95, 0.46) 100%);
+                    }
+
+                    .self-app-card::after {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(120deg,
+                                transparent 0%,
+                                transparent 25%,
+                                rgba(255, 255, 255, 0.35) 50%,
+                                transparent 75%,
+                                transparent 100%);
+                        transform: translateX(-130%);
+                        transition: transform 0s;
+                        pointer-events: none;
+                        z-index: 3;
+                    }
+
+                    .self-app-card:hover::after {
+                        transform: translateX(130%);
+                        transition: transform 1.2s ease-in-out;
+                    }
+
+                    .self-app-card .sa-label {
+                        position: absolute;
+                        inset: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.2rem;
+                        /* Reduced gap so arrow is closer */
+                        text-align: center;
+                        padding: 0.6rem;
+                        color: #ffffff;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        letter-spacing: 0.03em;
+                        line-height: 1.3;
+                        text-decoration: underline;
+                        /* Add underline to text */
+                        text-underline-offset: 4px;
+                        text-decoration-thickness: 1px;
+                        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+                        z-index: 2;
+                        transition: color 0.3s ease;
+                    }
+
+                    .self-app-card:hover .sa-label {
+                        color: #fbbf24;
+                        /* Turn yellow on hover */
+                    }
+
+                    .sa-label svg {
+                        transition: transform 0.3s ease;
+                    }
+
+                    .self-app-card:hover .sa-label svg {
+                        transform: translate(3px, -3px);
+                    }
+                </style>
+
+                <h2 class="self-app-section-heading">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    Self Applications
+                </h2>
+
+                <div class="self-app-grid">
+                    <a href="#" class="self-app-card">
+                        <img src="/bussiness-men.jpg" alt="Promotions">
+                        <div class="sa-overlay"></div>
+                        <span class="sa-label">Promotions <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17L17 7" />
+                                <path d="M7 7h10v10" />
+                            </svg></span>
+                    </a>
+                    <a href="#" class="self-app-card">
+                        <img src="/New Images/EDIT2_1S9A4549.jpg" alt="Study Leave &amp; Returns">
+                        <div class="sa-overlay"></div>
+                        <span class="sa-label">Study Leave &amp; Returns <svg xmlns="http://www.w3.org/2000/svg"
+                                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17L17 7" />
+                                <path d="M7 7h10v10" />
+                            </svg></span>
+                    </a>
+                    <a href="#" class="self-app-card">
+                        <img src="/male-shaking-hands.jpg" alt="Transfers">
+                        <div class="sa-overlay"></div>
+                        <span class="sa-label">Transfers <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17L17 7" />
+                                <path d="M7 7h10v10" />
+                            </svg></span>
+                    </a>
+                    <a href="#" class="self-app-card">
+                        <img src="/New Images/EDIT2_1S9A4727.jpg" alt="Upgrading">
+                        <div class="sa-overlay"></div>
+                        <span class="sa-label">Upgrading <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17L17 7" />
+                                <path d="M7 7h10v10" />
+                            </svg></span>
+                    </a>
+                    <a href="#" class="self-app-card">
+                        <img src="/New Images/Black Entrepreneur And Business Owner Launches Free Webinar To Help 1,000 Black-Owned Startups.jpg"
+                            alt="Assurance">
+                        <div class="sa-overlay"></div>
+                        <span class="sa-label">Assurance <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17L17 7" />
+                                <path d="M7 7h10v10" />
+                            </svg></span>
+                    </a>
+                </div>
+
             </div>
         </section>
 
