@@ -4,87 +4,28 @@
     "devCommand": "npm run dev",
     "installCommand": "npm install",
     "framework": null,
+    "cleanUrls": true,
+    "trailingSlash": false,
     "rewrites": [
-        {
-            "source": "/",
-            "destination": "/index.html"
-        },
-        {
-            "source": "/modules",
-            "destination": "/modules.html"
-        },
-        {
-            "source": "/blog",
-            "destination": "/blog.html"
-        },
-        {
-            "source": "/blog-post",
-            "destination": "/blog-post.html"
-        },
-        {
-            "source": "/about",
-            "destination": "/about.html"
-        },
-        {
-            "source": "/admin-login",
-            "destination": "/admin-login.html"
-        },
-        {
-            "source": "/admin",
-            "destination": "/admin.html"
-        },
-        {
-            "source": "/gedp-admin-login",
-            "destination": "/gedp-admin-login.html"
-        },
-        {
-            "source": "/gedp-admin",
-            "destination": "/gedp-admin.html"
-        },
-        {
-            "source": "/portals",
-            "destination": "/portals.html"
-        },
-        {
-            "source": "/privacy",
-            "destination": "/privacy.html"
-        },
-        {
-            "source": "/terms",
-            "destination": "/terms.html"
-        },
-        {
-            "source": "/gallery",
-            "destination": "/gallery.html"
-        },
-        {
-            "source": "/assurance",
-            "destination": "/assurance/index.html"
-        },
-        {
-            "source": "/promotion",
-            "destination": "/promotion/index.html"
-        },
-        {
-            "source": "/recruitment",
-            "destination": "/recruitment-portal/index.html"
-        },
-        {
-            "source": "/school",
-            "destination": "/school-placement/index.html"
-        },
-        {
-            "source": "/study-leave",
-            "destination": "/study-leave/index.html"
-        },
-        {
-            "source": "/transfer",
-            "destination": "/transfer/index.html"
-        },
-        {
-            "source": "/upgrading",
-            "destination": "/upgrading/index.html"
-        }
+        { "source": "/modules", "destination": "/modules.html" },
+        { "source": "/blog", "destination": "/blog.html" },
+        { "source": "/blog-post", "destination": "/blog-post.html" },
+        { "source": "/about", "destination": "/about.html" },
+        { "source": "/admin-login", "destination": "/admin-login.html" },
+        { "source": "/admin", "destination": "/admin.html" },
+        { "source": "/gedp-admin-login", "destination": "/gedp-admin-login.html" },
+        { "source": "/gedp-admin", "destination": "/gedp-admin.html" },
+        { "source": "/portals", "destination": "/portals.html" },
+        { "source": "/privacy", "destination": "/privacy.html" },
+        { "source": "/terms", "destination": "/terms.html" },
+        { "source": "/gallery", "destination": "/gallery.html" },
+        { "source": "/assurance", "destination": "/assurance/index.html" },
+        { "source": "/promotion", "destination": "/promotion/index.html" },
+        { "source": "/recruitment", "destination": "/recruitment-portal/index.html" },
+        { "source": "/school", "destination": "/school-placement/index.html" },
+        { "source": "/study-leave", "destination": "/study-leave/index.html" },
+        { "source": "/transfer", "destination": "/transfer/index.html" },
+        { "source": "/upgrading", "destination": "/upgrading/index.html" }
     ],
     "headers": [
         {
