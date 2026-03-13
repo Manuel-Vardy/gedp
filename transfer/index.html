@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEDP Teacher Transfer System – Ghana Education Service</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0b132b',
+                        secondary: '#1c2541',
+                        accent: '#ffc107',
+                        ash: '#f8f9fa',
+                        darkRed: '#8e1515',
+                        darkerRed: '#701010',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="image/GEDP-fav.png">
+</head>
+
+<body class="bg-ash text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-4 bg-primary/80 backdrop-blur-xl shadow-lg">
+        <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+            <a href="#" class="flex items-center">
+                <img src="image/GEDP.png" alt="GES Logo" class="h-12 md:h-14 w-auto">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Desktop CTA -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="#"
+                    class="bg-darkRed hover:bg-darkerRed text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-lg">Apply
+                    Transfer</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 z-[55] bg-primary/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Mobile Menu Container (Side Drawer) -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-[80%] max-w-[400px] z-[60] bg-primary/98 backdrop-blur-3xl flex flex-col items-center justify-start pt-24 space-y-6 lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+        <!-- Close Button -->
+        <button id="mobile-menu-close"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all hover:bg-white/10 active:scale-95">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="flex flex-col items-center space-y-8 w-full px-10">
+            <a href="#eligibility"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Eligibility</a>
+            <a href="#application"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Apply
+                Online</a>
+            <a href="#review"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Review
+                Process</a>
+            <a href="#decision"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Final
+                Decision</a>
+            <a href="#types"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Types
+                of Transfer</a>
+            <a href="#"
+                class="bg-darkRed text-white px-8 py-3 rounded-full font-medium shadow-2xl hover:bg-darkerRed transition-all mt-8 text-lg w-full text-center">Apply
+                Transfer</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="home" class="min-h-[80vh] flex items-center pt-40 pb-16 relative overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline poster="image/greet.jpg" preload="metadata"
+            class="absolute inset-0 w-full h-full object-cover">
+            <source src="video/846-140823862_medium.mp4" type="video/mp4">
+        </video>
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+
+        <div class="container mx-auto px-6 text-left slide-up z-10 relative">
+            <h1
+                class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 text-accent leading-tight tracking-tight max-w-4xl">
+                GEDP Teacher Transfer System
+            </h1>
+            <div class="bg-accent mb-8 w-32 h-[2px] rounded-full"></div>
+            <p class="text-base md:text-lg font-light mb-6 text-white/90 max-w-3xl leading-relaxed opacity-90">
+                The GEDP Teacher Transfer System is an official administrative and digital system used to process and
+                manage the transfer of teachers from one school, district, or region to another within Ghana.
+            </p>
+            <p class="text-base md:text-lg font-light text-white/90 max-w-2xl leading-relaxed opacity-90">
+                It helps GES control teacher distribution, ensure fairness, and maintain proper staffing levels in
+                schools.
+            </p>
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4 mt-8">
+                <a href="#eligibility"
+                    class="bg-accent hover:bg-yellow-500 text-primary px-6 py-2.5 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-base min-w-[150px] text-center">Check
+                    Eligibility</a>
+                <a href="#"
+                    class="border-2 border-white/40 hover:border-white hover:bg-white/10 text-white px-6 py-2.5 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 text-base min-w-[150px] text-center">Apply
+                    Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About the System -->
+    <section class="bg-white py-16 border-b border-gray-100">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4 uppercase tracking-wide">What is the GEDP
+                    Teacher Transfer System?</h2>
+                <div class="bg-darkRed mx-auto mb-8 w-24 h-[2px] rounded-full"></div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    The GEDP-Teacher Transfer System is a structured process and online platform that allows teachers
+                    to:
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 text-left mt-10">
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-700 text-base leading-relaxed">Apply for transfer from their current
+                            post</span>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-700 text-base leading-relaxed">Request relocation to another district or
+                            region</span>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-700 text-base leading-relaxed">Submit supporting documents
+                            electronically</span>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-700 text-base leading-relaxed">Track the status of their
+                            application</span>
+                    </div>
+                </div>
+                <p class="text-gray-500 text-base mt-8 italic">
+                    The system is fully managed by the GES headquarters together with district and regional education
+                    directorates.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Step 1: Confirm Eligibility -->
+        <section id="eligibility" class="bg-white py-20 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="relative group">
+                        <!-- Bottom dark gradient -->
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none transition-opacity duration-300"></div>
+                        <img src="image/financial-adviser-explaining-retirement-pension-options-old-couple.jpg"
+                            alt="Eligibility for Transfer" class="rounded-2xl w-full object-cover h-[250px] md:h-[520px]">
+                    </div>
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 1</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Confirm Eligibility for Transfer
+                        </h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-8 text-gray-600 text-lg leading-relaxed">Before applying, a teacher must ensure
+                            they meet the basic GES transfer conditions:</p>
+
+                        <div class="space-y-8">
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-1">Basic Conditions:</h5>
+                                <div class="bg-darkRed mb-3 w-12 h-[0.5px]"></div>
+                                <ul class="text-gray-700 space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Must have served at least 3 years at the current post (normally required).
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Must have no pending disciplinary issues.
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Must have proper documentation supporting the reason for transfer.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-1">Common Acceptable Reasons:</h5>
+                                <div class="bg-darkRed mb-4 w-12 h-[0.5px]"></div>
+                                <ul class="grid grid-cols-2 gap-x-6 gap-y-3 text-gray-700 font-medium">
+                                    <li class="flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Marriage
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Health condition
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Family responsibilities
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Further education
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Security concerns
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Spouse relocation
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: Apply Online -->
+        <section id="application" class="bg-ash py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 2</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Apply Online on the Transfer Portal
+                        </h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-8 text-gray-600 text-lg leading-relaxed">Log into GEDP and navigate to the Transfer
+                            Portal to process your transfer. The following information is required:</p>
+
+                        <div class="space-y-8">
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-1">Information Required:</h5>
+                                <div class="bg-darkRed mb-4 w-12 h-[0.5px]"></div>
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 text-gray-700">
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Staff ID
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Current school
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Current district/region
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Preferred district/region
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Reason for transfer
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Supporting documents
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a href="#"
+                                class="inline-flex items-center gap-3 bg-darkRed hover:bg-darkerRed text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-base">
+                                Apply on the Transfer Portal
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <!-- Bottom dark gradient -->
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none transition-opacity duration-300"></div>
+                        <img src="image/male-office.jpg" alt="Online Transfer Application"
+                            class="rounded-2xl w-full object-cover h-[250px] md:h-[460px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: Application Review -->
+        <section id="review" class="bg-white py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-14">
+                    <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-3">Step 2</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4">Application Review</h3>
+                    <div class="bg-darkRed mx-auto mb-6 w-32 h-[2px] rounded-full"></div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                        The request moves through several levels of review. Each level may recommend approval or
+                        rejection.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="bg-ash rounded-2xl p-8 text-center border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-darkRed rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">1</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-2">Headteacher</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Initial review and recommendation at the school
+                            level.</p>
+                    </div>
+                    <div
+                        class="bg-ash rounded-2xl p-8 text-center border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-darkRed rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">2</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-2">District Education Office</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">District-level review of the transfer
+                            application.</p>
+                    </div>
+                    <div
+                        class="bg-ash rounded-2xl p-8 text-center border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-darkRed rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">3</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-2">Regional Directorate</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Regional-level assessment and recommendation.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-ash rounded-2xl p-8 text-center border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-accent font-bold text-xl">4</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-2">GES Headquarters</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Final authority for all transfer decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3: Final Decision -->
+        <section id="decision" class="bg-ash py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <!-- Step 3 -->
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Step 3</p>
+                        <h3 class="text-3xl font-bold text-primary mb-6">Final Decision</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-6 text-gray-600 text-lg">GES makes the final decision based on:</p>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Teacher demand in both areas
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Validity of the reason for transfer
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Availability of vacancies
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Step 4</p>
+                        <h3 class="text-3xl font-bold text-primary mb-6">Issuance of Transfer Letter</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-6 text-gray-600 text-lg">If approved, the teacher receives a formal transfer letter
+                            indicating:</p>
+                        <ul class="space-y-4 text-gray-700 mb-8">
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                New district or region
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Reporting date
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Posting instructions
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Release and Assumption of Duty -->
+        <section class="bg-white py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="relative group">
+                        <!-- Bottom dark gradient -->
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none transition-opacity duration-300"></div>
+                        <img src="image/man-reading-papers.jpg" alt="Release and Assumption of Duty"
+                            class="rounded-2xl w-full object-cover h-[250px] md:h-[460px]">
+                    </div>
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Final Steps</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Release and Assumption of Duty</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-8 text-gray-600 text-lg leading-relaxed">Once approval is granted, the following
+                            steps must be completed:</p>
+
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <span
+                                    class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mt-0.5 text-accent font-bold text-sm">1</span>
+                                <div>
+                                    <p class="text-gray-700 text-base leading-relaxed">Current district issues a
+                                        <strong>release letter</strong>.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span
+                                    class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mt-0.5 text-accent font-bold text-sm">2</span>
+                                <div>
+                                    <p class="text-gray-700 text-base leading-relaxed">Teacher <strong>reports to new
+                                            district education office</strong>.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span
+                                    class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mt-0.5 text-accent font-bold text-sm">3</span>
+                                <div>
+                                    <p class="text-gray-700 text-base leading-relaxed">Teacher <strong>receives posting
+                                            to a school</strong>.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span
+                                    class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mt-0.5 text-accent font-bold text-sm">4</span>
+                                <div>
+                                    <p class="text-gray-700 text-base leading-relaxed">Teacher <strong>signs assumption
+                                            of duty form</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types of Transfers -->
+        <section id="types" class="bg-ash py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-14">
+                    <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4 uppercase tracking-wide">Types of
+                        Transfers in GES</h3>
+                    <div class="bg-darkRed mx-auto mb-6 w-32 h-[2px] rounded-full"></div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">The system allows different types of transfers
+                        based on the teacher's circumstances and needs.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Inter-District -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-darkRed/10 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-darkRed" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Inter-District Transfer</h4>
+                        <div class="bg-darkRed mb-4 w-10 h-[1.5px]"></div>
+                        <p class="text-gray-600 leading-relaxed">Movement from one district to another <strong>within
+                                the same region</strong>.</p>
+                    </div>
+
+                    <!-- Inter-Regional -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-darkRed/10 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-darkRed" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064">
+                                </path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Inter-Regional Transfer</h4>
+                        <div class="bg-darkRed mb-4 w-10 h-[1.5px]"></div>
+                        <p class="text-gray-600 leading-relaxed">Movement from one region of Ghana to <strong>another
+                                region</strong>.</p>
+                    </div>
+
+                    <!-- Special Transfer -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-darkRed/10 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-darkRed" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Special Transfer</h4>
+                        <div class="bg-darkRed mb-4 w-10 h-[1.5px]"></div>
+                        <p class="text-gray-600 leading-relaxed mb-4">Transfers based on exceptional circumstances:</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center gap-2 text-sm">
+                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span> Medical conditions
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span> Security concerns
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span> Marriage or family relocation
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Notes for Teachers -->
+        <section class="bg-white py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="bg-white border border-gray-100 shadow-sm overflow-hidden rounded-3xl">
+                    <div class="flex flex-col lg:flex-row gap-0 lg:gap-16">
+                        <!-- Image now comes first on mobile (order-1) -->
+                        <div class="lg:w-1/2 order-1 lg:order-2">
+                            <div class="relative group h-[300px] md:h-[500px] w-full overflow-hidden">
+                                <img src="image/working-computer.jpg" alt="Important Notes"
+                                    class="rounded-t-3xl lg:rounded-none lg:rounded-r-3xl w-full object-cover h-[300px] md:h-[500px] hover:grayscale transition-all duration-500">
+                            </div>
+                        </div>
+
+                        <!-- Text content below on mobile (order-2) -->
+                        <div class="lg:w-1/2 order-2 lg:order-1 p-6 md:p-10 lg:p-16">
+                            <div class="flex items-center gap-4 mb-8 w-full">
+                                <h3 class="text-xl md:text-2xl font-bold text-darkRed uppercase tracking-wide">
+                                    Important Notes <br class="hidden md:block"/> for Teachers:
+                                </h3>
+                                <div class="hidden md:block h-px bg-darkRed flex-grow"></div>
+                            </div>
+
+                            <ul class="space-y-5">
+                                <li class="flex items-start gap-4">
+                                    <span
+                                        class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="text-gray-700 text-lg leading-relaxed">Transfers are usually processed
+                                        during <strong>official transfer windows</strong> announced by GES.</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <span
+                                        class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="text-gray-700 text-lg leading-relaxed">Some transfers (e.g., medical or
+                                        security cases) may be treated as <strong>emergency transfers</strong>.</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <span
+                                        class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="text-gray-700 text-lg leading-relaxed">Teachers must <strong>continue
+                                            teaching</strong> until officially released.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Apply Now Section -->
+    <section class="bg-gray-100 py-16 border-t border-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-4">Ready to Apply for a Transfer?</h3>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto">Log into GEDP and navigate to the Transfer Portal to begin
+                your application.</p>
+            <a href="#"
+                class="inline-flex items-center justify-center gap-2 bg-darkRed hover:bg-darkerRed text-white px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-[0_10px_30px_rgba(142,21,21,0.4)] transition-all transform hover:-translate-y-1 text-lg">
+                <span>Apply for Transfer Now</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary py-8 text-center border-t border-secondary">
+        <div class="container mx-auto px-6">
+            <p class="mb-0 text-white/80 font-light">&copy; 2026 Ghana Education Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script>
+        // Fade-in on scroll animations
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Navbar background change on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const menu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('mobile-menu-overlay');
+
+        function toggleMenu() {
+            const isOpen = !menu.classList.contains('translate-x-full');
+            if (!isOpen) {
+                menu.classList.remove('translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100');
+                document.body.classList.add('overflow-hidden');
+            } else {
+                menu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                overlay.classList.remove('opacity-100');
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close menu when a link inside it is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!menu.classList.contains('translate-x-full')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

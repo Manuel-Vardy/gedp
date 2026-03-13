@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghana Education Service Promotion Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0b132b',
+                        secondary: '#1c2541',
+                        accent: '#ffc107',
+                        ash: '#f8f9fa',
+                        darkRed: '#8e1515',
+                        darkerRed: '#701010',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="image/GEDP-fav.png">
+</head>
+
+<body class="bg-ash text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-4 bg-primary/80 backdrop-blur-xl shadow-lg">
+        <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+            <a href="#" class="flex items-center">
+                <img src="image/GEDP.png" alt="GES Logo" class="h-12 md:h-14 w-auto">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-12">
+
+                <a href="#"
+                    class="bg-darkRed hover:bg-darkerRed text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-lg">Apply
+                    Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 z-[55] bg-primary/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Mobile Menu Container (Side Drawer) -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-[80%] max-w-[400px] z-[60] bg-primary/98 backdrop-blur-3xl flex flex-col items-center justify-start pt-24 space-y-6 lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+        <!-- Modern Close Button -->
+        <button id="mobile-menu-close"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all hover:bg-white/10 active:scale-95">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="flex flex-col items-center space-y-8 w-full px-10">
+            <a href="#teaching-staff" data-section="teaching-staff"
+                class="mobile-nav-link text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Teaching
+                Staff</a>
+            <a href="#non-teaching-staff" data-section="non-teaching-staff"
+                class="mobile-nav-link text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Non-Teaching
+                Staff</a>
+            <a href="#"
+                class="bg-darkRed text-white px-8 py-3 rounded-full font-medium shadow-2xl hover:bg-darkerRed transition-all mt-8 text-lg w-full text-center">Apply
+                Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="home" class="min-h-[80vh] flex items-center pt-40 pb-16 relative overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline poster="image/greet.jpg" preload="metadata"
+            class="absolute inset-0 w-full h-full object-cover">
+            <source src="video/846-140823862_medium.mp4" type="video/mp4">
+        </video>
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+
+        <div class="container mx-auto px-6 text-left slide-up z-10 relative">
+            <h1
+                class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 text-accent leading-tight tracking-tight max-w-4xl">
+                Ghana Education Service Promotion Portal
+            </h1>
+            <div class="bg-accent mb-8 w-32 h-[2px] rounded-full"></div>
+            <p class="text-base md:text-lg font-light mb-6 text-white/90 max-w-3xl leading-relaxed opacity-90">
+                The GES Promotion Exercise is an internal process through which serving staff (both teaching and
+                non-teaching) are elevated to higher ranks based on qualification, years of service, performance, and
+                success in promotion examinations and interviews.
+            </p>
+            <p class="text-base md:text-lg font-light text-white/90 max-w-2xl leading-relaxed opacity-90">
+                The exercise is usually conducted nationwide when vacancies exist and approval is granted.
+            </p>
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4 mt-6">
+                <a href="#"
+                    class="bg-accent hover:bg-yellow-500 text-primary px-6 py-2.5 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-base min-w-[150px] text-center">Talk
+                    to Expert</a>
+                <a href="#"
+                    class="border-2 border-white/40 hover:border-white hover:bg-white/10 text-white px-6 py-2.5 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 text-base min-w-[150px] text-center">Apply
+                    Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Applicant Category Navigation Bar -->
+    <section class="bg-white border-b border-gray-100 relative z-30">
+        <div class="container mx-auto px-6">
+            <div
+                class="flex flex-col md:flex-row items-start md:items-center md:justify-center gap-y-4 md:gap-x-12 py-8 md:py-6">
+                <a href="#teaching-staff" data-section="teaching-staff"
+                    class="nav-tab-link text-primary font-medium hover:text-darkRed transition-colors py-2 text-[17px] relative group">
+                    Teaching Staff
+                    <span
+                        class="indicator absolute bottom-0 left-0 w-full h-px bg-darkRed transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+                <a href="#non-teaching-staff" data-section="non-teaching-staff"
+                    class="nav-tab-link text-primary font-medium hover:text-darkRed transition-colors py-2 text-[17px] relative group">
+                    Non-Teaching Staff
+                    <span
+                        class="indicator absolute bottom-0 left-0 w-full h-px bg-darkRed transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections Container -->
+    <main id="content">
+        <!-- TEACHING STAFF -->
+        <section id="teaching-staff" class="applicant-section pt-0 pb-0 fade-in-section">
+            <!-- Top Part: White Background -->
+            <div class="bg-white py-12 md:py-20">
+                <div class="container mx-auto px-6 lg:px-12">
+                    <div class="text-center mb-10 md:mb-16">
+                        <div class="flex items-center justify-center gap-4 md:gap-6 mb-12 w-full">
+                            <div class="h-px bg-darkRed flex-grow max-w-[30px] md:max-w-[100px] min-w-[20px]"></div>
+                            <h2
+                                class="text-2xl md:text-4xl font-bold text-primary uppercase tracking-wide text-center shrink-0">
+                                TEACHING STAFF</h2>
+                            <div class="h-px bg-darkRed flex-grow max-w-[30px] md:max-w-[100px] min-w-[20px]"></div>
+                        </div>
+                        <p class="text-xl md:text-lg text-gray-600 max-w-3xl mx-auto text-center">
+                            The GES Promotion Exercise is an internal process for teaching staff to be elevated to
+                            higher ranks based on qualification, years of service, performance, and success in promotion
+                            examinations and interviews.
+                        </p>
+                    </div>
+
+                    <div class="space-y-24">
+                        <!-- Phase 01: Eligibility Requirements -->
+                        <div class="grid lg:grid-cols-2 gap-16 items-center">
+                            <div class="relative group">
+                                <img src="image/financial-adviser-explaining-retirement-pension-options-old-couple.jpg"
+                                    alt="Teaching Staff Eligibility"
+                                    class="rounded-3xl w-full object-cover h-[340px] md:h-auto aspect-[4/5] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+                                <div
+                                    class="absolute inset-x-0 bottom-0 h-1/2 rounded-3xl bg-gradient-to-t from-primary/80 to-transparent">
+                                </div>
+                                <div class="absolute bottom-10 left-8 right-8 text-white">
+                                    <h4 class="font-bold text-2xl mb-3">Eligibility Criteria</h4>
+                                    <p class="text-white/80 leading-relaxed text-lg">Meeting the standard for
+                                        advancement.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 01</p>
+                                <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Eligibility Requirements
+                                </h3>
+                                <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+
+                                <div class="space-y-8">
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-1">1. Minimum Years of Service:
+                                        </h5>
+                                        <div class="bg-darkRed mb-3 w-12 h-[1px]"></div>
+                                        <p class="text-gray-700 mb-2">An officer must have served a required number of
+                                            years in their current rank before qualifying for promotion.</p>
+                                        <ul class="text-gray-600 ml-6 space-y-1 list-disc italic">
+                                            <li>Superintendent I → Superintendent II</li>
+                                            <li>Principal Superintendent → Assistant Director II</li>
+                                            <li>Assistant Director II → Assistant Director I</li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-1">2. Educational Qualification:
+                                        </h5>
+                                        <div class="bg-darkRed mb-3 w-12 h-[1px]"></div>
+                                        <ul class="text-gray-700 space-y-2">
+                                            <li>Must meet the academic qualification required for the next rank.</li>
+                                            <li>Higher qualifications (e.g., Bachelor's or Master's degree) may be
+                                                required for certain promotions.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-1">3. Recommendation:</h5>
+                                        <div class="bg-darkRed mb-3 w-12 h-[1px]"></div>
+                                        <p class="text-gray-700">Must be recommended by: Headteacher, District Director
+                                            of Education, or Immediate supervisor.</p>
+                                    </div>
+
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-1">4. Registration:</h5>
+                                        <div class="bg-darkRed mb-3 w-12 h-[1px]"></div>
+                                        <p class="text-gray-700">Eligible officers must officially apply and register
+                                            for the promotion examination when it is announced by GES on GEDP website.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Part: Ash Background -->
+            <div class="bg-ash py-20 md:py-24 border-t border-gray-100">
+                <div class="container mx-auto px-6 lg:px-12">
+                    <div class="space-y-20">
+                        <!-- Phase 02: Process of Promotion Exercise -->
+                        <div class="mb-12">
+                            <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 02</p>
+                            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">PROCESS OF PROMOTION
+                                EXERCISE</h2>
+                            <div class="bg-darkRed mb-0 w-32 h-[2px] rounded-full"></div>
+                        </div>
+
+                        <div class="space-y-16">
+                            <!-- Row 1: Steps 1, 2 & Image -->
+                            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                                <div class="space-y-12">
+                                    <!-- 1. Announcement -->
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-2 flex items-center gap-3">
+                                            <span
+                                                class="w-8 h-8 bg-orange-500/10 text-orange-500 rounded-full flex items-center justify-center text-sm font-bold">01</span>
+                                            Announcement of Promotion
+                                        </h5>
+                                        <div class="ml-11 mb-6 w-12 h-0.5 bg-darkRed/80 rounded-full"></div>
+                                        <div class="ml-11">
+                                            <p class="text-gray-700 mb-4 font-medium italic">GES publishes an official
+                                                circular announcing:</p>
+                                            <ul
+                                                class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-gray-600 mb-4">
+                                                <li class="flex items-center gap-2.5">
+                                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                    Eligible ranks
+                                                </li>
+                                                <li class="flex items-center gap-2.5">
+                                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                    Qualification criteria
+                                                </li>
+                                                <li class="flex items-center gap-2.5">
+                                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                    Application procedures
+                                                </li>
+                                                <li class="flex items-center gap-2.5">
+                                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                    Deadline
+                                                </li>
+                                                <li class="flex items-center gap-2.5">
+                                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                    Examination date
+                                                </li>
+                                            </ul>
+                                            <p
+                                                class="text-gray-500 italic text-sm border-l-2 border-gray-200 pl-4 py-1">
+                                                The circular is distributed through district and regional education
+                                                offices.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2. Application Submission -->
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-2 flex items-center gap-3">
+                                            <span
+                                                class="w-8 h-8 bg-orange-500/10 text-orange-500 rounded-full flex items-center justify-center text-sm font-bold">02</span>
+                                            Application Submission
+                                        </h5>
+                                        <div class="ml-11 mb-6 w-12 h-0.5 bg-darkRed/80 rounded-full"></div>
+                                        <div class="ml-11">
+                                            <p class="text-gray-700 mb-4 font-medium italic">Eligible staff must:</p>
+                                            <ul class="space-y-4 text-gray-600">
+                                                <li class="flex items-start gap-3">
+                                                    <span
+                                                        class="mt-1.5 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                    <span>Complete promotion forms on <strong>GEDP Promotion
+                                                            Portal</strong>.</span>
+                                                </li>
+                                                <li class="flex items-start gap-3">
+                                                    <span
+                                                        class="mt-1.5 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                    <span>Attach required documents such as:
+                                                        <ul class="mt-3 space-y-2 ml-4">
+                                                            <li class="flex items-center gap-2">
+                                                                <span class="text-darkRed">○</span> Appointment letter
+                                                            </li>
+                                                            <li class="flex items-center gap-2">
+                                                                <span class="text-darkRed">○</span> Academic
+                                                                certificates
+                                                            </li>
+                                                            <li class="flex items-center gap-2">
+                                                                <span class="text-darkRed">○</span> Last promotion
+                                                                letter
+                                                            </li>
+                                                        </ul>
+                                                    </span>
+                                                </li>
+                                                <li class="flex items-start gap-3">
+                                                    <span
+                                                        class="mt-1.5 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                    <span>Submit through their head of institution to the District
+                                                        Education Office.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="self-start">
+                                    <div class="relative group">
+                                        <img src="image/male-office.jpg" alt="Promotion Process"
+                                            class="rounded-3xl w-full object-cover h-[450px] lg:h-[540px] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+                                        <div
+                                            class="absolute inset-x-0 bottom-0 h-1/2 rounded-3xl bg-gradient-to-t from-primary/80 to-transparent">
+                                        </div>
+                                        <div class="absolute bottom-10 left-8 right-8 text-white">
+                                            <h4 class="font-bold text-2xl mb-3">Professional Advancement</h4>
+                                            <p class="text-white/80 leading-relaxed text-lg">Advancement is based on
+                                                qualification and merit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 2: Steps 3 & 4 -->
+                            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                                <!-- 3. Screening -->
+                                <div>
+                                    <h5 class="text-xl font-bold text-primary mb-2 flex items-center gap-3">
+                                        <span
+                                            class="w-8 h-8 bg-orange-500/10 text-orange-500 rounded-full flex items-center justify-center text-sm font-bold">03</span>
+                                        Screening of Applications
+                                    </h5>
+                                    <div class="ml-11 mb-6 w-12 h-0.5 bg-darkRed/80 rounded-full"></div>
+                                    <div class="ml-11">
+                                        <p class="text-gray-700 mb-4 font-medium italic">District and Regional
+                                            offices verify:</p>
+                                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600 mb-4">
+                                            <li class="flex items-center gap-2.5">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                Years of service
+                                            </li>
+                                            <li class="flex items-center gap-2.5">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                Qualification
+                                            </li>
+                                            <li class="flex items-center gap-2.5">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                Rank status
+                                            </li>
+                                            <li class="flex items-center gap-2.5">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                Performance record
+                                            </li>
+                                        </ul>
+                                        <div class="bg-primary/5 p-4 rounded-xl border-l-4 border-primary">
+                                            <p class="text-primary font-medium italic text-sm">Qualified applicants
+                                                are shortlisted for examination.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 4. Examination -->
+                                <div>
+                                    <h5 class="text-xl font-bold text-primary mb-4 flex items-center gap-3">
+                                        <span
+                                            class="w-8 h-8 bg-orange-500/10 text-orange-500 rounded-full flex items-center justify-center text-sm font-bold">04</span>
+                                        Promotion Examination
+                                    </h5>
+                                    <div class="ml-11 mb-6 w-12 h-0.5 bg-darkRed/80 rounded-full"></div>
+                                    <div class="ml-11">
+                                        <p class="text-gray-700 mb-4 font-medium italic">Candidates write a
+                                            promotion examination which may cover:</p>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li class="flex items-center gap-2.5">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                Educational policies
+                                            </li>
+                                            <li class="flex items-center gap-2.5">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                School administration
+                                            </li>
+                                            <li class="flex items-center gap-2.5">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                Leadership and supervision
+                                            </li>
+                                            <li class="flex items-center gap-2.5">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full"></span>
+                                                Professional Knowledge
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 03: Release of Results -->
+                        <div class="mt-20">
+                            <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 03</p>
+                            <h3 class="text-3xl font-bold text-primary mb-6">Release of Results</h3>
+                            <div class="bg-darkRed mb-10 w-32 h-[2px] rounded-full"></div>
+
+                            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                                <ul class="space-y-6 text-gray-700">
+                                    <li class="flex items-start gap-4">
+                                        <div
+                                            class="flex-shrink-0 w-12 h-12 bg-darkRed rounded-xl flex items-center justify-center shadow-lg shadow-darkRed/20">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-xl font-semibold text-primary">Result Publication</p>
+                                            <p class="text-gray-700 text-lg">GES releases results after marking and
+                                                vetting.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+                                    <h6 class="font-bold text-primary text-lg mb-4">Successful candidates receive:</h6>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-center gap-3 text-gray-700 text-lg">
+                                            <span class="w-2 h-2 bg-darkRed rounded-full shrink-0"></span> Promotion
+                                            letters
+                                        </li>
+                                        <li class="flex items-center gap-3 text-gray-700 text-lg">
+                                            <span class="w-2 h-2 bg-darkRed rounded-full shrink-0"></span> New rank
+                                            placement
+                                        </li>
+                                        <li class="flex items-center gap-3 text-gray-600 md:col-span-2">
+                                            <span class="w-2 h-2 bg-darkRed rounded-full shrink-0"></span> Effective
+                                            date of
+                                            promotion
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Important Note -->
+                        <div class="bg-white border border-gray-100 shadow-sm overflow-hidden rounded-3xl mt-16">
+                            <div class="flex flex-col lg:flex-row items-stretch">
+                                <div class="lg:w-1/2 order-2 lg:order-1 p-6 md:p-10 lg:p-16 flex flex-col justify-center">
+                                    <div class="flex items-center gap-4 mb-10 w-full">
+                                        <h3 class="text-2xl font-bold text-darkRed uppercase tracking-wide shrink-0">
+                                            Important Notes:</h3>
+                                        <div class="h-px bg-darkRed flex-grow"></div>
+                                    </div>
+
+                                    <ul class="space-y-6 mb-8">
+                                        <li class="flex items-start gap-4">
+                                            <span
+                                                class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="text-gray-700 text-lg">Promotion is competitive and
+                                                merit-based.</span>
+                                        </li>
+                                        <li class="flex items-start gap-4">
+                                            <span
+                                                class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="text-gray-700 text-lg">Meeting minimum years of service does
+                                                not guarantee automatic promotion.</span>
+                                        </li>
+                                        <li class="flex items-start gap-4">
+                                            <span
+                                                class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="text-gray-700 text-lg">Examination malpractice or falsification
+                                                of documents leads to disqualification.</span>
+                                        </li>
+                                        <li class="flex items-start gap-4">
+                                            <span
+                                                class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="text-gray-700 text-lg">Officers must stay updated with GES
+                                                policies and reforms.</span>
+                                        </li>
+                                    </ul>
+                                    <div class="space-y-4 pt-6 border-t border-gray-100">
+                                        <p class="text-gray-700 leading-relaxed font-medium">The GES Promotion Exercise
+                                            ensures career progression within the Ghana Education Service.</p>
+                                        <p class="text-gray-600 leading-relaxed">It encourages professionalism,
+                                            competence, and leadership development among staff while maintaining
+                                            standards in the education sector.</p>
+                                    </div>
+                                </div>
+
+                                <div class="lg:w-1/2 order-1 lg:order-2">
+                                    <div class="relative group h-full w-full overflow-hidden">
+                                        <img src="image/working-computer.jpg" alt="Important Notes"
+                                            class="w-full h-full object-cover min-h-[340px] transition-transform duration-700 group-hover:scale-[1.02]">
+                                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-primary/80 to-transparent">
+                                        </div>
+                                        <div class="absolute bottom-10 left-8 right-8 text-white">
+                                            <h4 class="font-bold text-2xl mb-3">Essential Guidelines</h4>
+                                            <p class="text-white/80 leading-relaxed text-lg">Key reminders for success.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="non-teaching-staff" class="applicant-section hidden fade-in-section pt-0 pb-0">
+            <!-- Top Part: White Background -->
+            <div class="bg-white py-12 md:py-20 border-b border-gray-100">
+                <div class="container mx-auto px-6 lg:px-12">
+                    <div class="text-center mb-10 md:mb-16">
+                        <div class="flex items-center justify-center gap-4 md:gap-6 mb-12 w-full">
+                            <div class="h-px bg-darkRed flex-grow max-w-[30px] md:max-w-[100px] min-w-[20px]"></div>
+                            <h2
+                                class="text-2xl md:text-4xl font-bold text-primary uppercase tracking-wide text-center shrink-0">
+                                NON-TEACHING STAFF</h2>
+                            <div class="h-px bg-darkRed flex-grow max-w-[30px] md:max-w-[100px] min-w-[20px]"></div>
+                        </div>
+                        <p class="text-xl md:text-lg text-gray-700 max-w-4xl mx-auto text-center mb-10">
+                            Non-teaching staff include administrative officers, accountants, secretaries, ICT officers,
+                            procurement officers, laboratory assistants, drivers, and other supporting personnel working
+                            in
+                            schools and education offices.
+                        </p>
+                        <div class="bg-white border border-gray-100 rounded-2xl p-8 mb-10 text-left w-full">
+                            <p class="text-lg text-gray-700 font-medium mb-4">The GES Promotion Exercise is an
+                                internal career advancement process that allows qualified non-teaching staff to move to
+                                higher grades or ranks based on:</p>
+                            <ul class="space-y-2 text-gray-700 mb-6">
+                                <li class="flex items-center gap-4">
+                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                    <span>Years of service</span>
+                                </li>
+                                <li class="flex items-center gap-4">
+                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                    <span>Academic and professional qualifications</span>
+                                </li>
+                                <li class="flex items-center gap-4">
+                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                    <span>Performance record</span>
+                                </li>
+                                <li class="flex items-center gap-4">
+                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                    <span>Success in promotion examination and/or interview</span>
+                                </li>
+                            </ul>
+                            <p class="text-base text-darkRed font-bold border-t border-gray-100 pt-4">
+                                Promotion is not automatic; it is competitive and based on merit and vacancy
+                                availability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-24">
+                        <!-- Phase 01: Eligibility Requirements -->
+                        <div class="grid lg:grid-cols-2 gap-16 items-center">
+                            <div class="relative group">
+                                <img src="image/man-reading-papers.jpg" alt="Non-Teaching Eligibility"
+                                    class="rounded-3xl w-full object-cover h-[340px] md:h-auto aspect-[4/5] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+                                <div
+                                    class="absolute inset-x-0 bottom-0 h-1/2 rounded-3xl bg-gradient-to-t from-primary/80 to-transparent">
+                                </div>
+                                <div class="absolute bottom-10 left-8 right-8 text-white">
+                                    <h4 class="font-bold text-2xl mb-3">Administrative Merit</h4>
+                                    <p class="text-white/80 leading-relaxed text-lg">Steps toward career progression.
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 01</p>
+                                <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6 uppercase">ELIGIBILITY
+                                    REQUIREMENTS FOR NON-TEACHING STAFF PROMOTION</h3>
+                                <div class="bg-darkRed mb-8 w-32 h-[2px] rounded-full"></div>
+
+
+                                <div class="space-y-12">
+                                    <!-- 1. Minimum Years of Service -->
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-1">1. Minimum Years of Service</h5>
+                                        <div class="bg-darkRed mb-3 w-12 h-[1px]"></div>
+                                        <p
+                                            class="text-gray-700 mb-4 font-medium underline underline-offset-4 decoration-darkRed/10">
+                                            Example:</p>
+                                        <ul class="text-gray-700 space-y-3 mb-4 ml-6">
+                                            <li class="flex items-start gap-4">
+                                                <span class="mt-2 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Administrative Assistant → Senior Administrative Assistant</span>
+                                            </li>
+                                            <li class="flex items-start gap-4">
+                                                <span class="mt-2 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Senior Administrative Assistant → Principal Administrative
+                                                    Assistant</span>
+                                            </li>
+                                            <li class="flex items-start gap-4">
+                                                <span class="mt-2 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Principal Officer → Assistant Director</span>
+                                            </li>
+                                        </ul>
+                                        <p class="text-gray-600">The required years are stated in the official GES
+                                            promotion circular.</p>
+                                    </div>
+
+                                    <!-- 2. Required Academic and Professional Qualification -->
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-1">2. Required Academic and
+                                            Professional Qualification</h5>
+                                        <div class="bg-darkRed mb-3 w-12 h-[1px]"></div>
+                                        <p
+                                            class="text-gray-700 mb-4 font-medium underline underline-offset-4 decoration-darkRed/10">
+                                            Examples:</p>
+                                        <ul class="text-gray-700 space-y-3 mb-4 ml-6">
+                                            <li class="flex items-start gap-4">
+                                                <span class="mt-2 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>HND or Bachelor's degree (for administrative roles)</span>
+                                            </li>
+                                            <li class="flex items-start gap-4">
+                                                <span class="mt-2 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Professional certification (for accountants or procurement
+                                                    officers)</span>
+                                            </li>
+                                            <li class="flex items-start gap-4">
+                                                <span class="mt-2 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>ICT certification (for IT officers), where required</span>
+                                            </li>
+                                        </ul>
+                                        <p class="text-gray-600">Higher academic qualifications may enhance chances of
+                                            promotion.</p>
+                                    </div>
+
+                                    <!-- 3. Recommendation from Supervisor -->
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-1">3. Recommendation from
+                                            Supervisor</h5>
+                                        <div class="bg-darkRed mb-3 w-12 h-[1px]"></div>
+                                        <p class="text-gray-700 mb-4">The applicant must be recommended by:</p>
+                                        <ul class="text-gray-700 space-y-3 ml-6">
+                                            <li class="flex items-center gap-4">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Immediate supervisor</span>
+                                            </li>
+                                            <li class="flex items-center gap-4">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Head of Department</span>
+                                            </li>
+                                            <li class="flex items-center gap-4">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>District/Regional Director</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- 4. Official Application -->
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-1">4. Official Application</h5>
+                                        <div class="bg-darkRed mb-2 w-12 h-[1px]"></div>
+                                        <p class="text-gray-700">The officer must formally apply when GES announces the
+                                            promotion exercise.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Part: Ash Background -->
+            <div class="bg-ash py-20 md:py-24 border-t border-gray-100">
+                <div class="container mx-auto px-6 lg:px-12">
+                    <div class="space-y-20">
+                        <!-- Phase 02: Process of Promotion Exercise -->
+                        <div class="mb-12">
+                            <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 02</p>
+                            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">PROCESS OF PROMOTION EXERCISE
+                            </h2>
+                            <div class="bg-darkRed mb-0 w-32 h-[2px] rounded-full"></div>
+                        </div>
+
+                        <div class="space-y-16">
+                            <!-- Row 1: Steps 1, 2 & Image -->
+                            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                                <div class="space-y-12">
+                                    <!-- 1. Announcement -->
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-4 flex items-center gap-3">
+                                            <span
+                                                class="w-8 h-8 bg-orange-500/10 text-orange-500 rounded-full flex items-center justify-center text-sm font-bold">01</span>
+                                            Announcement of Promotion Exercise
+                                        </h5>
+                                        <div class="ml-11 mb-6 w-12 h-0.5 bg-darkRed/80 rounded-full"></div>
+                                        <div class="ml-11">
+                                            <p class="text-gray-700 mb-4 font-medium">GES issues an official circular
+                                                specifying:</p>
+                                            <ul class="space-y-2 text-gray-600 mb-4 ml-2">
+                                                <li class="flex items-center gap-3">
+                                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                    <span>Eligible ranks</span>
+                                                </li>
+                                                <li class="flex items-center gap-3">
+                                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                    <span>Required qualifications</span>
+                                                </li>
+                                                <li class="flex items-center gap-3">
+                                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                    <span>Application procedures</span>
+                                                </li>
+                                                <li class="flex items-center gap-3">
+                                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                    <span>Examination date</span>
+                                                </li>
+                                                <li class="flex items-center gap-3">
+                                                    <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                    <span>Deadline for submission</span>
+                                                </li>
+                                            </ul>
+                                            <p class="text-gray-600">The circular is distributed to District and
+                                                Regional Education Offices.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2. Submission of Application -->
+                                    <div>
+                                        <h5 class="text-xl font-bold text-primary mb-4 flex items-center gap-3">
+                                            <span
+                                                class="w-8 h-8 bg-orange-500/10 text-orange-500 rounded-full flex items-center justify-center text-sm font-bold">02</span>
+                                            Submission of Application
+                                        </h5>
+                                        <div class="ml-11 mb-6 w-12 h-0.5 bg-darkRed/80 rounded-full"></div>
+                                        <div class="ml-11">
+                                            <p class="text-gray-700 mb-4 font-medium">Eligible staff must:</p>
+                                            <ul class="space-y-4 text-gray-700">
+                                                <li class="flex items-start gap-4">
+                                                    <span
+                                                        class="mt-2 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                    <span>Complete promotion forms.</span>
+                                                </li>
+                                                <li class="flex items-start gap-4">
+                                                    <span
+                                                        class="mt-2 w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                    <span>Attach supporting documents such as:
+                                                        <ul class="mt-3 space-y-2 ml-2">
+                                                            <li class="flex items-center gap-3 font-normal">
+                                                                <span class="text-darkRed shrink-0">○</span> First
+                                                                appointment letter
+                                                            </li>
+                                                            <li class="flex items-center gap-3 font-normal">
+                                                                <span class="text-darkRed shrink-0">○</span> Last
+                                                                promotion letter
+                                                            </li>
+                                                            <li class="flex items-center gap-3 font-normal">
+                                                                <span class="text-darkRed shrink-0">○</span> Academic
+                                                                certificates
+                                                            </li>
+                                                            <li class="flex items-center gap-3 font-normal">
+                                                                <span class="text-darkRed shrink-0">○</span>
+                                                                Professional certificates
+                                                            </li>
+                                                            <li class="flex items-center gap-3 font-normal">
+                                                                <span class="text-darkRed shrink-0">○</span> Performance
+                                                                appraisal reports
+                                                            </li>
+                                                        </ul>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <p class="mt-6 text-gray-700 font-medium">Applications are submitted through
+                                                the appropriate administrative channel:</p>
+                                            <p class="mt-2 text-gray-600">Immediate Supervisor → District Office →
+                                                Regional Office → GES Headquarters.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="self-start">
+                                    <div class="relative group">
+                                        <img src="image/young-businessman-working-office.jpg" alt="Non-Teaching Process"
+                                            class="process-img rounded-3xl w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+                                        <div
+                                            class="absolute inset-x-0 bottom-0 h-1/2 rounded-3xl bg-gradient-to-t from-primary/80 to-transparent">
+                                        </div>
+                                        <div class="absolute bottom-10 left-8 right-8 text-white">
+                                            <h4 class="font-bold text-2xl mb-3">Service Excellence</h4>
+                                            <p class="text-white/80 leading-relaxed text-lg">Advancement is based on
+                                                administrative merit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 2: Steps 3, 4 & 5 -->
+                            <div class="grid lg:grid-cols-3 gap-6 lg:gap-6 items-stretch">
+                                <!-- 3. Screening of Applications -->
+                                <div class="bg-white rounded-2xl border border-gray-100 p-8 h-full">
+                                    <h5 class="text-xl font-bold text-primary mb-3 flex items-center gap-3">
+                                        <span
+                                            class="w-8 h-8 bg-orange-500/10 text-orange-500 rounded-full flex items-center justify-center text-sm font-bold">03</span>
+                                        Screening
+                                    </h5>
+                                    <div class="ml-11 mb-5 w-12 h-0.5 bg-darkRed/80 rounded-full"></div>
+                                    <div class="ml-11">
+                                        <p class="text-gray-700 mb-4 font-medium">GES verifies:</p>
+                                        <ul class="space-y-2 text-gray-700 mb-6">
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Years of service</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Qualification</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Rank eligibility</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Certificates</span>
+                                            </li>
+                                        </ul>
+                                        <p class="text-gray-600 text-sm">Qualified applicants will receive SMS from IEPA
+                                            confirming his/her eligibility for the interview.</p>
+                                    </div>
+                                </div>
+
+                                <!-- 4. Interview Stage -->
+                                <div class="bg-white rounded-2xl border border-gray-100 p-8 h-full">
+                                    <h5 class="text-xl font-bold text-primary mb-3 flex items-center gap-3">
+                                        <span
+                                            class="w-8 h-8 bg-orange-500/10 text-orange-500 rounded-full flex items-center justify-center text-sm font-bold">04</span>
+                                        Interview
+                                    </h5>
+                                    <div class="ml-11 mb-5 w-12 h-0.5 bg-darkRed/80 rounded-full"></div>
+                                    <div class="ml-11">
+                                        <p class="text-gray-700 mb-4 font-medium">The panel assesses:</p>
+                                        <ul class="space-y-2 text-gray-700 mb-6">
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Leadership ability</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Technical competence</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Communication skills</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Problem-solving ability</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Job responsibilities</span>
+                                            </li>
+                                        </ul>
+                                        <p class="text-gray-600 text-sm">Candidates who pass the written exam are
+                                            invited for an interview; original documents are verified.</p>
+                                    </div>
+                                </div>
+
+                                <!-- 5. Release of Promotion Results -->
+                                <div class="bg-white rounded-2xl border border-gray-100 p-8 h-full">
+                                    <h5 class="text-xl font-bold text-primary mb-3 flex items-center gap-3">
+                                        <span
+                                            class="w-8 h-8 bg-orange-500/10 text-orange-500 rounded-full flex items-center justify-center text-sm font-bold">05</span>
+                                        Results
+                                    </h5>
+                                    <div class="ml-11 mb-5 w-12 h-0.5 bg-darkRed/80 rounded-full"></div>
+                                    <div class="ml-11">
+                                        <p class="text-gray-700 mb-4 font-medium">GES officially publishes results
+                                            through GEDP Portal.</p>
+                                        <p class="text-gray-700 font-medium mb-3">Successful candidates:</p>
+                                        <ul class="space-y-3 text-gray-700">
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Receive promotion letters</span>
+                                            </li>
+                                            <li class="flex items-center gap-3">
+                                                <span class="w-1.5 h-1.5 bg-darkRed rounded-full shrink-0"></span>
+                                                <span>Are placed on the new grade</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Important Note -->
+                            <div class="bg-white border border-gray-100 shadow-sm overflow-hidden rounded-3xl mt-16">
+                                <div class="flex flex-col lg:flex-row items-stretch">
+                                    <div class="lg:w-1/2 order-2 lg:order-1 p-6 md:p-10 lg:p-16 flex flex-col justify-center">
+                                        <div class="flex items-center gap-4 mb-10 w-full">
+                                            <h3
+                                                class="text-2xl font-bold text-darkRed uppercase tracking-wide shrink-0">
+                                                Important Notes:</h3>
+                                            <div class="h-px bg-darkRed flex-grow"></div>
+                                        </div>
+                                        <ul class="space-y-6 mb-8">
+                                            <li class="flex items-start gap-4">
+                                                <span
+                                                    class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                                    <svg class="w-3.5 h-3.5 text-white" fill="none"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                    </svg>
+                                                </span>
+                                                <span class="text-gray-700 text-lg">Promotion depends on availability
+                                                    of vacancies.</span>
+                                            </li>
+                                            <li class="flex items-start gap-4">
+                                                <span
+                                                    class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                                    <svg class="w-3.5 h-3.5 text-white" fill="none"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                    </svg>
+                                                </span>
+                                                <span class="text-gray-700 text-lg">Meeting minimum service years does
+                                                    not guarantee promotion.</span>
+                                            </li>
+                                            <li class="flex items-start gap-4">
+                                                <span
+                                                    class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                                    <svg class="w-3.5 h-3.5 text-white" fill="none"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                    </svg>
+                                                </span>
+                                                <span class="text-gray-700 text-lg">Falsification of documents leads
+                                                    to disqualification.</span>
+                                            </li>
+                                            <li class="flex items-start gap-4">
+                                                <span
+                                                    class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                                    <svg class="w-3.5 h-3.5 text-white" fill="none"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                    </svg>
+                                                </span>
+                                                <span class="text-gray-700 text-lg">Promotion is based on merit and
+                                                    transparency.</span>
+                                            </li>
+                                        </ul>
+                                        <div class="space-y-4 pt-6 border-t border-gray-100">
+                                            <p class="text-gray-700 leading-relaxed">The GES Promotion Exercise for
+                                                Non-Teaching Staff ensures structured career progression within the
+                                                Ghana Education Service. It encourages professional growth, competence,
+                                                and accountability while strengthening administrative and operational
+                                                efficiency in the education sector.</p>
+                                        </div>
+                                    </div>
+                                    <div class="lg:w-1/2 order-1 lg:order-2">
+                                        <div class="relative group h-full w-full overflow-hidden">
+                                            <img src="image/man-writing-notebook.jpg" alt="Non-Teaching Notes"
+                                                class="w-full h-full object-cover min-h-[340px] transition-transform duration-700 group-hover:scale-[1.02]">
+                                            <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-primary/80 to-transparent">
+                                            </div>
+                                            <div class="absolute bottom-10 left-8 right-8 text-white">
+                                                <h4 class="font-bold text-2xl mb-3">Service Standards</h4>
+                                                <p class="text-white/80 leading-relaxed text-lg">Maintaining excellence.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+    </main>
+
+    <!-- Static Apply Now Section -->
+    <section class="bg-gray-100 py-16 border-t border-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-6">Apply Here</h3>
+            <a href="#"
+                class="inline-flex items-center justify-center gap-2 bg-darkRed hover:bg-darkerRed text-white px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-[0_10px_30px_rgba(142,21,21,0.4)] transition-all transform hover:-translate-y-1 text-lg">
+                <span>Apply Now</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary py-8 text-center border-t border-secondary">
+        <div class="container mx-auto px-6">
+            <p class="mb-0 text-white/80 font-light">&copy; 2026 Ghana
+                Education Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script>
+        // Animations
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Navbar background change on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const menu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('mobile-menu-overlay');
+
+        function toggleMenu() {
+            const isOpen = !menu.classList.contains('translate-x-full');
+
+            if (!isOpen) {
+                // Open
+                menu.classList.remove('translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100');
+                document.body.classList.add('overflow-hidden');
+            } else {
+                // Close
+                menu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                overlay.classList.remove('opacity-100');
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close mobile menu when a mobile nav link is clicked
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('data-section');
+                switchSection(sectionId);
+                toggleMenu();
+            });
+        });
+
+        // Tab Switching Logic
+        const tabLinks = document.querySelectorAll('.nav-tab-link');
+        const sections = document.querySelectorAll('.applicant-section');
+
+        function switchSection(sectionId, shouldScroll = true) {
+            // Hide all sections
+            sections.forEach(sec => sec.classList.add('hidden'));
+
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                // Trigger re-check for animations
+                targetSection.classList.add('is-visible');
+
+                // Scroll to content if needed (optional, but good for UX)
+                if (shouldScroll) {
+                    const headerOffset = 180;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            }
+
+            // Update Active States for indicators in the category bar
+            tabLinks.forEach(link => {
+                const indicator = link.querySelector('.indicator');
+                if (indicator) {
+                    if (link.getAttribute('data-section') === sectionId) {
+                        indicator.classList.remove('scale-x-0');
+                        indicator.classList.add('scale-x-100');
+                        link.classList.add('text-darkRed');
+                    } else {
+                        indicator.classList.add('scale-x-0');
+                        indicator.classList.remove('scale-x-100');
+                        link.classList.remove('text-darkRed');
+                    }
+                }
+            });
+        }
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('data-section');
+                switchSection(sectionId);
+            });
+        });
+
+        // Show "Teaching Staff" visible on load (without jumping/scrolling)
+        switchSection('teaching-staff', false);
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

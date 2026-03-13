@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEDP Teacher Upgrading System – Ghana Education Service</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0b132b',
+                        secondary: '#1c2541',
+                        accent: '#ffc107',
+                        ash: '#f8f9fa',
+                        darkRed: '#8e1515',
+                        darkerRed: '#701010',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="image/GEDP-fav.png">
+</head>
+
+<body class="bg-ash text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-4 bg-primary/80 backdrop-blur-xl shadow-lg">
+        <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+            <a href="#" class="flex items-center">
+                <img src="image/GEDP.png" alt="GES Logo" class="h-12 md:h-14 w-auto">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Desktop CTA -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="#"
+                    class="bg-darkRed hover:bg-darkerRed text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-lg">Apply
+                    for Upgrading</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 z-[55] bg-primary/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Mobile Menu Container (Side Drawer) -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-[80%] max-w-[400px] z-[60] bg-primary/98 backdrop-blur-3xl flex flex-col items-center justify-start pt-24 space-y-6 lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+        <!-- Close Button -->
+        <button id="mobile-menu-close"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all hover:bg-white/10 active:scale-95">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="flex flex-col items-center space-y-8 w-full px-10">
+            <a href="#about"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">About</a>
+            <a href="#how-it-works"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">How
+                It Works</a>
+            <a href="#apply"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Apply
+                Online</a>
+            <a href="#review"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Review
+                Process</a>
+            <a href="#tips"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Important
+                Tips</a>
+            <a href="#"
+                class="bg-darkRed text-white px-8 py-3 rounded-full font-medium shadow-2xl hover:bg-darkerRed transition-all mt-8 text-lg w-full text-center">Apply
+                for Upgrading</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="home" class="min-h-[80vh] flex items-center pt-40 pb-16 relative overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline poster="image/greet.jpg" preload="metadata"
+            class="absolute inset-0 w-full h-full object-cover">
+            <source src="video/846-140823862_medium.mp4" type="video/mp4">
+        </video>
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+
+        <div class="container mx-auto px-6 text-left slide-up z-10 relative">
+            <h1
+                class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 text-accent leading-tight tracking-tight max-w-4xl">
+                GEDP Teacher Upgrading System
+            </h1>
+            <div class="bg-accent mb-8 w-32 h-[2px] rounded-full"></div>
+            <p class="text-base md:text-lg font-light mb-6 text-white/90 max-w-3xl leading-relaxed opacity-90">
+                The Teacher Upgrading System in Ghana Education Service (GES) is the official process used to move a
+                teacher from a lower professional rank or qualification level to a higher one after obtaining additional
+                academic or professional qualifications.
+            </p>
+            <p class="text-base md:text-lg font-light text-white/90 max-w-2xl leading-relaxed opacity-90">
+                It is the system that recognizes a teacher's new qualification and upgrades their rank, salary scale,
+                and professional status within GES.
+            </p>
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4 mt-8">
+                <a href="#how-it-works"
+                    class="bg-accent hover:bg-yellow-500 text-primary px-6 py-2.5 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-base min-w-[150px] text-center">How
+                    It Works</a>
+                <a href="#"
+                    class="border-2 border-white/40 hover:border-white hover:bg-white/10 text-white px-6 py-2.5 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 text-base min-w-[150px] text-center">Apply
+                    Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About the System -->
+    <section id="about" class="bg-white py-16 border-b border-gray-100">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="max-w-4xl mx-auto text-left md:text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4 uppercase tracking-wide">What is the
+                    Teacher Upgrading System?</h2>
+                <div class="bg-darkRed ml-0 md:mx-auto mb-8 w-24 h-[2px] rounded-full"></div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-4">
+                    The Teacher Upgrading System refers to the administrative and digital process used by GES to update
+                    a teacher's professional grade after they further their education.
+                </p>
+                <p class="text-gray-600 text-lg leading-relaxed mb-10">
+                    The Teacher Upgrading System in GES is the official process that allows teachers who obtain higher
+                    academic qualifications to be promoted to higher professional ranks and salary levels within the
+                    Ghana Education Service.
+                </p>
+                <h3 class="text-xl md:text-2xl font-bold text-primary mb-4 uppercase tracking-wide">Purpose of the
+                    Teacher Upgrading System</h3>
+                <div class="bg-darkRed ml-0 md:mx-auto mb-8 w-16 h-[2px] rounded-full"></div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-10">
+                    The upgrading system was introduced to achieve several goals:
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 text-left mt-4">
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <p class="font-semibold text-primary mb-1">Professional Development</p>
+                            <p class="text-gray-700 text-base leading-relaxed">It encourages teachers to continue their
+                                education and improve their teaching skills.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <p class="font-semibold text-primary mb-1">Recognition of Higher Qualification</p>
+                            <p class="text-gray-700 text-base leading-relaxed">Teachers who obtain new qualifications
+                                are officially recognized and placed on a higher professional level.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <p class="font-semibold text-primary mb-1">Salary Adjustment</p>
+                            <p class="text-gray-700 text-base leading-relaxed">An upgrade results in higher salary
+                                levels and allowances.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <p class="font-semibold text-primary mb-1">Improved Quality of Education</p>
+                            <p class="text-gray-700 text-base leading-relaxed">Better-trained teachers help improve
+                                teaching quality in schools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Step 1: Teacher Obtains Higher Qualification -->
+        <section id="how-it-works" class="bg-white py-20 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="relative group">
+                        <!-- Bottom dark gradient -->
+                        <div
+                            class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none transition-opacity duration-300">
+                        </div>
+                        <img src="image/financial-adviser-explaining-retirement-pension-options-old-couple.jpg"
+                            alt="Teacher Obtains Higher Qualification"
+                            class="rounded-2xl w-full object-cover h-[250px] md:h-[520px]">
+                    </div>
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Step 1</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Teacher Obtains Higher
+                            Qualification
+                        </h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-8 text-gray-600 text-lg leading-relaxed">The teacher completes a recognized
+                            program from an accredited institution such as:</p>
+
+                        <div class="space-y-8">
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-1">Recognized Qualifications:</h5>
+                                <div class="bg-darkRed mb-3 w-12 h-[0.5px]"></div>
+                                <ul class="text-gray-700 space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Diploma in Education
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Bachelor of Education (B.Ed.)
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Postgraduate Diploma in Education
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Master's Degree in Education
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="text-gray-600 text-base leading-relaxed italic">Institutions must be
+                                    recognized by the National Teaching Council and accepted by GES.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: Apply for Upgrading -->
+        <section id="apply" class="bg-ash py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Step 2</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Apply for Upgrading
+                        </h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-8 text-gray-600 text-lg leading-relaxed">The teacher applies through the GES
+                            upgrading portal or through the district education office. The application usually
+                            includes:</p>
+
+                        <div class="space-y-8">
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-1">Application Information Required:</h5>
+                                <div class="bg-darkRed mb-4 w-12 h-[0.5px]"></div>
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 text-gray-700">
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Staff ID
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Current rank
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        New academic qualification
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Date qualification was obtained
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-1">Submission of Required Documents:</h5>
+                                <div class="bg-darkRed mb-4 w-12 h-[0.5px]"></div>
+                                <p class="text-gray-600 text-base mb-3">Teachers must upload or submit certified copies
+                                    of:</p>
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 text-gray-700">
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Degree or diploma certificate
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Academic transcript
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Appointment letter
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Study leave approval (if applicable)
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a href="#"
+                                class="inline-flex items-center gap-3 bg-darkRed hover:bg-darkerRed text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-base">
+                                Apply on the Upgrading Portal
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <!-- Bottom dark gradient -->
+                        <div
+                            class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none transition-opacity duration-300">
+                        </div>
+                        <img src="image/male-office.jpg" alt="Apply for Upgrading Online"
+                            class="rounded-2xl w-full object-cover h-[250px] md:h-[460px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3 & Step 4: Verification and Approval -->
+        <section id="review" class="bg-white py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+                    <!-- Step 3: Verification of Qualification -->
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Step 3</p>
+                        <h3 class="text-3xl font-bold text-primary mb-6">Verification of Qualification</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-8 text-gray-600 text-lg leading-relaxed">
+                            GES verifies the documents to ensure the certificate is genuine and recognized. Verification is
+                            done with:
+                        </p>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div
+                                class="bg-ash rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow flex items-start gap-5">
+                                <div class="w-12 h-12 flex-shrink-0 bg-darkRed rounded-full flex items-center justify-center">
+                                    <span class="text-white font-bold text-lg">1</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-primary mb-1">The Awarding University</h4>
+                                    <p class="text-gray-500 text-sm leading-relaxed">GES verifies the qualification directly with
+                                        the institution that awarded the certificate.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-ash rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow flex items-start gap-5">
+                                <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-full flex items-center justify-center">
+                                    <span class="text-accent font-bold text-lg">2</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-primary mb-1">The National Teaching Council</h4>
+                                    <p class="text-gray-500 text-sm leading-relaxed">The NTC confirms the qualification is
+                                        officially recognized and accepted for upgrading purposes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Approval and Rank Upgrade -->
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Step 4</p>
+                        <h3 class="text-3xl font-bold text-primary mb-6">Approval and Rank Upgrade</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-6 text-gray-600 text-lg">Once verification is complete, GES:</p>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Upgrades the teacher's professional rank
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Adjusts the salary scale
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Updates the teacher's records in the system
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                This depends on qualification and years of service
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Visit the Portal & Fill Form -->
+        <section class="bg-white py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="relative group">
+                        <!-- Bottom dark gradient -->
+                        <div
+                            class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none transition-opacity duration-300">
+                        </div>
+                        <img src="image/man-reading-papers.jpg" alt="Visit the GEDP-GES Upgrading Portal"
+                            class="rounded-2xl w-full object-cover h-[250px] md:h-[460px]">
+                    </div>
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Portal Steps</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Visit the GEDP-GES Upgrading
+                            Portal</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-8 text-gray-600 text-lg leading-relaxed">Access the GES upgrading portal of Ghana
+                            Education Digital Platform and complete the following steps:</p>
+
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <span
+                                    class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mt-0.5 text-accent font-bold text-sm">1</span>
+                                <div>
+                                    <p class="text-gray-700 text-base leading-relaxed"><strong>Fill the Application
+                                            Form</strong> — provide all the required information accurately, including
+                                        Personal Details, Professional Information, Qualification Details, and upload
+                                        Supporting Documents.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span
+                                    class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mt-0.5 text-accent font-bold text-sm">2</span>
+                                <div>
+                                    <p class="text-gray-700 text-base leading-relaxed"><strong>Review Your
+                                            Application</strong> — before submitting, check all information carefully,
+                                        confirm the uploaded documents are correct, and make sure there are no spelling
+                                        errors or missing fields.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span
+                                    class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mt-0.5 text-accent font-bold text-sm">3</span>
+                                <div>
+                                    <p class="text-gray-700 text-base leading-relaxed"><strong>Submit the
+                                            Application</strong> — click Submit Application. The system generates a
+                                        confirmation message and you may receive an application reference number. Save
+                                        or screenshot this for tracking.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-6 italic">Incorrect information may delay approval.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Review Process -->
+        <section id="review-process" class="bg-ash py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-14">
+                    <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-3">Step 7</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4">Application Review Process</h3>
+                    <div class="bg-darkRed mx-auto mb-6 w-32 h-[2px] rounded-full"></div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                        Your application will be reviewed by the following authorities who will verify your
+                        qualification and documents:
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="bg-white rounded-2xl p-8 text-center border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-darkRed rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">1</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-2">District Education Office</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">First level of review at the district
+                            education level.</p>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl p-8 text-center border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-darkRed rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">2</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-2">Regional Education Directorate</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Regional-level assessment and
+                            recommendation.</p>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl p-8 text-center border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-accent font-bold text-xl">3</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-2">GES Headquarters</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Headquarters of the Ghana Education Service —
+                            final authority for all upgrading decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approval and Upgrade (Step 8) -->
+        <section class="bg-white py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Step 8</p>
+                        <h3 class="text-3xl font-bold text-primary mb-6">Approval and Upgrade</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-6 text-gray-600 text-lg">If approved:</p>
+                        <ul class="space-y-4 text-gray-700 mb-8">
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Your rank will be upgraded
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Your salary scale will be adjusted
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Your records will be updated in the GES system
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                You may receive an official upgrading letter
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Final Summary -->
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Final</p>
+                        <h3 class="text-3xl font-bold text-primary mb-6">Summary</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">Teachers log into the GEDP portal, fill
+                            the upgrading form, upload certificates and documents, submit the application, and wait for
+                            verification and approval.</p>
+                        <a href="#"
+                            class="inline-flex items-center gap-3 bg-darkRed hover:bg-darkerRed text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-base">
+                            Begin Your Upgrading Application
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Tips for Successful Upgrading -->
+        <section id="tips" class="bg-white py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="bg-white border border-gray-100 shadow-sm overflow-hidden rounded-3xl">
+                    <div class="flex flex-col lg:flex-row gap-0 lg:gap-16">
+                        <!-- Image now comes first on mobile (order-1) -->
+                        <div class="lg:w-1/2 order-1 lg:order-2">
+                            <div class="relative group h-[300px] md:h-[500px] w-full overflow-hidden">
+                                <img src="image/working-computer.jpg" alt="Important Tips for Successful Upgrading"
+                                    class="rounded-t-3xl lg:rounded-none lg:rounded-r-3xl w-full object-cover h-[300px] md:h-[500px] hover:grayscale transition-all duration-500">
+                            </div>
+                        </div>
+
+                        <!-- Text content below on mobile (order-2) -->
+                        <div class="lg:w-1/2 order-2 lg:order-1 p-6 md:p-10 lg:p-16">
+                            <div class="flex items-center gap-4 mb-8 w-full">
+                                <h3 class="text-xl md:text-2xl font-bold text-darkRed uppercase tracking-wide">
+                                    Important Tips <br class="hidden md:block" /> for Successful Upgrading:
+                                </h3>
+                                <div class="hidden md:block h-px bg-darkRed flex-grow"></div>
+                            </div>
+
+                            <ul class="space-y-5">
+                                <li class="flex items-start gap-4">
+                                    <span
+                                        class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="text-gray-700 text-lg leading-relaxed">Ensure your institution is
+                                        <strong>accredited</strong>.</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <span
+                                        class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="text-gray-700 text-lg leading-relaxed">Submit <strong>clear and
+                                            genuine documents</strong>.</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <span
+                                        class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="text-gray-700 text-lg leading-relaxed">Use the <strong>correct staff
+                                            ID</strong>.</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <span
+                                        class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="text-gray-700 text-lg leading-relaxed">Apply only when GES announces
+                                        an <strong>upgrading window</strong>.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Apply Now Section -->
+    <section class="bg-gray-100 py-16 border-t border-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-4">Ready to Apply for Upgrading?</h3>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto">Log into GEDP and navigate to the Upgrading Portal to begin
+                your application.</p>
+            <a href="#"
+                class="inline-flex items-center justify-center gap-2 bg-darkRed hover:bg-darkerRed text-white px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-[0_10px_30px_rgba(142,21,21,0.4)] transition-all transform hover:-translate-y-1 text-lg">
+                <span>Apply for Upgrading Now</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary py-8 text-center border-t border-secondary">
+        <div class="container mx-auto px-6">
+            <p class="mb-0 text-white/80 font-light">&copy; 2026 Ghana Education Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script>
+        // Fade-in on scroll animations
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Navbar background change on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenuOverlay.classList.add('opacity-100');
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenuOverlay.classList.remove('opacity-100');
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+    </script>
+
+</body>
+
+</html>

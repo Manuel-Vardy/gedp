@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEDP Assurance Portal – Ghana Education Service</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0b132b',
+                        secondary: '#1c2541',
+                        accent: '#ffc107',
+                        ash: '#f8f9fa',
+                        darkRed: '#8e1515',
+                        darkerRed: '#701010',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="image/GEDP-fav.png">
+</head>
+
+<body class="bg-ash text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-4 bg-primary/80 backdrop-blur-xl shadow-lg">
+        <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+            <a href="#" class="flex items-center">
+                <img src="image/GEDP.png" alt="GES Logo" class="h-12 md:h-14 w-auto">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Desktop CTA -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="#application"
+                    class="bg-darkRed hover:bg-darkerRed text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-lg">Apply
+                    Transfer</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 z-[55] bg-primary/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Mobile Menu Container (Side Drawer) -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-[80%] max-w-[400px] z-[60] bg-primary/98 backdrop-blur-3xl flex flex-col items-center justify-start pt-24 space-y-6 lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+        <!-- Close Button -->
+        <button id="mobile-menu-close"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all hover:bg-white/10 active:scale-95">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="flex flex-col items-center space-y-8 w-full px-10">
+            <a href="#eligibility"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Eligibility</a>
+            <a href="#documents"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Documents</a>
+            <a href="#application"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Apply
+                Online</a>
+            <a href="#verification"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Verification</a>
+            <a href="#release"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Release</a>
+            <a href="#application"
+                class="bg-darkRed text-white px-8 py-3 rounded-full font-medium shadow-2xl hover:bg-darkerRed transition-all mt-8 text-lg w-full text-center">Apply
+                Transfer</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="home" class="min-h-[80vh] flex items-center pt-40 pb-16 relative overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline poster="image/greet.jpg" preload="metadata"
+            class="absolute inset-0 w-full h-full object-cover">
+            <source src="video/846-140823862_medium.mp4" type="video/mp4">
+        </video>
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+
+        <div class="container mx-auto px-6 text-left slide-up z-10 relative">
+            <h1
+                class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 text-accent leading-tight tracking-tight max-w-4xl">
+                Seeking Assurance for Transfer
+            </h1>
+            <div class="bg-accent mb-8 w-32 h-[2px] rounded-full"></div>
+            <p class="text-base md:text-lg font-light mb-6 text-white/90 max-w-3xl leading-relaxed opacity-90">
+                At Ghana Education Service (GES), “seeking assurance” refers to the process where a teacher obtains an assurance letter from a district or region they want to be transferred to.
+            </p>
+            <p class="text-base md:text-lg font-light text-white/90 max-w-2xl leading-relaxed opacity-90">
+                The letter confirms that there is a vacancy and the district is willing to accept the teacher before the transfer is processed.
+            </p>
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4 mt-8">
+                <a href="#eligibility"
+                    class="bg-accent hover:bg-yellow-500 text-primary px-6 py-2.5 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-base min-w-[150px] text-center">Check
+                    Eligibility</a>
+                <a href="#application"
+                    class="border-2 border-white/40 hover:border-white hover:bg-white/10 text-white px-6 py-2.5 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 text-base min-w-[150px] text-center">Apply
+                    Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About the System -->
+    <section class="bg-white py-16 border-b border-gray-100">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="max-w-4xl mx-auto text-left md:text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4 uppercase tracking-wide">Understand What an Assurance Letter Is</h2>
+                <div class="bg-darkRed ml-0 md:mx-auto mb-8 w-24 h-[2px] rounded-full"></div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    An assurance letter is an official document issued by a district or regional education office confirming that:
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left mt-10">
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-700 text-base leading-relaxed">There is a vacancy for a teacher in that district/region.</span>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-700 text-base leading-relaxed">The district is willing to accept the teacher if the transfer is approved.</span>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 bg-ash rounded-xl border border-gray-100">
+                        <span
+                            class="flex-shrink-0 w-10 h-10 bg-darkRed rounded-full flex items-center justify-center mt-0.5">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-700 text-base leading-relaxed">The teacher can now apply for release from their current district.</span>
+                    </div>
+                </div>
+                <p class="text-darkRed text-lg mt-8 font-semibold italic">
+                    It is usually the first and most important step in the GES transfer or reposting process.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Step 1: Confirm Eligibility -->
+        <section id="eligibility" class="bg-white py-20 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="relative group">
+                        <!-- Bottom dark gradient -->
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none transition-opacity duration-300"></div>
+                        <img src="image/financial-adviser-explaining-retirement-pension-options-old-couple.jpg"
+                            alt="Eligibility for Transfer" class="rounded-2xl w-full object-cover h-[250px] md:h-[520px]">
+                    </div>
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 1</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Check Eligibility Before Applying
+                        </h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-8 text-gray-600 text-lg leading-relaxed">Before seeking assurance, teachers must meet the following criteria:</p>
+
+                        <div class="space-y-8">
+                            <div>
+                                <ul class="text-gray-700 space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Serve at least 3 years at their current station (common practice in GES).
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Have good conduct and performance records.
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Have no disciplinary issues.
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Have supporting reasons for transfer (marriage, health, family, etc.).
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: Apply Online -->
+        <section id="application" class="bg-ash py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 2</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Identify the Preferred District or Region
+                        </h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-8 text-gray-600 text-lg leading-relaxed">Before starting the online process, the teacher must:</p>
+
+                        <div class="space-y-8">
+                            <div>
+                                <ul class="text-gray-700 space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Decide the region/district they want to transfer to.
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Confirm there may be vacancies in that district.
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                        Contact the Metro/Municipal/District Education Office (MMDE) of the preferred district.
+                                    </li>
+                                </ul>
+                                <p class="text-darkRed font-bold mt-6 italic">The assurance must come from the district where the teacher wants to move.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <!-- Bottom dark gradient -->
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none transition-opacity duration-300"></div>
+                        <img src="image/male-office.jpg" alt="Online Transfer Application"
+                            class="rounded-2xl w-full object-cover h-[250px] md:h-[460px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 3: Prepare Required Documents -->
+        <section id="documents" class="bg-white py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-14">
+                    <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-3">Phase 3</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4">Prepare Required Documents</h3>
+                    <div class="bg-darkRed mx-auto mb-6 w-32 h-[2px] rounded-full"></div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                        Before filling the online form, teachers must scan and prepare digital copies of required documents.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <!-- Document Cards -->
+                    <div class="bg-ash rounded-2xl p-4 md:p-6 border border-gray-100 hover:shadow-md transition-all flex items-center gap-3 md:gap-4">
+                        <span class="w-8 h-8 bg-darkRed rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">1</span>
+                        <span class="text-gray-700 font-medium">Application letter for assurance</span>
+                    </div>
+                    <div class="bg-ash rounded-2xl p-4 md:p-6 border border-gray-100 hover:shadow-md transition-all flex items-center gap-3 md:gap-4">
+                        <span class="w-8 h-8 bg-darkRed rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">2</span>
+                        <span class="text-gray-700 font-medium">First appointment/posting letter</span>
+                    </div>
+                    <div class="bg-ash rounded-2xl p-4 md:p-6 border border-gray-100 hover:shadow-md transition-all flex items-center gap-3 md:gap-4">
+                        <span class="w-8 h-8 bg-darkRed rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">3</span>
+                        <span class="text-gray-700 font-medium">Promotion letter (if any)</span>
+                    </div>
+                    <div class="bg-ash rounded-2xl p-4 md:p-6 border border-gray-100 hover:shadow-md transition-all flex items-center gap-3 md:gap-4">
+                        <span class="w-8 h-8 bg-darkRed rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">4</span>
+                        <span class="text-gray-700 font-medium">Academic certificates</span>
+                    </div>
+                    <div class="bg-ash rounded-2xl p-4 md:p-6 border border-gray-100 hover:shadow-md transition-all flex items-center gap-3 md:gap-4">
+                        <span class="w-8 h-8 bg-darkRed rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">5</span>
+                        <span class="text-gray-700 font-medium">Personal record form</span>
+                    </div>
+                    <div class="bg-ash rounded-2xl p-4 md:p-6 border border-gray-100 hover:shadow-md transition-all flex items-center gap-3 md:gap-4">
+                        <span class="w-8 h-8 bg-darkRed rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">6</span>
+                        <span class="text-gray-700 font-medium">Current payslip</span>
+                    </div>
+                    <div class="bg-ash rounded-2xl p-4 md:p-6 border border-gray-100 hover:shadow-md transition-all flex items-center gap-3 md:gap-4">
+                        <span class="w-8 h-8 bg-darkRed rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">7</span>
+                        <span class="text-gray-700 font-medium">Confidential report from district director</span>
+                    </div>
+                    <div class="bg-ash rounded-2xl p-4 md:p-6 border border-gray-100 hover:shadow-md transition-all flex items-center gap-3 md:gap-4">
+                        <span class="w-8 h-8 bg-darkRed rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">8</span>
+                        <span class="text-gray-700 font-medium">Marriage certificate (if joining spouse)</span>
+                    </div>
+                    <div class="bg-ash rounded-2xl p-4 md:p-6 border border-gray-100 hover:shadow-md transition-all flex items-center gap-3 md:gap-4">
+                        <span class="w-8 h-8 bg-darkRed rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">9</span>
+                        <span class="text-gray-700 font-medium">Previous transfer letter (if applicable)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 4: Access GEDP Transfer Portal -->
+        <section id="application" class="bg-ash py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 4</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Access GEDP Assurance Portal</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <div class="space-y-8">
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-3 text-darkRed">Online Process Includes:</h5>
+                                <ul class="text-gray-700 space-y-4">
+                                    <li class="flex items-start gap-4">
+                                        <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mt-0.5 text-accent font-bold text-sm">1</span>
+                                        <p class="text-gray-700 text-base leading-relaxed">Open GEDP website or access the link provided by GES and navigate to Transfer Portal.</p>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mt-0.5 text-accent font-bold text-sm">2</span>
+                                        <p class="text-gray-700 text-base leading-relaxed">Fill in personal and professional details.</p>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mt-0.5 text-accent font-bold text-sm">3</span>
+                                        <p class="text-gray-700 text-base leading-relaxed">Upload the scanned documents.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                                <h5 class="text-xl font-bold text-primary mb-4">Information required in the form include:</h5>
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700 font-medium">
+                                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full"></span> Full name</li>
+                                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full"></span> Staff ID number</li>
+                                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full"></span> Current district and school</li>
+                                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full"></span> Rank and subject specialization</li>
+                                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full"></span> Preferred district/region</li>
+                                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full"></span> Reason for transfer</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <!-- Bottom dark gradient -->
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none transition-opacity duration-300"></div>
+                        <img src="image/male-office.jpg" alt="Online Transfer Application"
+                            class="rounded-2xl w-full object-cover h-[250px] md:h-[500px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 5: Submission and Online Verification -->
+        <section id="verification" class="bg-white py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 5</p>
+                        <h3 class="text-3xl font-bold text-primary mb-6">Submission and Online Verification</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-6 text-gray-600 text-lg">After submitting the online form, GES verify:</p>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start gap-4">
+                                <span class="bg-darkRed/10 text-darkRed p-1 rounded-md">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span>Vacancy in the requested district</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="bg-darkRed/10 text-darkRed p-1 rounded-md">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span>Teacher eligibility</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="bg-darkRed/10 text-darkRed p-1 rounded-md">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span>Authenticity of documents.</span>
+                            </li>
+                        </ul>
+                        <p class="text-darkRed font-bold mt-8 p-4 bg-ash rounded-xl border-l-4 border-darkRed">If approved, the district will issue an assurance letter.</p>
+                    </div>
+
+                    <!-- Phase 6: Download Assurance Letter -->
+                    <div>
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 6</p>
+                        <h3 class="text-3xl font-bold text-primary mb-6">Download or Receive Assurance Letter on GEDP Portal</h3>
+                        <div class="bg-darkRed mb-6 w-32 h-[2px] rounded-full"></div>
+                        <p class="mb-6 text-gray-600 text-lg">Once approved:</p>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start gap-4">
+                                <span class="bg-darkRed/10 text-darkRed p-1 rounded-md">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span>The teacher receives the assurance letter electronically.</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="bg-darkRed/10 text-darkRed p-1 rounded-md">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </span>
+                                <span>The district compiles names of teachers granted assurance and submits the list to GES Headquarters electronically.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 7: Issuance of Release and Reposting Letter -->
+        <section id="release" class="bg-ash py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">Phase 7</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">Issuance of Release and Reposting Letter</h3>
+                    <div class="bg-darkRed mx-auto mb-10 w-32 h-[2px] rounded-full"></div>
+                    
+                    <div class="relative group">
+                        <img src="image/man-reading-papers.jpg" alt="Release and Reposting"
+                            class="rounded-3xl w-full object-cover h-[300px] md:h-[400px] shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent rounded-3xl flex items-end p-10">
+                            <p class="text-white text-xl font-medium">Following the assurance, the final release and reposting letters are processed to complete the transfer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Apply Now Section -->
+    <section class="bg-gray-100 py-16 border-t border-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-4">Ready to seek assurance?</h3>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto">Get your documents ready and log into the GEDP portal to start the process.</p>
+            <a href="#"
+                class="inline-flex items-center justify-center gap-2 bg-darkRed hover:bg-darkerRed text-white px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-[0_10px_30px_rgba(142,21,21,0.4)] transition-all transform hover:-translate-y-1 text-lg">
+                <span>Apply for Assurance Now</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary py-8 text-center border-t border-secondary">
+        <div class="container mx-auto px-6">
+            <p class="mb-0 text-white/80 font-light">&copy; 2026 Ghana Education Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script>
+        // Fade-in on scroll animations
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Navbar background change on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const menu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('mobile-menu-overlay');
+
+        function toggleMenu() {
+            const isOpen = !menu.classList.contains('translate-x-full');
+            if (!isOpen) {
+                menu.classList.remove('translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100');
+                document.body.classList.add('overflow-hidden');
+            } else {
+                menu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                overlay.classList.remove('opacity-100');
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close menu when a link inside it is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!menu.classList.contains('translate-x-full')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

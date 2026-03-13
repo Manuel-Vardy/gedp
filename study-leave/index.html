@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-primary">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Leave and Returns - Ghana Education Service</title>
+    <link rel="icon" type="image/png" href="image/GEDP-fav.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0b132b',
+                        secondary: '#1c2541',
+                        accent: '#ffc107',
+                        ash: '#f8f9fa',
+                        darkRed: '#8e1515',
+                        darkerRed: '#701010',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-ash text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-4 bg-primary/80 backdrop-blur-xl shadow-lg">
+        <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+            <a href="#" class="flex items-center">
+                <img src="image/GEDP.png" alt="GES Logo" class="h-12 md:h-14 w-auto">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Desktop CTA -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="#"
+                    class="bg-darkRed hover:bg-darkerRed text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-lg">Apply
+                    Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 z-[55] bg-primary/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
+    <!-- Mobile Menu Container (Side Drawer) -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-[80%] max-w-[400px] z-[60] bg-primary/98 backdrop-blur-3xl flex flex-col items-center justify-start pt-24 space-y-6 lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+        <!-- Close Button -->
+        <button id="mobile-menu-close"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all hover:bg-white/10 active:scale-95">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="flex flex-col items-center space-y-8 w-full px-10">
+            <a href="#eligibility"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Eligibility</a>
+            <a href="#application"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Process</a>
+            <a href="#return-process"
+                class="text-[20px] font-light text-white/90 hover:text-accent transition-all w-full text-center py-2 border-b border-white/5">Return
+                Process</a>
+            <a href="#"
+                class="bg-darkRed text-white px-8 py-3 rounded-full font-medium shadow-2xl hover:bg-darkerRed transition-all mt-8 text-lg w-full text-center">Apply
+                Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="home" class="min-h-[80vh] flex items-center pt-40 pb-16 relative overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline poster="image/greet.jpg" preload="metadata"
+            class="absolute inset-0 w-full h-full object-cover">
+            <source src="video/846-140823862_medium.mp4" type="video/mp4">
+        </video>
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+
+        <div class="container mx-auto px-6 text-left slide-up z-10 relative">
+            <h1
+                class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 text-accent leading-tight tracking-tight max-w-4xl uppercase">
+                STUDY LEAVE AND RETURNS
+            </h1>
+            <div class="bg-accent mb-8 w-32 h-[2px] rounded-full"></div>
+            <p class="text-base md:text-lg font-light mb-6 text-white/90 max-w-3xl leading-relaxed opacity-90">
+                <strong class="font-bold">What is Study Leave?</strong><br /><br />
+                Study Leave is an approved period during which a teacher is granted permission to pursue
+                further education.
+            </p>
+            <p class="text-base md:text-lg font-light text-white/90 max-w-2xl leading-relaxed opacity-90">
+                It is intended to improve professional qualifications and enhance service delivery in the education
+                sector.
+            </p>
+        </div>
+    </header>
+
+    <!-- Tabbed Navigation -->
+    <div class="bg-white sticky top-[80px] z-40 border-b border-gray-100 shadow-sm">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-center space-x-8 md:space-x-12">
+            <button id="tab-leave-btn" class="py-5 text-lg font-semibold text-primary border-b-2 border-darkRed transition-all hover:text-darkRed relative group">
+                Study Leave
+            </button>
+            <button id="tab-returns-btn" class="py-5 text-lg font-medium text-gray-500 border-b-2 border-transparent transition-all hover:text-primary">
+                Study Leave Returns
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Tab Panel: Study Leave -->
+        <div id="panel-leave" class="tab-panel">
+
+        <!-- Eligibility -->
+        <section id="eligibility" class="bg-white py-24 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12 max-w-6xl">
+                <!-- Title area -->
+                <div class="mb-14">
+                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3">PHASE 01</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4 uppercase">ELIGIBILITY REQUIREMENTS FOR
+                        STUDY LEAVE WITH PAY</h3>
+                    <div class="bg-darkRed w-20 h-[2px] rounded-full"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none transition-opacity duration-300">
+                        </div>
+                        <img src="image/financial-adviser-explaining-retirement-pension-options-old-couple.jpg"
+                            alt="Eligibility for Study Leave"
+                            class="rounded-2xl w-full object-cover h-[250px] md:h-[620px]">
+                    </div>
+                    <div>
+                        <p class="mb-8 text-gray-600 text-lg leading-relaxed">To qualify for study leave with pay, a
+                            teacher must:</p>
+
+                        <div class="space-y-8">
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-1">Minimum Years of Service</h5>
+                                <div class="bg-darkRed mb-3 w-12 h-[0.5px]"></div>
+                                <ul class="text-gray-700 space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span
+                                                class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Have completed at least three (3) years of continuous service after first
+                                        appointment.
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span
+                                                class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Must have served in a deprived/rural area if required by current GES policy
+                                        guidelines.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-1">Good Conduct and Performance</h5>
+                                <div class="bg-darkRed mb-3 w-12 h-[0.5px]"></div>
+                                <ul class="text-gray-700 space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span
+                                                class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Must have satisfactory annual appraisal reports.
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span
+                                                class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Must not have pending disciplinary cases.
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span
+                                                class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Must be recommended by the Headteacher and District Director.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-1">Admission into an Accredited Institution
+                                </h5>
+                                <div class="bg-darkRed mb-3 w-12 h-[0.5px]"></div>
+                                <ul class="text-gray-700 space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span
+                                                class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        <div>Must have gained admission into an accredited tertiary institution such as:
+                                            <ul class="mt-2 space-y-1 ml-4 list-[circle]">
+                                                <li>University of Education, Winneba</li>
+                                                <li>University of Cape Coast</li>
+                                                <li>University of Ghana</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span
+                                                class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        The course must be relevant to GES needs (e.g., Education, Mathematics, Science,
+                                        Special Education, etc.).
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="text-xl font-bold text-primary mb-1">Bond Agreement</h5>
+                                <div class="bg-darkRed mb-3 w-12 h-[0.5px]"></div>
+                                <ul class="text-gray-700 space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span
+                                                class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Applicant must sign a bond to serve GES after completion of studies.
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span
+                                                class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        The bond period is usually equal to the duration of the study leave.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process of Applying -->
+        <section id="application" class="bg-ash py-24 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12 max-w-6xl">
+                <!-- Title area -->
+                <div class="mb-14">
+                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3">PHASE 02</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4 uppercase">PROCESS OF APPLYING FOR STUDY
+                        LEAVE WITH PAY</h3>
+                    <div class="bg-darkRed w-20 h-[2px] rounded-full"></div>
+                </div>
+
+                <!-- Top Section -->
+                <div class="grid lg:grid-cols-2 gap-16 mb-16 items-start">
+                    <!-- Left Column: Steps 01 and 02 -->
+                    <div class="space-y-12">
+                        <!-- Step 01 -->
+                        <div>
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 font-bold text-xs">
+                                    01</div>
+                                <h4 class="text-xl font-bold text-primary">Announcement</h4>
+                            </div>
+                            <div class="pl-12 text-gray-700 text-base leading-relaxed">
+                                <p class="mb-4 italic text-gray-600">GES releases an official circular announcing:</p>
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-4">
+                                    <li class="flex items-start gap-3"><span
+                                            class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span
+                                            class="text-gray-700">Study leave categories</span></li>
+                                    <li class="flex items-start gap-3"><span
+                                            class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span
+                                            class="text-gray-700">Quota for each district/region</span></li>
+                                    <li class="flex items-start gap-3"><span
+                                            class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span
+                                            class="text-gray-700">Approved subject areas</span></li>
+                                    <li class="flex items-start gap-3"><span
+                                            class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span
+                                            class="text-gray-700">Deadline for application</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 02 -->
+                        <div>
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 font-bold text-xs">
+                                    02</div>
+                                <h4 class="text-xl font-bold text-primary">Submission of Application</h4>
+                            </div>
+                            <div class="pl-12 text-gray-700 text-base leading-relaxed">
+                                <p class="mb-4 italic text-gray-600">The applicant must submit:</p>
+                                <ul class="space-y-4 mb-8 pl-2">
+                                    <li class="flex items-start gap-4">
+                                        <span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span>
+                                        <span class="text-gray-700">Completed study leave application form</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span>
+                                        <span class="text-gray-700">Admission letter</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span>
+                                        <span class="text-gray-700">Appointment letter</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span>
+                                        <span class="text-gray-700">Academic certificates</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span>
+                                        <span class="text-gray-700">Recent payslip</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span>
+                                        <span class="text-gray-700">Recommendation letters</span>
+                                    </li>
+                                </ul>
+                                <div class="pl-5 border-l-2 border-gray-200">
+                                    <p class="text-gray-500 text-sm italic">Application is submitted through:
+                                        Headteacher &rarr; District Education Office &rarr; Regional Education Office
+                                        &rarr; GES Headquarters.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Image -->
+                    <div class="relative w-full h-[350px] lg:h-full lg:min-h-[500px] mb-8 lg:mb-0 group">
+                        <!-- Gradient Overlay -->
+                        <div
+                            class="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-slate-900 via-slate-800/80 to-transparent rounded-b-3xl z-10">
+                        </div>
+                        <!-- Used a previous image file that looks like a person fulfilling the application or reading papers -->
+                        <img src="image/man-reading-papers.jpg" alt="Application Process"
+                            class="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-lg">
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Steps 03 and 04 -->
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <!-- Step 03 -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 font-bold text-xs">
+                                03</div>
+                            <h4 class="text-xl font-bold text-primary">Screening and Selection</h4>
+                        </div>
+                        <div class="pl-12 text-gray-700 text-base leading-relaxed">
+                            <p class="mb-4 italic text-gray-600">Applications are screened based on:</p>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-4">
+                                <li class="flex items-start gap-3"><span
+                                        class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span
+                                        class="text-gray-700">Years of service</span></li>
+                                <li class="flex items-start gap-3"><span
+                                        class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span
+                                        class="text-gray-700">Subject area priority</span></li>
+                                <li class="flex items-start gap-3"><span
+                                        class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span
+                                        class="text-gray-700">Performance record</span></li>
+                                <li class="flex items-start gap-3"><span
+                                        class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span
+                                        class="text-gray-700">District quota availability</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 04 -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 font-bold text-xs">
+                                04</div>
+                            <h4 class="text-xl font-bold text-primary">Approval and Release Letter</h4>
+                        </div>
+                        <div class="pl-12 text-gray-700 text-base leading-relaxed">
+                            <p class="mb-4 italic text-gray-600">Successful applicants receive:</p>
+                            <ul class="space-y-4 mb-8 pl-2">
+                                <li class="flex items-start gap-4"><span
+                                        class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span
+                                        class="text-gray-700">Official study leave approval letter</span></li>
+                                <li class="flex items-start gap-4"><span
+                                        class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span
+                                        class="text-gray-700">Instructions on reporting after completion</span></li>
+                            </ul>
+                            <div class="bg-gray-200/50 rounded-lg p-4 inline-block">
+                                <p class="font-semibold text-gray-800 text-sm italic">Salary continues during the study
+                                    period.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conditions During Study Leave -->
+        <section class="bg-white py-20 border-t border-gray-100 fade-in-section">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <!-- Image Column (First on Mobile, Right on Desktop) -->
+                    <div class="order-1 lg:order-2">
+                        <div class="relative w-full rounded-3xl overflow-hidden shadow-xl">
+                            <img src="image/working-computer.jpg" alt="Conditions During Study Leave"
+                                class="w-full object-cover h-[250px] lg:h-[450px] transform hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+
+                    <!-- Text Column (Second on Mobile, Left on Desktop) -->
+                    <div class="order-2 lg:order-1">
+                        <div class="max-w-xl">
+                            <h3 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight uppercase tracking-tight">
+                                CONDITIONS DURING STUDY<br>LEAVE
+                            </h3>
+                            <div class="bg-darkRed mb-8 w-24 h-[3px] rounded-full"></div>
+
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <span class="flex-shrink-0 w-7 h-7 bg-primary text-white rounded-full flex items-center justify-center font-bold text-[10px]">1</span>
+                                    <p class="text-gray-600 text-sm md:text-base font-medium">Teacher must not take up another employment.</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="flex-shrink-0 w-7 h-7 bg-primary text-white rounded-full flex items-center justify-center font-bold text-[10px]">2</span>
+                                    <p class="text-gray-600 text-sm md:text-base font-medium">Must pursue the approved course only.</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="flex-shrink-0 w-7 h-7 bg-primary text-white rounded-full flex items-center justify-center font-bold text-[10px]">3</span>
+                                    <p class="text-gray-600 text-sm md:text-base font-medium">Must complete the programme successfully.</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="flex-shrink-0 w-7 h-7 bg-primary text-white rounded-full flex items-center justify-center font-bold text-[10px]">4</span>
+                                    <p class="text-gray-600 text-sm md:text-base font-medium">Must inform GES of any changes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        </div> <!-- End of panel-leave -->
+
+        <!-- Tab Panel: Returns -->
+        <div id="panel-returns" class="tab-panel hidden">
+
+            <!-- Returns Eligibility -->
+            <section id="returns-eligibility" class="bg-white py-24 fade-in-section">
+                <div class="container mx-auto px-6 lg:px-12 max-w-6xl">
+                    <div class="mb-14">
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3">PHASE 01</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4 uppercase">REQUIREMENTS FOR STUDY LEAVE RETURN</h3>
+                        <div class="bg-darkRed w-20 h-[2px] rounded-full"></div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-16 items-start">
+                        <div class="relative group">
+                            <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-transparent rounded-b-2xl z-10 pointer-events-none"></div>
+                            <img src="image/male-office.jpg" alt="Return Requirements" class="rounded-2xl w-full object-cover h-[250px] md:h-[500px]">
+                        </div>
+                        <div>
+                            <p class="mb-8 text-gray-600 text-lg leading-relaxed">The returning officer must submit the following documents for reinstatement:</p>
+                            <div class="space-y-6">
+                                <ul class="text-gray-700 space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <span class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Application for reinstatement
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Completion letter from institution
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Academic transcript
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Certificate (or official result slip)
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="flex-shrink-0 w-5 h-5 bg-darkRed rounded-full flex items-center justify-center mt-1"><span class="w-1.5 h-1.5 bg-white rounded-full"></span></span>
+                                        Study leave approval letter copy
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Returns Process -->
+            <section id="returns-process" class="bg-ash py-24 border-t border-gray-100 fade-in-section">
+                <div class="container mx-auto px-6 lg:px-12 max-w-6xl">
+                    <div class="mb-14">
+                        <p class="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3">PHASE 02</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4 uppercase">PROCESS OF STUDY LEAVE RETURN</h3>
+                        <div class="bg-darkRed w-20 h-[2px] rounded-full"></div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-16 items-start">
+                        <div class="space-y-12 order-2 lg:order-1">
+                            <div>
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 font-bold text-xs">01</div>
+                                    <h4 class="text-xl font-bold text-primary">Reporting & Verification</h4>
+                                </div>
+                                <div class="pl-12 text-gray-700 text-base leading-relaxed">
+                                    <p class="mb-2 font-semibold">Reporting to District Office</p>
+                                    <p class="mb-4 text-gray-600">Teacher reports to the District Education Office with required documents.</p>
+                                    <p class="mb-2 font-semibold">Verification of Documents</p>
+                                    <p class="mb-2 text-gray-600">GES verifies:</p>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span class="text-gray-700">Completion of programme</span></li>
+                                        <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span class="text-gray-700">Authenticity of certificate</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 font-bold text-xs">02</div>
+                                    <h4 class="text-xl font-bold text-primary">Reposting & Salary</h4>
+                                </div>
+                                <div class="pl-12 text-gray-700 text-base leading-relaxed">
+                                    <p class="mb-2 font-semibold">Reposting</p>
+                                    <p class="mb-2 text-gray-600">Teacher is:</p>
+                                    <ul class="space-y-2 mb-4">
+                                        <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span class="text-gray-700">Reposted to a school (may not necessarily be the former school).</span></li>
+                                        <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span class="text-gray-700">Assigned based on subject specialization and vacancy.</span></li>
+                                    </ul>
+                                    <p class="mb-2 font-semibold">Salary Adjustment (If Applicable)</p>
+                                    <p class="mb-2 text-gray-600">If the new qualification qualifies the teacher for:</p>
+                                    <ul class="space-y-2 mb-4">
+                                        <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span class="text-gray-700">Upgrading (e.g., Diploma to Degree),</span></li>
+                                        <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 bg-darkRed rounded-sm mt-2 flex-shrink-0"></span> <span class="text-gray-700">Rank promotion,</span></li>
+                                    </ul>
+                                    <p class="text-gray-600 italic">GES processes salary adjustment accordingly.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative w-full h-[250px] lg:h-full lg:min-h-[450px] group order-1 lg:order-2">
+                            <div class="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-slate-900 via-slate-800/80 to-transparent rounded-b-3xl z-10"></div>
+                            <img src="image/working-computer.jpg" alt="Return Process" class="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-lg">
+                        </div>
+                    </div>
+
+                    <!-- Important Notes -->
+                    <div class="bg-white border border-gray-100 shadow-sm overflow-hidden rounded-3xl mt-20">
+                        <div class="flex flex-col lg:flex-row gap-0 lg:gap-16">
+                            <!-- Image First on Mobile -->
+                            <div class="lg:w-1/2 order-1 lg:order-2">
+                                <img src="image/financial-adviser-explaining-retirement-pension-options-old-couple.jpg" alt="Final Notes" class="w-full h-[250px] lg:h-full object-cover">
+                            </div>
+
+                            <!-- Text Second on Mobile -->
+                            <div class="lg:w-1/2 p-6 md:p-10 lg:p-16 order-2 lg:order-1">
+                                <div class="flex items-center gap-4 mb-8 w-full">
+                                    <h3 class="text-xl md:text-2xl font-bold text-darkRed uppercase tracking-wide">Important Notes</h3>
+                                    <div class="hidden md:block h-px bg-darkRed flex-grow"></div>
+                                </div>
+                                <ul class="space-y-5">
+                                    <li class="flex items-start gap-4">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1 text-white text-xs">!</span>
+                                        <div>
+                                            <span class="text-gray-700 text-lg leading-relaxed">Failure to return after study leave may lead to:</span>
+                                            <ul class="mt-2 space-y-1 ml-4 list-disc text-gray-600">
+                                                <li>Suspension of salary</li>
+                                                <li>Legal action to recover paid salaries</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1 text-white text-xs">!</span>
+                                        <span class="text-gray-700 text-lg leading-relaxed">Teachers must serve the bond period after return.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1 text-white text-xs">!</span>
+                                        <span class="text-gray-700 text-lg leading-relaxed">Study leave without pay follows a slightly different procedure.</span>
+                                    </li>
+                                </ul>
+
+                                <div class="mt-10 p-6 bg-orange-50/50 border-l-4 border-darkRed rounded-r-xl text-gray-700 leading-relaxed italic">
+                                    The Study Leave Policy of the Ghana Education Service enables teachers to upgrade their 
+                                    qualifications while ensuring continued service to the education sector. The process involves 
+                                    eligibility verification, official approval, and proper reinstatement after completion.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> <!-- End of panel-returns -->
+
+    </main>
+
+    <!-- Final CTA Section -->
+    <section class="bg-white py-24 text-center">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-primary mb-10">Apply Here</h3>
+            <a href="#" class="inline-flex items-center gap-3 bg-darkRed hover:bg-darkerRed text-white px-12 py-5 rounded-full font-bold transition-all transform hover:-translate-y-1 shadow-2xl hover:shadow-darkRed/20 hover:scale-[1.02] text-xl group">
+                Apply Now 
+                <svg class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary py-12 text-center">
+        <div class="container mx-auto px-6">
+            <p class="text-gray-400 text-sm md:text-base tracking-wide font-light">
+                &copy; 2026 Ghana Education Service. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script>
+        // Fade-in on scroll animations
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Tab Switching Logic
+        const leaveBtn = document.getElementById('tab-leave-btn');
+        const returnsBtn = document.getElementById('tab-returns-btn');
+        const leavePanel = document.getElementById('panel-leave');
+        const returnsPanel = document.getElementById('panel-returns');
+
+        if (leaveBtn && returnsBtn && leavePanel && returnsPanel) {
+            function switchTab(activeBtn, activePanel, inactiveBtn, inactivePanel) {
+                // Update Button Classes
+                activeBtn.classList.add('text-primary', 'border-darkRed');
+                activeBtn.classList.remove('text-gray-500', 'border-transparent', 'font-medium');
+                activeBtn.classList.add('font-semibold');
+
+                inactiveBtn.classList.remove('text-primary', 'border-darkRed', 'font-semibold');
+                inactiveBtn.classList.add('text-gray-500', 'border-transparent', 'font-medium');
+
+                // Toggle Panels
+                activePanel.classList.remove('hidden');
+                inactivePanel.classList.add('hidden');
+
+                // Trigger observer for new visible sections
+                const visibleSections = activePanel.querySelectorAll('.fade-in-section');
+                visibleSections.forEach(section => {
+                    if (section.getBoundingClientRect().top < window.innerHeight) {
+                        section.classList.add('is-visible');
+                    }
+                });
+            }
+
+            leaveBtn.addEventListener('click', () => {
+                switchTab(leaveBtn, leavePanel, returnsBtn, returnsPanel);
+            });
+
+            returnsBtn.addEventListener('click', () => {
+                switchTab(returnsBtn, returnsPanel, leaveBtn, leavePanel);
+            });
+        }
+
+        // Navbar background change on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                if (navbar) navbar.classList.add('shadow-md');
+            } else {
+                if (navbar) navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const menu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('mobile-menu-overlay');
+
+        if (btn && closeBtn && menu && overlay) {
+            function toggleMenu() {
+                const isOpen = !menu.classList.contains('translate-x-full');
+                if (!isOpen) {
+                    menu.classList.remove('translate-x-full');
+                    overlay.classList.remove('opacity-0', 'pointer-events-none');
+                    overlay.classList.add('opacity-100');
+                    document.body.classList.add('overflow-hidden');
+                } else {
+                    menu.classList.add('translate-x-full');
+                    overlay.classList.add('opacity-0', 'pointer-events-none');
+                    overlay.classList.remove('opacity-100');
+                    document.body.classList.remove('overflow-hidden');
+                }
+            }
+
+            btn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!menu.classList.contains('translate-x-full')) {
+                        toggleMenu();
+                    }
+                });
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
