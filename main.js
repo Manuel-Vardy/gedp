@@ -134,24 +134,32 @@ function initFormHandlers() {
  * Navigation Effects
  */
 function initNavEffects() {
-  // Smooth scroll
+  // Smooth scroll for internal links starting with #
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 80,
-          behavior: 'smooth'
-        });
+      const href = this.getAttribute('href');
+      // Only prevent default if it's an actual ID on the current page
+      if (href && href !== '#' && document.querySelector(href)) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      } else if (href === '#') {
+          e.preventDefault(); // Just prevent jumping to top
       }
-    });
-  });
+    }); // Close addEventListener
+  }); // Close forEach
+}
 
-  // Header scroll effect
-  const header = document.querySelector('.header');
-  let lastScrollY = window.scrollY;
+// Header scroll effect
+const header = document.querySelector('.header');
+let lastScrollY = window.scrollY;
 
+if (header) {
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
 
