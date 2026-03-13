@@ -56,6 +56,34 @@
         {
             "source": "/gallery",
             "destination": "/gallery.html"
+        },
+        {
+            "source": "/assurance",
+            "destination": "/assurance/index.html"
+        },
+        {
+            "source": "/promotion",
+            "destination": "/promotion/index.html"
+        },
+        {
+            "source": "/recruitment",
+            "destination": "/recruitment-portal/index.html"
+        },
+        {
+            "source": "/school",
+            "destination": "/school-placement/index.html"
+        },
+        {
+            "source": "/study-leave",
+            "destination": "/study-leave/index.html"
+        },
+        {
+            "source": "/transfer",
+            "destination": "/transfer/index.html"
+        },
+        {
+            "source": "/upgrading",
+            "destination": "/upgrading/index.html"
         }
     ],
     "headers": [
