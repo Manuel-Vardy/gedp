@@ -1,0 +1,98 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/modules"
+  to = "/modules.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog-post"
+  to = "/blog-post.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin-login"
+  to = "/admin-login.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/gedp-admin-login"
+  to = "/gedp-admin-login.html"
+  status = 200
+
+[[redirects]]
+  from = "/gedp-admin"
+  to = "/gedp-admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/portals"
+  to = "/portals.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+
+[[redirects]]
+  from = "/gallery"
+  to = "/gallery.html"
+  status = 200
+
+[[redirects]]
+  from = "/assurance"
+  to = "/assurance/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/promotion"
+  to = "/promotion/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/recruitment"
+  to = "/recruitment-portal/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/school"
+  to = "/school-placement/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/study-leave"
+  to = "/study-leave/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/transfer"
+  to = "/transfer/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/upgrading"
+  to = "/upgrading/index.html"
+  status = 200
